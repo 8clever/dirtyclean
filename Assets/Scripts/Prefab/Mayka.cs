@@ -23,6 +23,15 @@ public class Mayka : Item, IItem
             return;   
         }
 
+        var bomj = cell.GetComponentInChildren<Bomj>();
+        if (bomj) {
+            Destroy(this.gameObject);
+            Destroy(bomj.gameObject);
+            Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
+            NextStep();
+            return;
+        }
+
         MoveToItemField();
     }
 
