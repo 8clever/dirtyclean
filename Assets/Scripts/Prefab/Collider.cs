@@ -27,8 +27,8 @@ public class Collider : MonoBehaviour
             if (!camera) throw new System.Exception("Tag MainCamera not setted");
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Layers.dragged);
-            this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Layers.dragged);
+            this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
+            this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
         }
 
         if (isNip) {
@@ -74,20 +74,20 @@ public class Collider : MonoBehaviour
         foreach (var hit in hits) {
             var cell = hit.collider.GetComponent<Cell>();
             var item = this.transform.parent.GetComponent<Item>();
+            var nip = this.transform.parent.GetComponent<Nip>();
 
             if (cell) {
                 if (this.transform.parent.transform.parent == cell.transform) {
                     return;
                 }
 
-                var nip = this.transform.parent.GetComponent<INip>();
-                
                 if (item != null) (item as IItem).OnDrop(cell.gameObject);
-                if (nip != null) nip.OnDrop(cell.gameObject);
+                if (nip != null) (nip as INip).OnDrop(cell.gameObject);
                 break;
             }
 
             if (item != null) item.MoveToItemField();
+            if (nip != null) nip.MoveToBack();
         }
     }
 

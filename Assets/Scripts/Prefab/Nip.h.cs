@@ -143,9 +143,9 @@ public class Nip : MonoBehaviour
 
     public void Update () {
 
-        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Layers.nips);
+        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Config.Layers.nips);
         if (parentPos != this.transform.position) {
-            var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, 1f);
+            var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, Config.Nip.moveSpeed);
             this.transform.position = nextPosition;
         }
     }
@@ -165,10 +165,15 @@ public class Nip : MonoBehaviour
     }
 
     public void OnDropDefault (GameObject cell) {
-        if (cell == null) return;
         if (cell.transform == this.transform.parent) return;
         if (cell.transform.childCount == 0) {
             SetParentAndNext(cell);
+            return;
         }
+        MoveToBack();
+    }
+
+    public void MoveToBack () {
+        this.transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Config.Layers.nips);
     }
 }

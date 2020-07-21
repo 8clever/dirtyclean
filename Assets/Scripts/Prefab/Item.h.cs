@@ -23,7 +23,7 @@ public class Item : MonoBehaviour
     public void MoveToItemField () {
         var field = GameObject.Find("ItemField");
         if (field == null) throw new System.Exception("ItemField required");
-        var pos = new Vector3(field.transform.position.x, field.transform.position.y, Layers.items);
+        var pos = new Vector3(field.transform.position.x, field.transform.position.y, Config.Layers.items);
         this.transform.position = pos;
         this.GetComponentInChildren<Collider>().transform.position = pos;
     }
