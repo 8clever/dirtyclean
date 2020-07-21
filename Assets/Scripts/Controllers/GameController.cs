@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
 
     private int health = 400;
 
+    private GameObject shadow;
+
     void Start()
     {
 
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
     }
 
     public void DefaultStart () {
+        ToggleShadow(false);
         RenderHealth();
         GenerateItem();
         var cell = GetRandomRespawnCell();
@@ -73,6 +76,12 @@ public class GameController : MonoBehaviour
         SceneController.LoadScene(SceneController.GameOverScene);
     }
 
+    private void ToggleShadow (bool active) {
+        shadow = shadow ? shadow : GameObject.Find("Shadow");
+        if (shadow == null) throw new System.Exception("Shadow GameObject is required");
+        shadow.SetActive(active);
+    }
+
     public void NextStep () {
         IsGameOver();
 
@@ -83,13 +92,16 @@ public class GameController : MonoBehaviour
         GenerateItem();
         
         var time = CurrentTime();
+        
         if (time == 0) {
+            ToggleShadow(false);
             var cell = GetRandomRespawnCell();
             if (cell) {
                 Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
             }
         }
         if (time == 4) {
+            ToggleShadow(true);
             var cell = GetRandomRespawnCell();
             if (cell) {
                 Instantiate(Resources.Load<StreetDog>(StreetDog.resourcePath), cell.transform);
