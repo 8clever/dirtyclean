@@ -7,6 +7,12 @@ public class Mayka : Item, IItem
     public static string resourcePath = "Item/Mayka";
     public void OnDrop(GameObject cell)
     {
+        var c = cell.GetComponent<Cell>();
+        if (c.isPrison) {
+            MoveToItemField();
+            return;
+        }
+
         if (cell && cell.transform.childCount == 0) {
             Destroy(this.gameObject);
             Instantiate(Resources.Load<Musorka>(Musorka.resourcePath), cell.transform);

@@ -60,6 +60,11 @@ public class Collider : MonoBehaviour
             var item = this.transform.parent.GetComponent<Item>();
             var nip = this.transform.parent.GetComponent<Nip>();
 
+            void MoveBack () {
+                if (item != null) item.MoveToItemField();
+                if (nip != null) nip.MoveToBack();
+            }
+
             if (cell) {
                 if (this.transform.parent.transform.parent == cell.transform) {
                     if (isNip && draggable) {
@@ -71,14 +76,18 @@ public class Collider : MonoBehaviour
                     }
                     return;
                 }
+                
+                if (isNip && cell.isPrison && cell.transform.childCount > 0) {
+                    MoveBack();
+                    break;
+                }
 
                 if (item != null) (item as IItem).OnDrop(cell.gameObject);
                 if (nip != null) (nip as INip).OnDrop(cell.gameObject);
                 break;
             }
 
-            if (item != null) item.MoveToItemField();
-            if (nip != null) nip.MoveToBack();
+            MoveBack();
         }
     }
 
