@@ -19,6 +19,11 @@ public class Kust : Nip, INip
 
     public void OnDrop(GameObject cell)
     {
+        var c = cell.GetComponent<Cell>();
+        if (c.isPrison) {
+            MoveToBack();
+            return;
+        }
         OnDropDefault(cell);
     }
 
