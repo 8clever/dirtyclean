@@ -32,6 +32,17 @@ public class GameController : MonoBehaviour
         if (cell) {
             Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
         }
+        var staticNips = new List<Nip>();
+        staticNips.Add(Resources.Load<Valun>(Valun.resourcePath));
+        staticNips.Add(Resources.Load<Tree>(Tree.resourcePath));
+        staticNips.Add(Resources.Load<Kolodec>(Kolodec.resourcePath));
+        staticNips.Add(Resources.Load<Kust>(Kust.resourcePath));
+        foreach (var nip in staticNips) {
+            var emptyCell = GetRandomCell();
+            if (emptyCell) {
+                Instantiate(nip, emptyCell.transform);
+            }
+        }
     }
 
     private IEnumerator MoveNips () {
@@ -128,6 +139,23 @@ public class GameController : MonoBehaviour
         foreach(var obj in objects) {
             var cell = obj.GetComponent<Cell>();
             if (cell && cell.isRespawn && cell.transform.childCount == 0) {
+                emptyCells.Add(cell);
+            }
+        }
+        var idx = Random.Range(0, emptyCells.Count);
+        return emptyCells[idx];
+    }
+
+    private Cell GetRandomCell () {
+        var objects = GameObject.FindGameObjectsWithTag("cell");
+        var emptyCells = new List<Cell>();
+        foreach(var obj in objects) {
+            var cell = obj.GetComponent<Cell>();
+            if (
+                !cell.isPrison &&
+                !cell.isRespawn && 
+                cell.transform.childCount == 0
+            ) {
                 emptyCells.Add(cell);
             }
         }
