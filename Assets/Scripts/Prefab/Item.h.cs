@@ -17,14 +17,15 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void MoveToItemField () {
         var field = GameObject.Find("ItemField");
         if (field == null) throw new System.Exception("ItemField required");
-        this.transform.position = field.transform.position;
-        this.GetComponentInChildren<Collider>().transform.position = field.transform.position;
+        var pos = new Vector3(field.transform.position.x, field.transform.position.y, Layers.items);
+        this.transform.position = pos;
+        this.GetComponentInChildren<Collider>().transform.position = pos;
     }
 
     public void NextStep () {

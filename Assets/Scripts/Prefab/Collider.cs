@@ -27,8 +27,8 @@ public class Collider : MonoBehaviour
             if (!camera) throw new System.Exception("Tag MainCamera not setted");
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, this.transform.parent.position.z);
-            this.transform.position = new Vector3(ray.origin.x, ray.origin.y, this.transform.position.z);
+            this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Layers.dragged);
+            this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Layers.dragged);
         }
 
         if (isNip) {

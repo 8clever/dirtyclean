@@ -143,7 +143,7 @@ public class Nip : MonoBehaviour
 
     public void Update () {
 
-        Vector3 parentPos = this.transform.parent.position + new Vector3(0, 0, -1);
+        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Layers.nips);
         if (parentPos != this.transform.position) {
             var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, 1f);
             this.transform.position = nextPosition;
