@@ -32,6 +32,15 @@ public class Mayka : Item, IItem
             return;
         }
 
+        var musorka = cell.GetComponentInChildren<Musorka>();
+        if (musorka) {
+            Destroy(this.gameObject);
+            Destroy(musorka.gameObject);
+            Instantiate(Resources.Load<Svalka>(Svalka.resourcePath), cell.transform);
+            NextStep();
+            return;
+        }
+
         MoveToItemField();
     }
 
