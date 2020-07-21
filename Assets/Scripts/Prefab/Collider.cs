@@ -73,6 +73,7 @@ public class Collider : MonoBehaviour
 
         foreach (var hit in hits) {
             var cell = hit.collider.GetComponent<Cell>();
+            var item = this.transform.parent.GetComponent<Item>();
 
             if (cell) {
                 if (this.transform.parent.transform.parent == cell.transform) {
@@ -80,11 +81,13 @@ public class Collider : MonoBehaviour
                 }
 
                 var nip = this.transform.parent.GetComponent<INip>();
-                var item = this.transform.parent.GetComponent<IItem>();
-
-                if (item != null) item.OnDrop(cell.gameObject);
+                
+                if (item != null) (item as IItem).OnDrop(cell.gameObject);
                 if (nip != null) nip.OnDrop(cell.gameObject);
+                break;
             }
+
+            if (item != null) item.MoveToItemField();
         }
     }
 
