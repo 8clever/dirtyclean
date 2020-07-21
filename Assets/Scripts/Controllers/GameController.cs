@@ -134,4 +134,8 @@ public class GameController : MonoBehaviour
         var idx = Random.Range(0, emptyCells.Count);
         return emptyCells[idx];
     }
+
+    public void AddPointsToHealth (int num) {
+        health += num;
+    }
 }

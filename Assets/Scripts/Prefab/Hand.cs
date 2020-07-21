@@ -8,7 +8,15 @@ public class Hand : Item, IItem
     public static string resourcePath = "Item/Hand";
     public void OnDrop(GameObject cell)
     {   
-        if (cell && cell.transform.childCount > 0) {
+        if (cell.transform.childCount == 0) {
+            Destroy(this.gameObject);
+            var controller = GameObject.FindObjectOfType<GameController>();
+            controller.AddPointsToHealth(1);
+            NextStep();
+            return;
+        }
+
+        if (cell.transform.childCount > 0) {
             var nip = cell.GetComponentInChildren<INip>();
             if (nip != null && nip.CanDrag) {
                 Destroy(this.gameObject);
