@@ -23,16 +23,16 @@ public class Cat : Nip, INip
 
     public void OnDrop(GameObject cell)
     {
-        if (cell) {
-            var cat = cell.transform.GetComponentInChildren<Cat>();
-            if (cat) {
-                Destroy(this.gameObject);
-                Destroy(cat.gameObject);
-                Instantiate(Resources.Load<Chinese>(Chinese.resourcePath), cell.transform);
-                GameNextStep();
-                return;
-            }
+        var cat = cell.transform.GetComponentInChildren<Cat>();
+        if (cat) {
+            Destroy(this.gameObject);
+            Destroy(cat.gameObject);
+            Instantiate(Resources.Load<Chinese>(Chinese.resourcePath), cell.transform);
+            GameNextStep();
+            return;
         }
+
+        OnDropDefault(cell);
     }
 
     // Start is called before the first frame update
