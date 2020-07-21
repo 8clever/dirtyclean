@@ -12,7 +12,6 @@ public class Collider : MonoBehaviour
 
     private GameObject handPicked;
 
-    private bool isMouseDown = false;
     void Start()
     {
         var nip = this.transform.parent.GetComponent<INip>();
@@ -43,27 +42,12 @@ public class Collider : MonoBehaviour
         }
     }
 
-    IEnumerator RestoreMouseDown () {
-        yield return new WaitForSeconds(0.5f);
-        isMouseDown = false;
-    }
-
     void OnMouseDown() {
-        if (isNip && draggable && isMouseDown) {
-            draggable = false;
-            isMouseDown = false;
-            var itemField = GameObject.Find("ItemField") as GameObject;
-            if (itemField.transform.childCount == 0) {
-                Instantiate(Resources.Load<Hand>(Hand.resourcePath), itemField.transform);
-            }
-        }
-        isMouseDown = true;
         if (!draggable) return;
         dragged = true;
     }
 
     void OnMouseUp() {
-        StartCoroutine(RestoreMouseDown());
         if (!draggable) return;
 
         dragged = false;
@@ -78,6 +62,13 @@ public class Collider : MonoBehaviour
 
             if (cell) {
                 if (this.transform.parent.transform.parent == cell.transform) {
+                    if (isNip && draggable) {
+                        draggable = false;
+                        var itemField = GameObject.Find("ItemField") as GameObject;
+                        if (itemField.transform.childCount == 0) {
+                            Instantiate(Resources.Load<Hand>(Hand.resourcePath), itemField.transform);
+                        }
+                    }
                     return;
                 }
 

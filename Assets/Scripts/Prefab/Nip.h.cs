@@ -165,7 +165,6 @@ public class Nip : MonoBehaviour
     }
 
     public void OnDropDefault (GameObject cell) {
-        if (cell.transform == this.transform.parent) return;
         if (cell.transform.childCount == 0) {
             SetParentAndNext(cell);
             return;
