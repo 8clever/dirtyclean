@@ -19,7 +19,6 @@ public class Police : Nip, INip
         if (dvornik != null) {
             Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), dvornik.transform.parent);
             Destroy(dvornik.gameObject);
-            Destroy(this.gameObject);
         }
     }
 
