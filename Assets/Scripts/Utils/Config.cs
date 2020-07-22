@@ -16,4 +16,6 @@ public static class Config {
     public static class Nip {
         public static float moveSpeed = 1f;
     }
+
+    public static bool gameFieldWeb = true;
 }

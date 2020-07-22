@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,18 +14,19 @@ public class GameController : MonoBehaviour
 
     private GameObject shadow;
 
-    void Start()
-    {
-
-    }
+    private Image setka;
 
     // Update is called once per frame
-    void Update()
+    public void DefaultUpdate()
     {
-        
+        if (Config.gameFieldWeb != setka.enabled) {
+            setka.enabled = Config.gameFieldWeb;
+        }
     }
 
     public void DefaultStart () {
+        setka = GameObject.Find("GameField").GetComponent<Image>();
+
         ToggleShadow(false);
         RenderHealth();
         GenerateItem();
@@ -84,7 +86,7 @@ public class GameController : MonoBehaviour
             }
         }
         if (stepsExists && health > 0) return;
-        SceneController.LoadScene(SceneController.GameOverScene);
+        SceneManager.LoadScene(SceneController.GameOverScene);
     }
 
     private void ToggleShadow (bool active) {
