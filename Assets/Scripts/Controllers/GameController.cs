@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
                 Instantiate(nip, emptyCell.transform);
             }
         }
+
+        StartCoroutine(AddPointAfter30sec());
     }
 
     private IEnumerator MoveNips () {
@@ -173,5 +175,18 @@ public class GameController : MonoBehaviour
 
     public void AddPointsToHealth (int num) {
         health += num;
+    }
+
+    IEnumerator AddPointAfter30sec () {
+        var health = GameObject.Find("HealthIndicator/Indicator").GetComponent<Image>();
+        var seconds = 30;
+        var tick = 1f / seconds;
+        for (int i = 1; i <= seconds; i++) {
+            health.fillAmount = tick * i;
+            yield return new WaitForSeconds(1);
+        }
+        AddPointsToHealth(1);
+        RenderHealth();
+        yield return AddPointAfter30sec();
     }
 }
