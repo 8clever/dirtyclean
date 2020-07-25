@@ -13,10 +13,13 @@ public class Collider : MonoBehaviour
 
     private GameObject handPicked;
 
+    private GameController controller;
+
     void Start()
     {
         var nip = this.transform.parent.GetComponent<INip>();
         isNip = nip != null;
+        controller = GameObject.FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -104,6 +107,9 @@ public class Collider : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other) {
+        if (!controller) return;
+        if (!controller.gameInitialized) return;
+
         var collider = other.gameObject.GetComponent<Collider>();
         if (collider && collider.dragged) return;
         if (isNip && draggable) return;

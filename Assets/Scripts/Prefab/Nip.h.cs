@@ -118,6 +118,8 @@ public class Nip : MonoBehaviour
             return false;
         }
 
+        if (hit.collider.transform.childCount > 1) return false;
+
         for (int n = 0; n < hit.collider.transform.childCount; n++) {
             var child = hit.collider.transform.GetChild(n);
             var requiredNip = child.GetComponent(type);

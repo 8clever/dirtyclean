@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
 
     private Image setka;
 
+    public bool gameInitialized = false;
+
     // Update is called once per frame
     public void DefaultUpdate()
     {
@@ -99,6 +101,7 @@ public class GameController : MonoBehaviour
     }
 
     public void NextStep () {
+        gameInitialized = true;
         IsGameOver();
 
         step += 1;
