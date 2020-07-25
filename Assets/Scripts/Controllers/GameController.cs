@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     
     private int step = 0;
 
-    private int health = 400;
+    private int health = 300;
 
     private GameObject shadow;
 
