@@ -17,6 +17,12 @@ public class Masson : Nip, INip
 
     public void OnCollision(Collision collision)
     {
+        foreach(var type in list) {
+            var nip = collision.gameObject.GetComponentInParent(type);
+            if (nip) {
+                Destroy(nip.gameObject);
+            }
+        }
     }
 
     public void OnDrop(GameObject cell)

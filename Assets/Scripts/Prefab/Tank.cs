@@ -17,9 +17,9 @@ public class Tank : Nip, INip
 
     public void OnCollision(Collision collision)
     {
-        foreach (var nipType in list) {
-            var nip = collision.transform.GetComponentInParent(nipType);
-            if (nip != null) {
+        foreach(var type in list) {
+            var nip = collision.gameObject.GetComponentInParent(type);
+            if (nip) {
                 Destroy(nip.gameObject);
             }
         }
