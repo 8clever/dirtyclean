@@ -9,6 +9,7 @@ public class President : Nip, INip
     public static string resourcePath = "Nip/President";
     public void NextStep()
     {
+        RandomMove();
     }
 
     public void OnCollision(Collision collision)
