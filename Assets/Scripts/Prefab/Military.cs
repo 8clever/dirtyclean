@@ -15,6 +15,10 @@ public class Military : Nip, INip
 
     public void OnCollision(Collision collision)
     {
+        var president = collision.gameObject.GetComponentInParent<President>();
+        if (president) {
+            Destroy(president.gameObject);
+        }
     }
 
     public void OnDrop(GameObject cell)
