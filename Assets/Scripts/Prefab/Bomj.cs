@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bomj : Nip, INip
 {
@@ -27,5 +25,10 @@ public class Bomj : Nip, INip
     void Start()
     {
         
+    }
+
+    public bool CanDrop(Cell cell)
+    {
+        return CanDropDefault(cell);
     }
 }

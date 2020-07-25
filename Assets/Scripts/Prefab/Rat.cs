@@ -39,4 +39,10 @@ public class Rat : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Rat>()) return true;
+        return CanDropDefault(cell);
+    }
 }

@@ -36,4 +36,10 @@ public class Powder : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Powder>()) return true;
+        return CanDropDefault(cell);
+    }
 }

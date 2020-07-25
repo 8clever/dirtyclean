@@ -41,4 +41,10 @@ public class SecurityGuard : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<SecurityGuard>()) return true;
+        return CanDropDefault(cell);
+    }
 }

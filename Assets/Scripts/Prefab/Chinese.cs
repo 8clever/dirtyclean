@@ -38,6 +38,12 @@ public class Chinese : Nip, INip
         }
     }
 
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Chinese>()) return true;
+        return CanDropDefault(cell);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

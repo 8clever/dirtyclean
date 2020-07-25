@@ -4,6 +4,8 @@ using UnityEngine;
 
 public interface IItem {
     void OnDrop (GameObject cell);
+
+    bool CanDrop (Cell cell);
 }
 
 public class Item : MonoBehaviour

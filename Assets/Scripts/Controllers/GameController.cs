@@ -20,12 +20,15 @@ public class GameController : MonoBehaviour
     public void DefaultUpdate()
     {
         if (Config.gameFieldWeb != setka.enabled) {
-            setka.enabled = Config.gameFieldWeb;
+            var cells = GameObject.FindGameObjectsWithTag("cell");
+            foreach(var c in cells) {
+                c.GetComponent<Image>().enabled = Config.gameFieldWeb;
+            }
         }
     }
 
     public void DefaultStart () {
-        setka = GameObject.Find("GameField").GetComponent<Image>();
+        setka = GameObject.Find("Cell").GetComponent<Image>();
 
         ToggleShadow(false);
         RenderHealth();

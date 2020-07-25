@@ -25,4 +25,9 @@ public class Kolodec : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        return false;
+    }
 }

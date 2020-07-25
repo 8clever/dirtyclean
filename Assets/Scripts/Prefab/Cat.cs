@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cat : Nip, INip
 {
@@ -39,5 +37,11 @@ public class Cat : Nip, INip
     void Start()
     {
         
+    }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Cat>()) return true;
+        return CanDropDefault(cell);
     }
 }

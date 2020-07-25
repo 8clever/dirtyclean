@@ -50,6 +50,16 @@ public class Mayka : Item, IItem
         MoveToItemField();
     }
 
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.isPrison) return false;
+        if (cell.transform.childCount == 0) return true;
+        if (cell.GetComponentInChildren<StreetDog>()) return true;
+        if (cell.GetComponentInChildren<Bomj>()) return true;
+        if (cell.GetComponentInChildren<Musorka>()) return true;
+        return false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

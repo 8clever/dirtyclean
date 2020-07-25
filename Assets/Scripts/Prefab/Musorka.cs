@@ -36,4 +36,10 @@ public class Musorka : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Musorka>()) return true;
+        return CanDropDefault(cell);
+    }
 }

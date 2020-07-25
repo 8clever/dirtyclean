@@ -42,4 +42,10 @@ public class GreenPeace : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<GreenPeace>()) return true;
+        return CanDropDefault(cell);
+    }
 }

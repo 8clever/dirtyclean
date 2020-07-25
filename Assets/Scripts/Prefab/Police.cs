@@ -42,4 +42,10 @@ public class Police : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Police>()) return true;
+        return CanDropDefault(cell);
+    }
 }

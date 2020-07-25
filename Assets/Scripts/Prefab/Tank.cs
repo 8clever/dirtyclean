@@ -30,6 +30,11 @@ public class Tank : Nip, INip
         OnDropDefault(cell);
     }
 
+    public bool CanDrop(Cell cell)
+    {
+        return CanDropDefault(cell);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

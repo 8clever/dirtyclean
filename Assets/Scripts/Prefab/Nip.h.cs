@@ -10,6 +10,8 @@ public interface INip
     void OnCollision (Collision collision);
 
     void OnDrop (GameObject cell);
+
+    bool CanDrop (Cell cell);
 }
 
 public class Nip : MonoBehaviour
@@ -170,6 +172,11 @@ public class Nip : MonoBehaviour
             return;
         }
         MoveToBack();
+    }
+
+    public bool CanDropDefault (Cell cell) {
+        if (cell.transform.childCount == 0) return true;
+        return false;
     }
 
     public void MoveToBack () {

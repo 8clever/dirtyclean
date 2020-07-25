@@ -26,4 +26,9 @@ public class Mine : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        return CanDropDefault(cell);
+    }
 }

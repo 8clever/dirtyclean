@@ -32,4 +32,9 @@ public class Kust : Nip, INip
         
     }
 
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.isPrison) return false;
+        return CanDropDefault(cell);
+    }
 }

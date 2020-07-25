@@ -30,6 +30,18 @@ public class Hand : Item, IItem
         MoveToItemField();
     }
 
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.transform.childCount == 0) return true;
+        if (cell.transform.childCount > 0) {
+            var nip = cell.GetComponentInChildren<INip>();
+            if (nip != null && nip.CanDrag) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

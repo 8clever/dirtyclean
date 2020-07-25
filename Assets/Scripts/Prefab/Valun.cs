@@ -25,6 +25,11 @@ public class Valun : Nip, INip
         OnDropDefault(cell);
     }
 
+    public bool CanDrop (Cell cell) {
+            if (cell.isPrison) return false;
+        return CanDropDefault(cell);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -38,4 +38,10 @@ public class Military : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Military>()) return true;
+        return CanDropDefault(cell);
+    }
 }

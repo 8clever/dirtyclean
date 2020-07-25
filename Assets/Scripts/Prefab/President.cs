@@ -35,4 +35,10 @@ public class President : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<President>()) return true;
+        return CanDropDefault(cell);
+    }
 }

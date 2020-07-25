@@ -38,4 +38,10 @@ public class Svalka : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Svalka>()) return true;
+        return CanDropDefault(cell);
+    }
 }

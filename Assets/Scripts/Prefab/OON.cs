@@ -43,4 +43,10 @@ public class OON : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<OON>()) return true;
+        return CanDropDefault(cell);
+    }
 }

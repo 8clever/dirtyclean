@@ -40,4 +40,10 @@ public class Dvornik : Nip, INip
         
         OnDropDefault(cell);
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Dvornik>()) return true;
+        return CanDropDefault(cell);
+    }
 }

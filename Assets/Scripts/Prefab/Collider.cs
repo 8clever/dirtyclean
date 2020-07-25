@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collider : MonoBehaviour
 {
@@ -28,6 +29,17 @@ public class Collider : MonoBehaviour
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
             this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
+            var hits = Physics.RaycastAll(ray);
+            foreach (var hit in hits) {
+                var cell = hit.collider.GetComponent<Cell>();
+                if (cell) {
+                    var nip = this.GetComponentInParent<INip>();
+                    var item = this.GetComponentInParent<IItem>();
+                    var img = cell.GetComponent<Image>();
+                    var canDrop = (nip != null && nip.CanDrop(cell)) || (item != null && item.CanDrop(cell));
+                    img.color = canDrop ? cell.canDrop : cell.cantDrop;
+                }
+            }
         }
 
         if (isNip) {

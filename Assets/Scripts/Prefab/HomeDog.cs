@@ -42,4 +42,10 @@ public class HomeDog : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<HomeDog>()) return true;
+        return CanDropDefault(cell);
+    }
 }

@@ -31,4 +31,9 @@ public class StreetDog : Nip, INip
     {
         
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        return CanDropDefault(cell);
+    }
 }

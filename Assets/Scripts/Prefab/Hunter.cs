@@ -47,4 +47,10 @@ public class Hunter : Nip, INip
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));
     }
+
+    public bool CanDrop(Cell cell)
+    {
+        if (cell.GetComponentInChildren<Hunter>()) return true;
+        return CanDropDefault(cell);
+    }
 }
