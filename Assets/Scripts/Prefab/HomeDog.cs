@@ -17,6 +17,7 @@ public class HomeDog : Nip, INip
     {
         var cat = collision.transform.GetComponentInParent<Cat>();
         if (cat != null) {
+            AddPoints(1);
             Destroy(cat.gameObject);
         }
     }
@@ -40,7 +41,7 @@ public class HomeDog : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(2);
     }
 
     public bool CanDrop(Cell cell)

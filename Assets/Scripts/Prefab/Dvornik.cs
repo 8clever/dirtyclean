@@ -15,6 +15,7 @@ public class Dvornik : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
+        AddPoints(1);
     }
 
     public void OnCollision(Collision collision)
@@ -22,6 +23,7 @@ public class Dvornik : Nip, INip
         var musorka = collision.gameObject.GetComponentInParent<Musorka>();
         if (musorka == null) return;
 
+        AddPoints(1);
         Destroy(musorka.gameObject);
     }
 

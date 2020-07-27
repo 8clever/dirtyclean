@@ -37,7 +37,7 @@ public class Rat : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(3);
     }
 
     public bool CanDrop(Cell cell)

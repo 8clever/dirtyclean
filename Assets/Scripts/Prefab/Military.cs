@@ -17,6 +17,7 @@ public class Military : Nip, INip
     {
         var president = collision.gameObject.GetComponentInParent<President>();
         if (president) {
+            AddPoints(1);
             Destroy(president.gameObject);
         }
     }
@@ -40,7 +41,7 @@ public class Military : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(6);
     }
 
     public bool CanDrop(Cell cell)

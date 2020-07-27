@@ -24,7 +24,7 @@ public class Bomj : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(-10);
     }
 
     public bool CanDrop(Cell cell)

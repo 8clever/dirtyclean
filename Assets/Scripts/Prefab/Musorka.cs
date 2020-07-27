@@ -34,7 +34,7 @@ public class Musorka : Nip, INip
 
     void Start()
     {
-        
+        AddPoints(1);
     }
 
     public bool CanDrop(Cell cell)

@@ -20,6 +20,7 @@ public class Masson : Nip, INip
         foreach(var type in list) {
             var nip = collision.gameObject.GetComponentInParent(type);
             if (nip) {
+                AddPoints(1);
                 Destroy(nip.gameObject);
             }
         }
@@ -47,5 +48,7 @@ public class Masson : Nip, INip
         list.Add(typeof(SecurityGuard));
         list.Add(typeof(Police));
         list.Add(typeof(Military));
+
+        AddPoints(6);
     }
 }

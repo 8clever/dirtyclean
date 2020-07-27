@@ -15,6 +15,7 @@ public class Cat : Nip, INip
     {
         var rat = collision.transform.GetComponentInParent<Rat>();
         if (rat != null) {
+            AddPoints(1);
             Destroy(rat.gameObject);
         }
     }
@@ -36,7 +37,7 @@ public class Cat : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(4);
     }
 
     public bool CanDrop(Cell cell)

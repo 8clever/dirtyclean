@@ -34,7 +34,7 @@ public class President : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(5);
     }
 
     public bool CanDrop(Cell cell)

@@ -15,6 +15,7 @@ public class Buldozer : Nip, INip
     {
         var svalka = collision.transform.GetComponentInParent<Svalka>();
         if (svalka != null) {
+            AddPoints(1);
             Destroy(svalka.gameObject);
         }
     }
@@ -38,7 +39,7 @@ public class Buldozer : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(2);
     }
 
     public bool CanDrop(Cell cell)

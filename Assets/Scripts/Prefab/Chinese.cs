@@ -19,6 +19,7 @@ public class Chinese : Nip, INip
         foreach (var nipType in list) {
             var nip = collision.transform.GetComponentInParent(nipType);
             if (nip != null) {
+                AddPoints(1);
                 Destroy(nip.gameObject);
             }
         }
@@ -51,5 +52,7 @@ public class Chinese : Nip, INip
         list.Add(typeof(Cat));
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));
+
+        AddPoints(5);
     }
 }

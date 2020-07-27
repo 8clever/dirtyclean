@@ -17,6 +17,7 @@ public class OON : Nip, INip
     {
         var military = collision.transform.GetComponentInParent<Military>();
         if (military != null) {
+            AddPoints(1);
             Destroy(military.gameObject);
             var police = Instantiate(Resources.Load<Police>(Police.resourcePath), military.transform.parent);
             police.RandomMove();
@@ -41,7 +42,7 @@ public class OON : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(4);
     }
 
     public bool CanDrop(Cell cell)

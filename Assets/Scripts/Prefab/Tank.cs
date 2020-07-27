@@ -20,6 +20,7 @@ public class Tank : Nip, INip
         foreach(var type in list) {
             var nip = collision.gameObject.GetComponentInParent(type);
             if (nip) {
+                AddPoints(1);
                 Destroy(nip.gameObject);
             }
         }
@@ -54,5 +55,7 @@ public class Tank : Nip, INip
         list.Add(typeof(Cat));
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));
+
+        AddPoints(7);
     }
 }

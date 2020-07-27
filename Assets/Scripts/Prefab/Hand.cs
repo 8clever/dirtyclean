@@ -12,6 +12,7 @@ public class Hand : Item, IItem
             Destroy(this.gameObject);
             var controller = GameObject.FindObjectOfType<GameController>();
             controller.AddPointsToHealth(1);
+            controller.AddPointsToPoints(1);
             NextStep();
             return;
         }

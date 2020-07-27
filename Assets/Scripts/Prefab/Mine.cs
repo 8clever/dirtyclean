@@ -24,7 +24,7 @@ public class Mine : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(7);
     }
 
     public bool CanDrop(Cell cell)

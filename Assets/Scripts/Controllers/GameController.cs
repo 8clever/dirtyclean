@@ -10,7 +10,9 @@ public class GameController : MonoBehaviour
     
     private int step = 0;
 
-    private int health = 300;
+    private int health = 0;
+
+    private int point = 0;
 
     private GameObject shadow;
 
@@ -32,8 +34,8 @@ public class GameController : MonoBehaviour
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
 
+        AddPointsToHealth(300);
         ToggleShadow(false);
-        RenderHealth();
         GenerateItem();
         var cell = GetRandomRespawnCell();
         if (cell) {
@@ -81,6 +83,12 @@ public class GameController : MonoBehaviour
         healthObject.text = health.ToString();
     }
 
+    private void RenderPoints () {
+        var pointsObject = GameObject.Find("Points").GetComponent<Text>();
+        if (pointsObject == null) throw new System.Exception("Points not exists");
+        pointsObject.text = point.ToString();
+    }
+
     private void IsGameOver () {
         var cells = GameObject.FindGameObjectsWithTag("cell");
         foreach (var cell in cells) {
@@ -107,9 +115,7 @@ public class GameController : MonoBehaviour
         }
 
         step += 1;
-        health -= 1;
-
-        RenderHealth();
+        AddPointsToHealth(-1);
         GenerateItem();
         
         var time = CurrentTime();
@@ -175,6 +181,12 @@ public class GameController : MonoBehaviour
 
     public void AddPointsToHealth (int num) {
         health += num;
+        RenderHealth();
+    }
+
+    public void AddPointsToPoints (int num) {
+        point += num;
+        RenderPoints();
     }
 
     IEnumerator AddPointAfter30sec () {
@@ -186,7 +198,6 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         AddPointsToHealth(1);
-        RenderHealth();
         NextStep();
     }
 }

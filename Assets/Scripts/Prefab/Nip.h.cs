@@ -173,6 +173,10 @@ public class Nip : MonoBehaviour
 
     public void OnDropDefault (GameObject cell) {
         if (cell.transform.childCount == 0) {
+            var c = cell.GetComponent<Cell>();
+            if (c.isPrison) {
+                AddPoints(1);
+            }
             SetParentAndNext(cell);
             return;
         }
@@ -192,5 +196,10 @@ public class Nip : MonoBehaviour
         var parent = this.transform.parent;
         this.transform.SetParent(prevParent);
         prevParent = parent;
+    }
+
+    public void AddPoints (int number) {
+        var controller = GameObject.FindObjectOfType<GameController>();
+        controller.AddPointsToPoints(number);
     }
 }

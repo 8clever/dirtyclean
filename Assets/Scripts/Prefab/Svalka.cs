@@ -36,7 +36,7 @@ public class Svalka : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddPoints(2);
     }
 
     public bool CanDrop(Cell cell)
