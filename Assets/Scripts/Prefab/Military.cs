@@ -19,6 +19,8 @@ public class Military : Nip, INip
         if (president) {
             AddPoints(1);
             Destroy(president.gameObject);
+            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), transform.parent);
+            bomj.RandomMove();
         }
     }
 
