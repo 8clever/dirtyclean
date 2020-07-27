@@ -8,6 +8,8 @@ public static class SceneController
 
     public static string GameOverScene = "GameOver";
 
+    public static string WinScene = "Win";
+
     public static string Options = "Options";
 
     public static string[] levels = {
