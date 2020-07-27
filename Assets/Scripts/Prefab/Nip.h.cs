@@ -17,6 +17,8 @@ public interface INip
 public class Nip : MonoBehaviour
 {
 
+    public Transform prevParent;
+
     public Nip GetClosestNip (System.Type type) {
         var objects = GameObject.FindObjectsOfType(type) as Nip[];
         if (objects == null) return null;
@@ -90,6 +92,7 @@ public class Nip : MonoBehaviour
                 var hit = GetClosestHit(hits);
                 var isValid = IsValidHit(hit, type);
                 if (isValid) {
+                    prevParent = this.transform.parent;
                     this.transform.SetParent(hit.collider.transform);
                     return;
                 };
@@ -183,5 +186,11 @@ public class Nip : MonoBehaviour
 
     public void MoveToBack () {
         this.transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Config.Layers.nips);
+    }
+
+    public void MoveToPrevParent () {
+        var parent = this.transform.parent;
+        this.transform.SetParent(prevParent);
+        prevParent = parent;
     }
 }

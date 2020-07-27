@@ -17,8 +17,9 @@ public class Police : Nip, INip
     {
         var dvornik = collision.transform.GetComponentInParent<Dvornik>();
         if (dvornik != null) {
-            Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), dvornik.transform.parent);
             Destroy(dvornik.gameObject);
+            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), dvornik.transform.parent);
+            bomj.RandomMove();
         }
     }
 
