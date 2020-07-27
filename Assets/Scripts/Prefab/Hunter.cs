@@ -46,6 +46,7 @@ public class Hunter : Nip, INip
         list.Add(typeof(Cat));
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));
+        list.Add(typeof(Rat));
     }
 
     public bool CanDrop(Cell cell)
