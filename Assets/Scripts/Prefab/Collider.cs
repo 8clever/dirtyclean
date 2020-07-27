@@ -58,6 +58,13 @@ public class Collider : MonoBehaviour
     }
 
     void OnMouseDown() {
+
+        var hand = GameObject.FindObjectOfType<Hand>();
+        if (isNip && hand && transform.parent.GetComponent<INip>().CanDrag) {
+            draggable = true;
+            Destroy(hand.gameObject);
+        }
+
         if (!draggable) return;
         dragged = true;
     }
