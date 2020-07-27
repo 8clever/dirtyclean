@@ -17,9 +17,9 @@ public class OON : Nip, INip
     {
         var military = collision.transform.GetComponentInParent<Military>();
         if (military != null) {
-            Instantiate(Resources.Load<Police>(Police.resourcePath), military.transform.parent);
             Destroy(military.gameObject);
-            Destroy(this.gameObject);
+            var police = Instantiate(Resources.Load<Police>(Police.resourcePath), military.transform.parent);
+            police.RandomMove();
         }
     }
 
