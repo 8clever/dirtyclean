@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour
                 Instantiate(nip, emptyCell.transform);
             }
         }
-
-        StartCoroutine(AddPointAfter30sec());
     }
 
     private IEnumerator MoveNips () {
@@ -85,14 +83,11 @@ public class GameController : MonoBehaviour
 
     private void IsGameOver () {
         var cells = GameObject.FindGameObjectsWithTag("cell");
-        var stepsExists = false;
         foreach (var cell in cells) {
             if (cell.transform.childCount == 0) {
-                stepsExists = true;
-                break;
+                return;
             }
         }
-        if (stepsExists && health > 0) return;
         SceneManager.LoadScene(SceneController.GameOverScene);
     }
 
@@ -105,6 +100,11 @@ public class GameController : MonoBehaviour
     public void NextStep () {
         gameInitialized = true;
         IsGameOver();
+
+        if (health == 0) {
+            StartCoroutine(AddPointAfter30sec());
+            return;
+        }
 
         step += 1;
         health -= 1;
@@ -187,6 +187,6 @@ public class GameController : MonoBehaviour
         }
         AddPointsToHealth(1);
         RenderHealth();
-        yield return AddPointAfter30sec();
+        NextStep();
     }
 }
