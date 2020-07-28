@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Cat : Nip, INip
 {
@@ -6,18 +7,16 @@ public class Cat : Nip, INip
 
     public static string resourcePath = "Nip/Cat";
 
+    private List<System.Type> list = new List<System.Type>();
+
     public void NextStep()
     {
-        MoveToNip(typeof(Rat));
+        MoveToNips(list);
     }
 
     public void OnCollision(Collision collision)
     {
-        var rat = collision.transform.GetComponentInParent<Rat>();
-        if (rat != null) {
-            AddPoints(1);
-            Destroy(rat.gameObject);
-        }
+        OnCollisionList(collision, list);
     }
 
     public void OnDrop(GameObject cell)
@@ -37,6 +36,9 @@ public class Cat : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
+        list.Add(typeof(Rat));
+        list.Add(typeof(Alien));
+
         AddPoints(4);
     }
 

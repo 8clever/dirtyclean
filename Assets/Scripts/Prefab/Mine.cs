@@ -8,12 +8,15 @@ public class Mine : Nip, INip
 
     public static string resourcePath = "Nip/Mine";
 
+    private List<System.Type> list = new List<System.Type>();
+
     public void NextStep()
     {
     }
 
     public void OnCollision(Collision collision)
     {
+        OnCollisionList(collision, list);
     }
 
     public void OnDrop(GameObject cell)
@@ -24,6 +27,8 @@ public class Mine : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
+        list.Add(typeof(Alien));
+
         AddPoints(7);
     }
 

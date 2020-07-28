@@ -7,12 +7,15 @@ public class Powder : Nip, INip
     public bool CanDrag => true;
 
     public static string resourcePath = "Nip/Powder";
+
+    private List<System.Type> list = new List<System.Type>();
     public void NextStep()
     {
     }
 
     public void OnCollision(Collision collision)
     {
+        OnCollisionList(collision, list);
     }
 
     public void OnDrop(GameObject cell)
@@ -34,6 +37,8 @@ public class Powder : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
+        list.Add(typeof(Alien));
+
         AddPoints(6);
     }
 

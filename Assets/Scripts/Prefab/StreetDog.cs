@@ -8,18 +8,16 @@ public class StreetDog : Nip, INip
 
     public static string resourcePath = "Nip/StreetDog";
 
+    private List<System.Type> list = new List<System.Type>();
+
     public void NextStep()
     {
-        MoveToNip(typeof(Cat));
+        MoveToNips(list);
     }
 
     public void OnCollision(Collision collision)
     {
-        var cat = collision.transform.GetComponentInParent<Cat>();
-        if (cat != null) {
-            AddPoints(1);
-            Destroy(cat.gameObject);
-        }
+        OnCollisionList(collision, list);
     }
 
     public void OnDrop(GameObject cell)
@@ -30,6 +28,9 @@ public class StreetDog : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
+        list.Add(typeof(Alien));
+        list.Add(typeof(Cat));
+
         AddPoints(1);
     }
 

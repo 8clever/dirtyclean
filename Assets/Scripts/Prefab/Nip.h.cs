@@ -52,6 +52,8 @@ public class Nip : MonoBehaviour
         });
         if (nips.Count > 0) {
             MoveToNip(nips[0].GetType());
+        } else {
+            RandomMove();
         }
     }
 
@@ -201,5 +203,15 @@ public class Nip : MonoBehaviour
     public void AddPoints (int number) {
         var controller = GameObject.FindObjectOfType<GameController>();
         controller.AddPointsToPoints(number);
+    }
+
+    public void OnCollisionList (Collision collision, List<System.Type> list) {
+        foreach(var type in list) {
+            var nip = collision.gameObject.GetComponentInParent(type);
+            if (nip) {
+                AddPoints(1);
+                Destroy(nip.gameObject);
+            }
+        }
     }
 }

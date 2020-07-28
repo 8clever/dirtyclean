@@ -17,13 +17,7 @@ public class Tank : Nip, INip
 
     public void OnCollision(Collision collision)
     {
-        foreach(var type in list) {
-            var nip = collision.gameObject.GetComponentInParent(type);
-            if (nip) {
-                AddPoints(1);
-                Destroy(nip.gameObject);
-            }
-        }
+        OnCollisionList(collision, list);
     }
 
     public void OnDrop(GameObject cell)
@@ -55,6 +49,7 @@ public class Tank : Nip, INip
         list.Add(typeof(Cat));
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));
+        list.Add(typeof(Alien));
 
         AddPoints(7);
     }
