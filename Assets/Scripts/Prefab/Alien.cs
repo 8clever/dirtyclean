@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Masson : Nip, INip
+public class Alien : Nip, INip
 {
+
+    public static string resourcesPath = "Nip/Alien";
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Masson";
-
     private List<System.Type> list = new List<System.Type>();
+
+    public bool CanDrop(Cell cell)
+    {
+        return CanDropDefault(cell);
+    }
 
     public void NextStep()
     {
@@ -28,21 +33,7 @@ public class Masson : Nip, INip
 
     public void OnDrop(GameObject cell)
     {
-        var masson = cell.GetComponentInChildren<Masson>();
-        if (masson) {
-            Destroy(this.gameObject);
-            Destroy(masson.gameObject);
-            Instantiate(Resources.Load<Alien>(Alien.resourcesPath), cell.transform);
-            GameNextStep();
-            return;
-        }
-
         OnDropDefault(cell);
-    }
-
-    public bool CanDrop(Cell cell)
-    {
-        return CanDropDefault(cell);
     }
 
     // Start is called before the first frame update
@@ -53,11 +44,12 @@ public class Masson : Nip, INip
         list.Add(typeof(GreenPeace));
         list.Add(typeof(OON));
         list.Add(typeof(President));
+        list.Add(typeof(Masson));
         list.Add(typeof(Chinese));
-        list.Add(typeof(SecurityGuard));
         list.Add(typeof(Police));
+        list.Add(typeof(Hunter));
         list.Add(typeof(Military));
 
-        AddPoints(6);
+        AddPoints(7);
     }
 }
