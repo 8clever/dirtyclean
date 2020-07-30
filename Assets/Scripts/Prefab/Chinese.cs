@@ -37,6 +37,8 @@ public class Chinese : Nip, INip
                 return;
             }
         }
+
+        OnDropDefault(cell);
     }
 
     public bool CanDrop(Cell cell)
