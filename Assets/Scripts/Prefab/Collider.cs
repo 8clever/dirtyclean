@@ -34,7 +34,6 @@ public class Collider : MonoBehaviour
             var camera = Camera.main;
             if (!camera) throw new System.Exception("Tag MainCamera not setted");
 
-            Debug.Log("Dragged");
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
             this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
