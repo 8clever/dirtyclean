@@ -25,29 +25,8 @@ public class Collider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && transform.parent.GetComponent<Mayka>() && dragged == false) {
-            dragged = true;
-            OnMouseUp();
-        }
-
         if (dragged) {
-            var camera = Camera.main;
-            if (!camera) throw new System.Exception("Tag MainCamera not setted");
-
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
-            this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
-            var hits = Physics.RaycastAll(ray);
-            foreach (var hit in hits) {
-                var cell = hit.collider.GetComponent<Cell>();
-                if (cell) {
-                    var nip = this.GetComponentInParent<INip>();
-                    var item = this.GetComponentInParent<IItem>();
-                    var img = cell.GetComponent<Image>();
-                    var canDrop = (nip != null && nip.CanDrop(cell)) || (item != null && item.CanDrop(cell));
-                    img.color = canDrop ? cell.canDrop : cell.cantDrop;
-                }
-            }
+            OnCellCanDrop(Hit(true));
         }
 
         if (isNip) {
@@ -60,6 +39,77 @@ public class Collider : MonoBehaviour
                 handPicked = null;
             }
         }
+
+        if (Input.GetMouseButtonUp(0) && dragged == false) {
+            var mayka = transform.parent.GetComponent<Mayka>();
+            var hand = transform.parent.GetComponent<Hand>();
+            if (mayka) {
+                OnMouseUp();
+            }
+            if (hand) {
+                var cell = Hit();
+                if (cell.transform.childCount == 0) {
+                    OnMouseUp();
+                }
+            }
+        }
+    }
+
+    void OnCellDrop (Cell cell) {
+        var item = transform.parent.GetComponent<Item>();
+        var nip = transform.parent.GetComponent<Nip>();
+
+        void MoveBack () {
+            if (item != null) item.MoveToItemField();
+            if (nip != null) nip.MoveToBack();
+        }
+
+        if (!cell) MoveBack();
+
+        if (transform.parent.transform.parent == cell.transform) {
+            if (isNip && draggable) {
+                draggable = false;
+                var itemField = GameObject.Find("ItemField") as GameObject;
+                if (itemField.transform.childCount == 0) {
+                    Instantiate(Resources.Load<Hand>(Hand.resourcePath), itemField.transform);
+                }
+            }
+            return;
+        }
+        
+        if (isNip && cell.isPrison && cell.transform.childCount > 0) {
+            MoveBack();
+        }
+
+        if (item != null) (item as IItem).OnDrop(cell.gameObject);
+        if (nip != null) (nip as INip).OnDrop(cell.gameObject);
+    }
+
+    void OnCellCanDrop (Cell cell) {
+        if (!cell) return;
+
+        var nip = this.GetComponentInParent<INip>();
+        var item = this.GetComponentInParent<IItem>();
+        var img = cell.GetComponent<Image>();
+        var canDrop = (nip != null && nip.CanDrop(cell)) || (item != null && item.CanDrop(cell));
+        img.color = canDrop ? cell.canDrop : cell.cantDrop;
+    }
+
+    Cell Hit (bool setPosition = false) {
+        var camera = Camera.main;
+        if (!camera) throw new System.Exception("Tag MainCamera not setted");
+
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (setPosition) {
+            transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
+            transform.SetParent(transform.parent);
+        }
+        var hits = Physics.RaycastAll(ray);
+        foreach (var hit in hits) {
+            var cell = hit.collider.GetComponent<Cell>();
+            if (cell) return cell;
+        }
+        return null;
     }
 
     void OnMouseDown() {
@@ -78,44 +128,8 @@ public class Collider : MonoBehaviour
         if (!draggable) return;
 
         dragged = false;
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        var hits = Physics.RaycastAll(ray);
-        if (hits.Length == 0) return;
-
-        foreach (var hit in hits) {
-            var cell = hit.collider.GetComponent<Cell>();
-            var item = this.transform.parent.GetComponent<Item>();
-            var nip = this.transform.parent.GetComponent<Nip>();
-
-            void MoveBack () {
-                if (item != null) item.MoveToItemField();
-                if (nip != null) nip.MoveToBack();
-            }
-
-            if (cell) {
-                if (this.transform.parent.transform.parent == cell.transform) {
-                    if (isNip && draggable) {
-                        draggable = false;
-                        var itemField = GameObject.Find("ItemField") as GameObject;
-                        if (itemField.transform.childCount == 0) {
-                            Instantiate(Resources.Load<Hand>(Hand.resourcePath), itemField.transform);
-                        }
-                    }
-                    return;
-                }
-                
-                if (isNip && cell.isPrison && cell.transform.childCount > 0) {
-                    MoveBack();
-                    break;
-                }
-
-                if (item != null) (item as IItem).OnDrop(cell.gameObject);
-                if (nip != null) (nip as INip).OnDrop(cell.gameObject);
-                break;
-            }
-
-            MoveBack();
-        }
+        var cell = Hit();
+        OnCellDrop(cell);
     }
 
     void OnCollisionEnter(Collision other) {
