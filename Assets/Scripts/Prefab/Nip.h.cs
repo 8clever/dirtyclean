@@ -66,17 +66,17 @@ public class Nip : MonoBehaviour
             return;
         };
         
-        var startPoint = this.transform.parent.position + new Vector3(0, 2, 0);
-        var direction =  destination.transform.parent.position - this.transform.parent.position;
+        var startPoint = transform.parent.position;
+        var direction =  destination.transform.parent.position - transform.parent.position;
         var ray = new Ray(startPoint, direction);
         MoveByRay(ray, type);
     }
 
     public void MoveByRay (Ray destination, System.Type type) {
-        var cell = this.transform.parent.GetComponent<Cell>();
+        var cell = transform.parent.GetComponent<Cell>();
         if (cell.isPrison) return;
 
-        var pos = this.transform.parent.position;
+        var pos = transform.parent.position;
         var dist = 100;
         List<Ray> rays = new List<Ray>();
         rays.Add(new Ray(pos, new Vector3(pos.x, pos.y + dist, pos.z) - pos));
@@ -94,8 +94,8 @@ public class Nip : MonoBehaviour
                 var hit = GetClosestHit(hits);
                 var isValid = IsValidHit(hit, type);
                 if (isValid) {
-                    prevParent = this.transform.parent;
-                    this.transform.SetParent(hit.collider.transform);
+                    prevParent = transform.parent;
+                    transform.SetParent(hit.collider.transform);
                     return;
                 };
             }
@@ -107,8 +107,8 @@ public class Nip : MonoBehaviour
         var y = Random.Range(-1, 2) * 100;
         if (this == null) return;
 
-        var destination = this.transform.parent.position + new Vector3(x, x == 0 ? y : 0, 0);
-        var ray = new Ray(this.transform.parent.position, destination - this.transform.parent.position);
+        var destination = transform.parent.position + new Vector3(x, x == 0 ? y : 0, 0);
+        var ray = new Ray(transform.parent.position, destination - transform.parent.position);
         MoveByRay(ray, typeof(Cell));
     }
 
