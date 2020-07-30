@@ -25,10 +25,16 @@ public class Collider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonUp(0) && transform.parent.GetComponent<Mayka>() && dragged == false) {
+            dragged = true;
+            OnMouseUp();
+        }
+
         if (dragged) {
             var camera = Camera.main;
             if (!camera) throw new System.Exception("Tag MainCamera not setted");
 
+            Debug.Log("Dragged");
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             this.transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
             this.transform.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
