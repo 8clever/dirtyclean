@@ -21,5 +21,5 @@ public static class Config {
 
     public static int healthPointsAtSeconds = 15; 
 
-    public static int maxHealth = 2;
+    public static int maxHealth = 300;
 }
