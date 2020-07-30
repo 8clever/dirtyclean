@@ -48,7 +48,7 @@ public class Collider : MonoBehaviour
             }
             if (hand) {
                 var cell = Hit();
-                if (cell.transform.childCount == 0) {
+                if (cell && cell.transform.childCount == 0) {
                     OnMouseUp();
                 }
             }
