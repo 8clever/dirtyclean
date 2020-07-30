@@ -64,7 +64,10 @@ public class Collider : MonoBehaviour
             if (nip != null) nip.MoveToBack();
         }
 
-        if (!cell) MoveBack();
+        if (!cell) { 
+            MoveBack();
+            return;
+        }
 
         if (transform.parent.transform.parent == cell.transform) {
             if (isNip && draggable) {

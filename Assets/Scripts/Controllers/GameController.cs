@@ -110,23 +110,10 @@ public class GameController : MonoBehaviour
         shadow.SetActive(active);
     }
 
-    public async void NextStep () {
+    public void NextStep () {
         gameInitialized = true;
-        IsGameOver();
-        
-        if (health == 0) {
-            await Task.Delay(1000);
-            NextStep();
-            return;
-        }
-
-        step += 1;
         AddPointsToHealth(-1);
-        GenerateItem();
-
-        if (health == Config.maxHealth) {
-            addHealthPoints = false;
-        }
+        step += 1;
 
         var time = CurrentTime();
         
@@ -137,6 +124,7 @@ public class GameController : MonoBehaviour
                 Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
             }
         }
+
         if (time == 4) {
             ToggleShadow(true);
             var cell = GetRandomRespawnCell();
@@ -144,8 +132,21 @@ public class GameController : MonoBehaviour
                 Instantiate(Resources.Load<StreetDog>(StreetDog.resourcePath), cell.transform);
             }
         }
-        
+
         StartCoroutine(MoveNips());
+        AfterNextStep();
+    }
+
+    private async void AfterNextStep () {
+        IsGameOver();
+        
+        if (health == 0) {
+            await Task.Delay(1000);
+            AfterNextStep();
+            return;
+        }
+
+        GenerateItem();
     }
 
     public void GenerateItem () {

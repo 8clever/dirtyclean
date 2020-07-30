@@ -167,7 +167,8 @@ public class Nip : MonoBehaviour
     }
 
     public void GameNextStep () {
-        GameObject.FindObjectOfType<GameController>().NextStep();
+        var controller = GameObject.FindObjectOfType<GameController>();
+        controller.NextStep();
     }
 
     public void SetParentAndNext (GameObject cell) {
