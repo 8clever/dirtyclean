@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
     private int health = 0;
 
     private int point = 0;
+
+    private bool addHealthPoints = false;
 
     private GameObject shadow;
 
@@ -34,7 +37,9 @@ public class GameController : MonoBehaviour
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
 
-        AddPointsToHealth(300);
+
+        AddPointsToHealth(Config.maxHealth);
+        AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
         var cell = GetRandomRespawnCell();
@@ -105,19 +110,24 @@ public class GameController : MonoBehaviour
         shadow.SetActive(active);
     }
 
-    public void NextStep () {
+    public async void NextStep () {
         gameInitialized = true;
         IsGameOver();
-
+        
         if (health == 0) {
-            StartCoroutine(AddPointAfter30sec());
+            await Task.Delay(1000);
+            NextStep();
             return;
         }
 
         step += 1;
         AddPointsToHealth(-1);
         GenerateItem();
-        
+
+        if (health == Config.maxHealth) {
+            addHealthPoints = false;
+        }
+
         var time = CurrentTime();
         
         if (time == 0) {
@@ -189,15 +199,28 @@ public class GameController : MonoBehaviour
         RenderPoints();
     }
 
-    IEnumerator AddPointAfter30sec () {
+    async Task AddHealthPointsByTime () {
+        await Task.Delay(1000);
+        if (health == 0 && !addHealthPoints) {
+            addHealthPoints = true;
+        }
+        if (health == Config.maxHealth) {
+            addHealthPoints = false;
+        }
+        if (addHealthPoints) {
+            await RenderHealthBar();
+            AddPointsToHealth(1);
+        }
+        await AddHealthPointsByTime();
+    }
+
+    async Task RenderHealthBar () {
         var health = GameObject.Find("HealthIndicator/Indicator").GetComponent<Image>();
         var seconds = Config.healthPointsAtSeconds;
         var tick = 1f / seconds;
         for (int i = 1; i <= seconds; i++) {
             health.fillAmount = tick * i;
-            yield return new WaitForSeconds(1);
+            await Task.Delay(1000);
         }
-        AddPointsToHealth(1);
-        NextStep();
     }
 }
