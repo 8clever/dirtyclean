@@ -191,7 +191,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator AddPointAfter30sec () {
         var health = GameObject.Find("HealthIndicator/Indicator").GetComponent<Image>();
-        var seconds = 30;
+        var seconds = Config.healthPointsAtSeconds;
         var tick = 1f / seconds;
         for (int i = 1; i <= seconds; i++) {
             health.fillAmount = tick * i;

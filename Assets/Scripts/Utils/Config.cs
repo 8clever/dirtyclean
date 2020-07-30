@@ -18,4 +18,6 @@ public static class Config {
     }
 
     public static bool gameFieldWeb = true;
+
+    public static int healthPointsAtSeconds = 15; 
 }
