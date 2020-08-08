@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Threading.Tasks;
 
 public class MenuController : MonoBehaviour
 {
@@ -51,11 +52,14 @@ public class MenuController : MonoBehaviour
         StartCoroutine(LoadScene(SceneController.levels[0], LoadSceneMode.Single));
     }
 
-    public void TogglePause () {
+    async public void TogglePause () {
         var scene = SceneManager.GetSceneByName(SceneController.MenuScene);
         if (scene.isLoaded) {
+            var operation = SceneManager.UnloadSceneAsync(SceneController.MenuScene);
+            for (bool isDone = false; isDone == false; isDone = operation.isDone) {
+                await Task.Delay(100);
+            }
             SceneController.isPause = false;
-            SceneManager.UnloadSceneAsync(SceneController.MenuScene);
             return;
         }
         SceneController.isPause = true;

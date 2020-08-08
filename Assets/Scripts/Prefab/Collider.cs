@@ -25,6 +25,8 @@ public class Collider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneController.isPause) return;
+
         if (dragged) {
             OnCellCanDrop(Hit(true));
         }
@@ -116,6 +118,7 @@ public class Collider : MonoBehaviour
     }
 
     void OnMouseDown() {
+        if (SceneController.isPause) return;
 
         var hand = GameObject.FindObjectOfType<Hand>();
         if (isNip && hand && transform.parent.GetComponent<INip>().CanDrag) {
@@ -136,6 +139,7 @@ public class Collider : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other) {
+        if (SceneController.isPause) return;
         if (!controller) return;
         if (!controller.gameInitialized) return;
 
