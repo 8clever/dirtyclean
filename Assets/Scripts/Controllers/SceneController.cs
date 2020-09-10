@@ -12,6 +12,8 @@ public static class SceneController
 
     public static string Options = "Options";
 
+    public static string CutScene = "Cutscene";
+
     public static string[] levels = {
         "lvl1"
     };

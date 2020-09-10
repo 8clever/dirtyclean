@@ -49,7 +49,8 @@ public class MenuController : MonoBehaviour
     }
 
     public void NewGame () {
-        StartCoroutine(LoadScene(SceneController.levels[0], LoadSceneMode.Single));
+        SceneController.isPause = false;
+        SceneManager.LoadScene(SceneController.CutScene, LoadSceneMode.Additive);
     }
 
     async public void TogglePause () {
