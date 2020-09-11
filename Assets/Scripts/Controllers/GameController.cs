@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
 
     public bool gameInitialized = false;
 
+    public bool isPause = false;
+
     private Config config;
 
     private void Awake() {
@@ -32,6 +34,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     public void DefaultUpdate()
     {
+        isPause = SceneManager.sceneCount > 1;     
+
         if (config.gameFieldWeb != setka.enabled) {
             var cells = GameObject.FindGameObjectsWithTag("cell");
             foreach(var c in cells) {
@@ -107,7 +111,7 @@ public class GameController : MonoBehaviour
                 return;
             }
         }
-        SceneManager.LoadScene(SceneController.GameOverScene);
+        SceneManager.LoadScene(Scenes.GameOver.ToString());
     }
 
     private void ToggleShadow (bool active) {

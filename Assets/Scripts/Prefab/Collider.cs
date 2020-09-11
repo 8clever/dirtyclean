@@ -19,19 +19,19 @@ public class Collider : MonoBehaviour
 
     private void Awake() {
         config = Config.GetConfig();
+        controller = GameObject.FindObjectOfType<GameController>();
     }
 
     void Start()
     {
-        var nip = this.transform.parent.GetComponent<INip>();
+        var nip = transform.parent.GetComponent<INip>();
         isNip = nip != null;
-        controller = GameObject.FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneController.isPause) return;
+        if (controller.isPause) return;
 
         if (dragged) {
             OnCellCanDrop(Hit(true));
@@ -124,7 +124,7 @@ public class Collider : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if (SceneController.isPause) return;
+        if (controller.isPause) return;
 
         var hand = GameObject.FindObjectOfType<Hand>();
         if (isNip && hand && transform.parent.GetComponent<INip>().CanDrag) {
@@ -145,9 +145,9 @@ public class Collider : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other) {
-        if (SceneController.isPause) return;
         if (!controller) return;
         if (!controller.gameInitialized) return;
+        if (controller.isPause) return;
 
         var collider = other.gameObject.GetComponent<Collider>();
         if (collider && collider.dragged) return;
