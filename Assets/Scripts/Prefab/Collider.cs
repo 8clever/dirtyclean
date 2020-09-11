@@ -64,17 +64,14 @@ public class Collider : MonoBehaviour
     }
 
     void OnCellDrop (Cell cell) {
+        if (!cell) return;
+
         var item = transform.parent.GetComponent<Item>();
         var nip = transform.parent.GetComponent<Nip>();
 
         void MoveBack () {
             if (item != null) item.MoveToItemField();
             if (nip != null) nip.MoveToBack();
-        }
-
-        if (!cell) { 
-            MoveBack();
-            return;
         }
 
         if (transform.parent.transform.parent == cell.transform) {

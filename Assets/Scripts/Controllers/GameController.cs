@@ -179,6 +179,7 @@ public class GameController : MonoBehaviour
                 emptyCells.Add(cell);
             }
         }
+        if (emptyCells.Count == 0) return null;
         var idx = Random.Range(0, emptyCells.Count);
         return emptyCells[idx];
     }
@@ -196,6 +197,7 @@ public class GameController : MonoBehaviour
                 emptyCells.Add(cell);
             }
         }
+        if (emptyCells.Count == 0) return null;
         var idx = Random.Range(0, emptyCells.Count);
         return emptyCells[idx];
     }
