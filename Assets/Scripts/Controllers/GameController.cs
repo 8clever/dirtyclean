@@ -23,13 +23,19 @@ public class GameController : MonoBehaviour
 
     public bool gameInitialized = false;
 
+    private Config config;
+
+    private void Awake() {
+        config = Config.GetConfig();
+    }
+
     // Update is called once per frame
     public void DefaultUpdate()
     {
-        if (Config.gameFieldWeb != setka.enabled) {
+        if (config.gameFieldWeb != setka.enabled) {
             var cells = GameObject.FindGameObjectsWithTag("cell");
             foreach(var c in cells) {
-                c.GetComponent<Image>().enabled = Config.gameFieldWeb;
+                c.GetComponent<Image>().enabled = config.gameFieldWeb;
             }
         }
     }
@@ -38,7 +44,7 @@ public class GameController : MonoBehaviour
         setka = GameObject.Find("Cell").GetComponent<Image>();
 
 
-        AddPointsToHealth(Config.maxHealth);
+        AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
@@ -205,7 +211,7 @@ public class GameController : MonoBehaviour
         if (health == 0 && !addHealthPoints) {
             addHealthPoints = true;
         }
-        if (health == Config.maxHealth) {
+        if (health == config.maxHealth) {
             addHealthPoints = false;
         }
         if (addHealthPoints) {
@@ -217,7 +223,7 @@ public class GameController : MonoBehaviour
 
     async Task RenderHealthBar () {
         var health = GameObject.Find("HealthIndicator/Indicator").GetComponent<Image>();
-        var seconds = Config.healthPointsAtSeconds;
+        var seconds = config.healthPointsAtSeconds;
         var tick = 1f / seconds;
         for (int i = 1; i <= seconds; i++) {
             health.fillAmount = tick * i;

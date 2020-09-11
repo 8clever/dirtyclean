@@ -22,16 +22,22 @@ public class Item : MonoBehaviour
 
     }
 
+    private Config config;
+
+    private void Awake() {
+        config = Config.GetConfig();
+    }
+
     public void MoveToItemField () {
         var field = GameObject.Find("ItemField");
         if (field == null) throw new System.Exception("ItemField required");
-        var pos = new Vector3(field.transform.position.x, field.transform.position.y, Config.Layers.items);
+        var pos = new Vector3(field.transform.position.x, field.transform.position.y, config.layers.items);
         this.transform.position = pos;
         this.GetComponentInChildren<Collider>().transform.position = pos;
     }
 
     public void NextStep () {
-        var controller = Camera.main.GetComponent<GameController>();
+        var controller = GameObject.FindObjectOfType<GameController>();
         controller.NextStep();
     }
 }

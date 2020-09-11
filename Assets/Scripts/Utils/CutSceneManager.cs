@@ -16,6 +16,6 @@ public class CutSceneManager : MonoBehaviour
     }
 
     void OnEndCutScene () {
-        SceneManager.LoadScene(SceneController.levels[0]);
+        SceneManager.LoadScene(Levels.lvl1.ToString());
     }
 }

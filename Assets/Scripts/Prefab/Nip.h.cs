@@ -17,7 +17,12 @@ public interface INip
 public class Nip : MonoBehaviour
 {
 
+    private Config config;
     public Transform prevParent;
+
+    private void Awake() {
+        config = Config.GetConfig();
+    }
 
     public Nip GetClosestNip (System.Type type) {
         var objects = GameObject.FindObjectsOfType(type) as Nip[];
@@ -155,9 +160,9 @@ public class Nip : MonoBehaviour
     }
 
     public void UpdateDefault () {
-        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Config.Layers.nips);
+        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
         if (parentPos != this.transform.position) {
-            var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, Config.Nip.moveSpeed);
+            var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, config.nip.moveSpeed);
             this.transform.position = nextPosition;
         }
     }
@@ -195,7 +200,7 @@ public class Nip : MonoBehaviour
     }
 
     public void MoveToBack () {
-        this.transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, Config.Layers.nips);
+        this.transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
     }
 
     public void MoveToPrevParent () {

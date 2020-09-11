@@ -1,25 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.IO;
 using UnityEngine;
 
 
+[Serializable]
+public class Config {
 
-public static class Config {
+    private static string configPath = "/config.json";
+    
+    public Layers layers = new Layers();
 
-    public static class Layers
+    public Nip nip = new Nip();
+    
+    public static Config GetConfig () {
+        var path = Application.persistentDataPath + configPath;
+        try {
+            var json = File.ReadAllText(path);
+            return JsonUtility.FromJson<Config>(json);
+        } catch (Exception) {
+            return new Config();
+        }
+    }
+
+    public void PersistConfig () {
+        var json = JsonUtility.ToJson(this);
+        var path = Application.persistentDataPath + configPath;
+        File.WriteAllText(path, json);
+    }
+
+    public class Layers
     {
-        public static int items = -1;
-        public static int nips = -1;
-        public static int dragged = -2;
+        public int items = -1;
+        public int nips = -1;
+        public int dragged = -2;
     }
 
-    public static class Nip {
-        public static float moveSpeed = 1f;
+    public class Nip {
+        public float moveSpeed = 1f;
     }
 
-    public static bool gameFieldWeb = true;
+    public bool gameFieldWeb = true;
 
-    public static int healthPointsAtSeconds = 15; 
+    public bool GameFieldWeb {
+        get {
+            return gameFieldWeb;
+        }
+        set {
+            gameFieldWeb = value;
+        }
+    }
 
-    public static int maxHealth = 300;
+    public int healthPointsAtSeconds = 15; 
+
+    public int maxHealth = 300;
 }

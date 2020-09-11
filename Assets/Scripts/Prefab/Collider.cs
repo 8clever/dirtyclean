@@ -15,6 +15,12 @@ public class Collider : MonoBehaviour
 
     private GameController controller;
 
+    private Config config;
+
+    private void Awake() {
+        config = Config.GetConfig();
+    }
+
     void Start()
     {
         var nip = this.transform.parent.GetComponent<INip>();
@@ -106,7 +112,7 @@ public class Collider : MonoBehaviour
 
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (setPosition) {
-            transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, Config.Layers.dragged);
+            transform.parent.position = new Vector3(ray.origin.x, ray.origin.y, config.layers.dragged);
             transform.SetParent(transform.parent);
         }
         var hits = Physics.RaycastAll(ray);
