@@ -65,8 +65,6 @@ public class Collider : MonoBehaviour
     }
 
     void OnCellDrop (Cell cell) {
-        Debug.Log(cell);
-        
         var item = transform.parent.GetComponent<Item>();
         var nip = transform.parent.GetComponent<Nip>();
 
