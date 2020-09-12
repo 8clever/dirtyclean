@@ -50,6 +50,17 @@ public class Config {
         }
     }
 
+    public bool music = true;
+
+    public bool Music {
+        get {
+            return music;
+        }
+        set {
+            music = value;
+        }
+    }
+
     public int healthPointsAtSeconds = 15; 
 
     public int maxHealth = 300;

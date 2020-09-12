@@ -2095,6 +2095,7 @@ GameObject:
   - component: {fileID: 439614688}
   - component: {fileID: 439614687}
   - component: {fileID: 439614689}
+  - component: {fileID: 439614690}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -2157,6 +2158,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 439614687}
   text: {fileID: 2050509848}
+--- !u!114 &439614690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439614685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c6297b2a672694b8929204207aad7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1433179031}
 --- !u!224 &447995692 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6638449577135838670, guid: 62b5073c25c7fa649924371d47b12550,
