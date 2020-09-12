@@ -27,7 +27,13 @@ public class GameController : MonoBehaviour
 
     private Config config;
 
+    public List<Mission> missions = new List<Mission>();
+
     private void Awake() {
+        DefaultAwake();
+    }
+
+    public void DefaultAwake () {
         config = Config.GetConfig();
     }
 
@@ -104,6 +110,13 @@ public class GameController : MonoBehaviour
         pointsObject.text = point.ToString();
     }
 
+    private void IsComplete () {
+        foreach (var m in missions) {
+            if (!m.IsComplete()) return;
+        }
+        SceneManager.LoadScene(Scenes.Win.ToString());
+    }
+
     private void IsGameOver () {
         var cells = GameObject.FindGameObjectsWithTag("cell");
         foreach (var cell in cells) {
@@ -149,6 +162,7 @@ public class GameController : MonoBehaviour
 
     private async void AfterNextStep () {
         IsGameOver();
+        IsComplete();
         
         if (health == 0) {
             await Task.Delay(1000);
