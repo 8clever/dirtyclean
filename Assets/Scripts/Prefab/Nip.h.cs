@@ -200,13 +200,7 @@ public class Nip : MonoBehaviour
     }
 
     public void MoveToBack () {
-        this.transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
-    }
-
-    public void MoveToPrevParent () {
-        var parent = this.transform.parent;
-        this.transform.SetParent(prevParent);
-        prevParent = parent;
+        transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
     }
 
     public void AddPoints (int number) {

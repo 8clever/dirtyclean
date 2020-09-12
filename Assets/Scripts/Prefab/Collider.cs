@@ -48,7 +48,8 @@ public class Collider : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && dragged == false) {
+        // required for items which placed directly on cell
+        if (Input.GetMouseButtonDown(0) && dragged == false) {
             var mayka = transform.parent.GetComponent<Mayka>();
             var hand = transform.parent.GetComponent<Hand>();
             if (mayka) {
@@ -64,15 +65,24 @@ public class Collider : MonoBehaviour
     }
 
     void OnCellDrop (Cell cell) {
-        if (!cell) return;
-
+        Debug.Log(cell);
+        
         var item = transform.parent.GetComponent<Item>();
         var nip = transform.parent.GetComponent<Nip>();
 
-        void MoveBack () {
+        void MoveBackItem () {
             if (item != null) item.MoveToItemField();
+        }
+
+        void MoveBackNip () {
             if (nip != null) nip.MoveToBack();
         }
+
+        if (!cell) {
+            MoveBackItem();
+            MoveBackNip();
+            return;
+        };
 
         if (transform.parent.transform.parent == cell.transform) {
             if (isNip && draggable) {
@@ -86,7 +96,7 @@ public class Collider : MonoBehaviour
         }
         
         if (isNip && cell.isPrison && cell.transform.childCount > 0) {
-            MoveBack();
+            MoveBackNip();
         }
 
         if (item != null) (item as IItem).OnDrop(cell.gameObject);
@@ -96,8 +106,8 @@ public class Collider : MonoBehaviour
     void OnCellCanDrop (Cell cell) {
         if (!cell) return;
 
-        var nip = this.GetComponentInParent<INip>();
-        var item = this.GetComponentInParent<IItem>();
+        var nip = GetComponentInParent<INip>();
+        var item = GetComponentInParent<IItem>();
         var img = cell.GetComponent<Image>();
         var canDrop = (nip != null && nip.CanDrop(cell)) || (item != null && item.CanDrop(cell));
         img.color = canDrop ? cell.canDrop : cell.cantDrop;
@@ -133,6 +143,7 @@ public class Collider : MonoBehaviour
         dragged = true;
     }
 
+    // required for items which dragged directly
     void OnMouseUp() {
         if (!draggable) return;
 
