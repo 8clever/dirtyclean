@@ -250,4 +250,11 @@ public class GameController : MonoBehaviour
             await Task.Delay(1000);
         }
     }
+
+    public void SetMission (System.Type nip, Mission.Type type, int count) {
+        var mission = missions.Find(m => m.nip == nip && m.type == type);
+        if (mission == null) return;
+
+        mission.count += count;
+    }
 }

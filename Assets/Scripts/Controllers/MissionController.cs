@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MissionController : MonoBehaviour
 {
     public Mission[] missions = {
-        new Mission("Test Mission")
+        new Mission(typeof(Dvornik), Mission.Type.Create, 20)
     };
 
     private GameObject content;
@@ -26,7 +26,9 @@ public class MissionController : MonoBehaviour
         foreach(var m in missions) {
             var obj = Instantiate(Resources.Load<GameObject>("UI/MissionText"), content.transform);
             var text = obj.GetComponent<Text>();
-            text.text = $"{n}. {m.name}";
+            var nipName = "";
+            Mission.NipNames.TryGetValue(m.nip, out nipName);
+            text.text = $"{n}. {m.type.ToString()} {m.count} / {m.requiredCount} {nipName}";
             n += 1;
         }
     }

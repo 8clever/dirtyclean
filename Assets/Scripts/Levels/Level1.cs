@@ -6,11 +6,11 @@ public class Level1 : GameController
 {
     // Start is called before the first frame update
     private void Awake() {
-        missions.Add(new Mission("Clean 20 cells with garbage").AddMission(Mission.Association.DestroyMusor, 20));
-        missions.Add(new Mission("Collect 10 street workers at the same time").AddMission(Mission.Association.CollectDvornik, 10));
-        missions.Add(new Mission("Create 10 buldozers").AddMission(Mission.Association.CreateBuldozers, 10));
-        missions.Add(new Mission("Create 5 green peace").AddMission(Mission.Association.CreateGreenPeace, 5));
-        missions.Add(new Mission("Create 1 president").AddMission(Mission.Association.CreatePresident, 1));
+        missions.Add(new Mission(typeof(Musorka), Mission.Type.Destroy, 20));
+        missions.Add(new Mission(typeof(Dvornik), Mission.Type.Collect, 10));
+        missions.Add(new Mission(typeof(Buldozer), Mission.Type.Create, 10));
+        missions.Add(new Mission(typeof(GreenPeace), Mission.Type.Create, 5));
+        missions.Add(new Mission(typeof(President), Mission.Type.Create, 1));
         DefaultAwake();
     }
     void Start()

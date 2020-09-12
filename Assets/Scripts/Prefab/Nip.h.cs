@@ -20,8 +20,18 @@ public class Nip : MonoBehaviour
     private Config config;
     public Transform prevParent;
 
+    private GameController controller;
+
     private void Awake() {
         config = Config.GetConfig();
+        controller = GameObject.FindObjectOfType<GameController>();
+        controller.SetMission(this.GetType(), Mission.Type.Create, 1);
+        controller.SetMission(this.GetType(), Mission.Type.Collect, 1);
+    }
+
+    private void OnDestroy() {
+        controller.SetMission(this.GetType(), Mission.Type.Destroy, 1);    
+        controller.SetMission(this.GetType(), Mission.Type.Collect, -1);
     }
 
     public Nip GetClosestNip (System.Type type) {
@@ -172,7 +182,6 @@ public class Nip : MonoBehaviour
     }
 
     public void GameNextStep () {
-        var controller = GameObject.FindObjectOfType<GameController>();
         controller.NextStep();
     }
 
@@ -204,7 +213,6 @@ public class Nip : MonoBehaviour
     }
 
     public void AddPoints (int number) {
-        var controller = GameObject.FindObjectOfType<GameController>();
         controller.AddPointsToPoints(number);
     }
 

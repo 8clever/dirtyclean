@@ -10,22 +10,12 @@ public interface IItem {
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public GameController controller;
     private Config config;
 
     private void Awake() {
         config = Config.GetConfig();
+        controller = GameObject.FindObjectOfType<GameController>();
     }
 
     public void MoveToItemField () {
@@ -37,7 +27,6 @@ public class Item : MonoBehaviour
     }
 
     public void NextStep () {
-        var controller = GameObject.FindObjectOfType<GameController>();
         controller.NextStep();
     }
 }

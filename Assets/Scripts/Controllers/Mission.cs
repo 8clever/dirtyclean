@@ -2,40 +2,40 @@
 
 public class Mission {
 
-    public enum Association
+    public enum Type
     {
-        DestroyMusor,
-        CollectDvornik,
-        CreateBuldozers,
-        CreateGreenPeace,
-        CreatePresident
+        Destroy,
+        Collect,
+        Create
     }
 
-    public Mission (string name) {
-        this.name = name;
+    public static readonly Dictionary<System.Type, string> NipNames = new Dictionary<System.Type, string>()
+    {
+        { typeof(Musorka), "Garbage" },
+        { typeof(Dvornik), "Street Worker" },
+        { typeof(Buldozer), "Buldozer" },
+        { typeof(GreenPeace), "Green Peace" },
+        { typeof(President), "President" }
+    };
+
+    public Mission (System.Type nip, Type type, int requiredCount) {
+        this.nip = nip;
+        this.type = type;
+        this.requiredCount = requiredCount;
     }
     public string name;
 
-    public class Info {
-        public int requiredCount;
-        public int count = 0;
-    }
+    public int requiredCount;
 
-    public Dictionary<Association, Info> mission = new Dictionary<Association, Info>();
+    public int count;
 
-    public Mission AddMission (Association a, int requiredCount) {
-        var info = new Info();
-        info.requiredCount = requiredCount;
-        mission.Add(a, info);
-        return this;
-    }
+    public Type type;
+
+    public System.Type nip;
 
     public bool IsComplete () {
-        foreach (var m in mission) {
-            var info = m.Value;
-            if (info.count < info.requiredCount) 
-                return false;
-        }
-        return true;
+        return count >= requiredCount;
     }
 }
+
+
