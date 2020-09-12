@@ -6,7 +6,8 @@ public enum Scenes {
     GameOver,
     Menu,
     Options,
-    Win
+    Win,
+    Tasks
 }
 
 public enum Levels {
