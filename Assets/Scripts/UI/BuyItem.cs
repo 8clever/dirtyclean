@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class BuyItem : MonoBehaviour
 {
+    [Header("Required fields")]
     public string resource;
     public Image cell;
     public Text text;
     public int price;
-
     public Button button;
 
+    [Header("Optional fields")]
     public GameController controller;
 
     public Animator animator;
@@ -34,14 +35,16 @@ public class BuyItem : MonoBehaviour
         cell.sprite = sprite.sprite;
         if (controller) {
             button.interactable = controller.point >= price;
-            controller.AddPointsToPoints(-price);
         }
     }
 
     public void OnClickBuy () {
         if (controller) {
             controller.CreateItem(resource);
+            controller.AddPointsToPoints(-price);
         }
-        animator.Play("HIDE");
+        if (animator) {
+            animator.Play("HIDE");
+        }
     }
 }
