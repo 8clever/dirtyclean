@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     private int health = 0;
 
-    private int point = 0;
+    public int point = 0;
 
     private bool addHealthPoints = false;
 
@@ -173,15 +173,22 @@ public class GameController : MonoBehaviour
         GenerateItem();
     }
 
-    public void GenerateItem () {
-        var chance = Random.Range(0, 100);
+    public void CreateItem (string resource) {
         var itemField = GameObject.Find("ItemField");
         if (itemField == null) throw new System.Exception("ItemField is required");
+        foreach (Transform child in itemField.transform) {
+            Destroy(child.gameObject);
+        }
+        Instantiate(Resources.Load(resource), itemField.transform);
+    }
+
+    public void GenerateItem () {
+        var chance = Random.Range(0, 100);
         if (chance > 50) {
-            Instantiate(Resources.Load("Item/Hand"), itemField.transform);
+            CreateItem("Item/Hand");
             return;
         }
-        Instantiate(Resources.Load("Item/Mayka"), itemField.transform);
+        CreateItem("Item/Mayka");
     }
 
     public Cell GetRandomRespawnCell () {
