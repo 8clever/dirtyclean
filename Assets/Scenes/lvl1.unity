@@ -6948,6 +6948,7 @@ GameObject:
   - component: {fileID: 1290215400}
   - component: {fileID: 1290215399}
   - component: {fileID: 1290215398}
+  - component: {fileID: 1290215401}
   m_Layer: 5
   m_Name: Market
   m_TagString: Untagged
@@ -7016,7 +7017,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290215399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1290215401}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1290215399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7054,6 +7066,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290215396}
   m_CullTransparentMesh: 0
+--- !u!114 &1290215401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290215396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33a1636d6cc19a4eb6c78a3935123c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 6
+  mode: 1
 --- !u!1001 &1293767726
 PrefabInstance:
   m_ObjectHideFlags: 0

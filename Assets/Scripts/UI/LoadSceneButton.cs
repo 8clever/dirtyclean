@@ -7,7 +7,8 @@ public enum Scenes {
     Menu,
     Options,
     Win,
-    Tasks
+    Tasks,
+    Shop
 }
 
 public enum Levels {
@@ -22,5 +23,13 @@ public class LoadSceneButton : MonoBehaviour
 
     public void OnClick () {
         SceneManager.LoadScene(scene.ToString(), mode);
+    }
+
+    public void LoadScene () {
+        OnClick();
+    }
+
+    public void UnloadScene () {
+        SceneManager.UnloadSceneAsync(scene.ToString());
     }
 }
