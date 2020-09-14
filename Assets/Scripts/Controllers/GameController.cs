@@ -333,10 +333,9 @@ public class GameController : MonoBehaviour
     }
 
     public static readonly string saveKey = "GameController";
-    public void Dump () {
+    private void Dump () {
         var save = GetSave();
         var json = JsonUtility.ToJson(save);
-        Debug.Log(json);
         PlayerPrefs.SetString(saveKey, json);
     }
 
