@@ -6,7 +6,7 @@ public class Rat : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Rat";
+    public static string ResourcePath = "Nip/Rat";
 
     public void NextStep()
     {
@@ -25,7 +25,7 @@ public class Rat : Nip, INip
             if (rat) {
                 Destroy(this.gameObject);
                 Destroy(rat.gameObject);
-                Instantiate(Resources.Load<Cat>(Cat.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Cat>(Cat.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

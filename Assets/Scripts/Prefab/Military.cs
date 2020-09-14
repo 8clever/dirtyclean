@@ -6,7 +6,7 @@ public class Military : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Military";
+    public static string ResourcePath = "Nip/Military";
 
     public void NextStep()
     {
@@ -19,7 +19,7 @@ public class Military : Nip, INip
         if (president) {
             AddPoints(1);
             Destroy(president.gameObject);
-            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), transform.parent);
+            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.ResourcePath), transform.parent);
             bomj.RandomMove();
         }
     }
@@ -31,7 +31,7 @@ public class Military : Nip, INip
             if (military) {
                 Destroy(this.gameObject);
                 Destroy(military.gameObject);
-                Instantiate(Resources.Load<Tank>(Tank.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Tank>(Tank.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

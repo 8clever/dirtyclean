@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ValunItem : Item, IItem
 {
-    public static string resourcePath = "Item/Valun";
+    public static string ResourcePath = "Item/Valun";
     public bool CanDrop(Cell cell)
     {
         if (cell.isPrison) return false;
@@ -16,7 +16,7 @@ public class ValunItem : Item, IItem
     {
         if (CanDrop(cell.GetComponent<Cell>())) {
             Destroy(gameObject);
-            Instantiate(Resources.Load<Valun>(Valun.resourcePath), cell.transform);
+            Instantiate(Resources.Load<Valun>(Valun.ResourcePath), cell.transform);
             NextStep();
             return;
         }

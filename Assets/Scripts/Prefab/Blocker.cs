@@ -5,6 +5,8 @@ public class Blocker : Nip, INip
 {
     public bool CanDrag => false;
 
+    public static readonly string ResourcePath = "Nip/Blocker";
+
     private Image image;
 
     public bool CanDrop(Cell cell)

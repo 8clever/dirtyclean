@@ -6,7 +6,7 @@ public class StreetDog : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/StreetDog";
+    public static string ResourcePath = "Nip/StreetDog";
 
     private List<System.Type> list = new List<System.Type>();
 

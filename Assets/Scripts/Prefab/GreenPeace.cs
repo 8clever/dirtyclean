@@ -6,7 +6,7 @@ public class GreenPeace : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/GreenPeace";
+    public static string ResourcePath = "Nip/GreenPeace";
 
     public void NextStep()
     {
@@ -29,7 +29,7 @@ public class GreenPeace : Nip, INip
             if (greenPeace) {
                 Destroy(this.gameObject);
                 Destroy(greenPeace.gameObject);
-                Instantiate(Resources.Load<OON>(OON.resourcePath), cell.transform);
+                Instantiate(Resources.Load<OON>(OON.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

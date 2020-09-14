@@ -5,7 +5,7 @@ using UnityEngine;
 public class Kust : Nip, INip
 {
     // Start is called before the first frame update
-    public static string resourcePath = "Nip/Kust";
+    public static string ResourcePath = "Nip/Kust";
 
     public bool CanDrag => true;
 

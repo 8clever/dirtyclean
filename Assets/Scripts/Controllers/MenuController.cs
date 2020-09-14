@@ -11,11 +11,27 @@ public class MenuController : MonoBehaviour
 
     private Config config;
 
+    private bool hasSave;
+
+    private bool isAdditive;
+
     private void Awake() {
         config = Config.GetConfig();
-
+        isAdditive = SceneManager.GetActiveScene().name != Scenes.Menu.ToString();
+        hasSave = PlayerPrefs.HasKey(GameController.saveKey);
         if (continueButton) {
-            continueButton.SetActive(SceneManager.GetActiveScene().name != Scenes.Menu.ToString());
+            continueButton.SetActive(isAdditive || hasSave);
+        }
+    }
+
+    public void OnClickContinue () {
+        if (isAdditive) {
+            SceneManager.UnloadSceneAsync(Scenes.Menu.ToString());
+            return;
+        }
+        if (hasSave) {
+            GameController.LoadLevel();
+            return;
         }
     }
 

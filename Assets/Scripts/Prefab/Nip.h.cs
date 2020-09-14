@@ -16,7 +16,6 @@ public interface INip
 
 public class Nip : MonoBehaviour
 {
-
     private Config config;
     public Transform prevParent;
 
@@ -25,8 +24,8 @@ public class Nip : MonoBehaviour
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-        controller.SetMission(this.GetType(), Mission.Type.Create, 1);
-        controller.SetMission(this.GetType(), Mission.Type.Collect, 1);
+        controller.SetMission(GetType(), Mission.Type.Create, 1);
+        controller.SetMission(GetType(), Mission.Type.Collect, 1);
     }
 
     private void OnDestroy() {
@@ -224,5 +223,24 @@ public class Nip : MonoBehaviour
                 Destroy(nip.gameObject);
             }
         }
+    }
+
+    [System.Serializable]
+    public class Save {
+        public string cellName;
+        public string resourcePath;
+
+        public void Restore () {
+            var cell = GameObject.Find(cellName);
+            Instantiate(Resources.Load(resourcePath), cell.transform);
+        }
+    }
+
+    public Save GetSave () {
+        return new Save()
+        {
+            cellName = transform.parent.name,
+            resourcePath = GetType().GetField("ResourcePath").GetValue(null) as string
+        };
     }
 }

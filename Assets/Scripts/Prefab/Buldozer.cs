@@ -4,7 +4,7 @@ public class Buldozer : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Buldozer";
+    public static string ResourcePath = "Nip/Buldozer";
 
     public void NextStep()
     {
@@ -27,7 +27,7 @@ public class Buldozer : Nip, INip
             if (buldozer) {
                 Destroy(buldozer.gameObject);
                 Destroy(this.gameObject);
-                Instantiate(Resources.Load<GreenPeace>(GreenPeace.resourcePath), cell.transform);
+                Instantiate(Resources.Load<GreenPeace>(GreenPeace.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

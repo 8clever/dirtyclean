@@ -6,7 +6,7 @@ public class Police : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Police";
+    public static string ResourcePath = "Nip/Police";
 
     public void NextStep()
     {
@@ -18,7 +18,7 @@ public class Police : Nip, INip
         var dvornik = collision.transform.GetComponentInParent<Dvornik>();
         if (dvornik != null) {
             Destroy(dvornik.gameObject);
-            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.resourcePath), dvornik.transform.parent);
+            var bomj = Instantiate(Resources.Load<Bomj>(Bomj.ResourcePath), dvornik.transform.parent);
             bomj.RandomMove();
         }
     }
@@ -30,7 +30,7 @@ public class Police : Nip, INip
             if (police) {
                 Destroy(this.gameObject);
                 Destroy(police.gameObject);
-                Instantiate(Resources.Load<Hunter>(Hunter.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Hunter>(Hunter.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

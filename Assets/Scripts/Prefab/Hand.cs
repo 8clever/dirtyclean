@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hand : Item, IItem
 {
 
-    public static string resourcePath = "Item/Hand";
+    public static string ResourcePath = "Item/Hand";
     public void OnDrop(GameObject cell)
     {   
         if (cell.transform.childCount == 0) {

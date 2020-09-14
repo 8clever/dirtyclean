@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
     private int step = 0;
 
     private int health = 0;
@@ -60,13 +58,13 @@ public class GameController : MonoBehaviour
         GenerateItem();
         var cell = GetRandomRespawnCell();
         if (cell) {
-            Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
+            Instantiate(Resources.Load<Dvornik>(Dvornik.ResourcePath), cell.transform);
         }
         var staticNips = new List<Nip>();
-        staticNips.Add(Resources.Load<Valun>(Valun.resourcePath));
-        staticNips.Add(Resources.Load<Tree>(Tree.resourcePath));
-        staticNips.Add(Resources.Load<Kolodec>(Kolodec.resourcePath));
-        staticNips.Add(Resources.Load<Kust>(Kust.resourcePath));
+        staticNips.Add(Resources.Load<Valun>(Valun.ResourcePath));
+        staticNips.Add(Resources.Load<Tree>(Tree.ResourcePath));
+        staticNips.Add(Resources.Load<Kolodec>(Kolodec.ResourcePath));
+        staticNips.Add(Resources.Load<Kust>(Kust.ResourcePath));
         foreach (var nip in staticNips) {
             var emptyCell = GetRandomCell();
             if (emptyCell) {
@@ -144,7 +142,7 @@ public class GameController : MonoBehaviour
             ToggleShadow(false);
             var cell = GetRandomRespawnCell();
             if (cell) {
-                Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Dvornik>(Dvornik.ResourcePath), cell.transform);
             }
         }
 
@@ -152,7 +150,7 @@ public class GameController : MonoBehaviour
             ToggleShadow(true);
             var cell = GetRandomRespawnCell();
             if (cell) {
-                Instantiate(Resources.Load<StreetDog>(StreetDog.resourcePath), cell.transform);
+                Instantiate(Resources.Load<StreetDog>(StreetDog.ResourcePath), cell.transform);
             }
         }
 
@@ -171,9 +169,10 @@ public class GameController : MonoBehaviour
         }
 
         GenerateItem();
+        Dump();
     }
 
-    public void CreateItem (string resource) {
+    public static void CreateItem (string resource) {
         var itemField = GameObject.Find("ItemField");
         if (itemField == null) throw new System.Exception("ItemField is required");
         foreach (Transform child in itemField.transform) {
@@ -263,5 +262,86 @@ public class GameController : MonoBehaviour
         if (mission == null) return;
 
         mission.count += count;
+    }
+
+    [System.Serializable]
+    public class Save {
+        public string level;
+        public int step;
+
+        public int health;
+
+        public int point;
+
+        public bool addHealthPoints;
+
+        public List<Nip.Save> nips = new List<Nip.Save>();
+
+        public Item.Save item;
+        public async void Restore () {
+            // load previous level;
+            var asyncLoad = SceneManager.LoadSceneAsync(level);
+            while (!asyncLoad.isDone) {
+                await Task.Delay(100);
+            }
+            var root = SceneManager.GetActiveScene().GetRootGameObjects();
+            
+            // clear game field
+            foreach(var nip in GameObject.FindObjectsOfType<Nip>()) {
+                Destroy(nip.gameObject);
+            }
+            foreach(var i in GameObject.FindObjectsOfType<Item>()) {
+                Destroy(i.gameObject);
+            }
+            // restore controller data
+            foreach (var o in root) {
+                var controller = o.GetComponent<GameController>();
+                if (controller) {
+                    controller.step = step;
+                    controller.health = health;
+                    controller.point = point;
+                    controller.addHealthPoints = addHealthPoints;
+                }
+            }
+            // restore nips
+            foreach (var n in nips) {
+                n.Restore();
+            }
+            // restore item
+            if (item != null) {
+                item.Restore();
+            }
+        }    
+    }
+
+    public Save GetSave () {
+        var save = new Save () {
+            level = GetType().GetField("Level").GetValue(null) as string,
+            step = step,
+            health = health,
+            point = point,
+            addHealthPoints = addHealthPoints,
+        };
+        foreach (var o in GameObject.FindObjectsOfType<Nip>()) {
+            save.nips.Add(o.GetSave());
+        }
+        var item = GameObject.FindObjectOfType<Item>();
+        if (item) {
+            save.item = item.GetSave();
+        }
+        return save;
+    }
+
+    public static readonly string saveKey = "GameController";
+    public void Dump () {
+        var save = GetSave();
+        var json = JsonUtility.ToJson(save);
+        Debug.Log(json);
+        PlayerPrefs.SetString(saveKey, json);
+    }
+
+    public static void LoadLevel () {
+        var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString(saveKey));
+        save.Restore();
     }
 }

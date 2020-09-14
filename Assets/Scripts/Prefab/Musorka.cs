@@ -6,7 +6,7 @@ public class Musorka : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Musorka";
+    public static string ResourcePath = "Nip/Musorka";
 
     public void NextStep () {
 
@@ -24,7 +24,7 @@ public class Musorka : Nip, INip
             if (musorka) {
                 Destroy(this.gameObject);
                 Destroy(musorka.gameObject);
-                Instantiate(Resources.Load<Svalka>(Svalka.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Svalka>(Svalka.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

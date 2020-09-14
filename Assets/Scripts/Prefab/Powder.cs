@@ -6,7 +6,7 @@ public class Powder : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Powder";
+    public static string ResourcePath = "Nip/Powder";
 
     private List<System.Type> list = new List<System.Type>();
     public void NextStep()
@@ -25,7 +25,7 @@ public class Powder : Nip, INip
             if (powder) {
                 Destroy(this.gameObject);
                 Destroy(powder.gameObject);
-                Instantiate(Resources.Load<Mine>(Mine.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Mine>(Mine.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

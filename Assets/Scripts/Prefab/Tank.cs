@@ -6,7 +6,7 @@ public class Tank : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Tank";
+    public static string ResourcePath = "Nip/Tank";
 
     private List<System.Type> list = new List<System.Type>();
 

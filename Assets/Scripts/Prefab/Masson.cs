@@ -6,7 +6,7 @@ public class Masson : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Masson";
+    public static string ResourcePath = "Nip/Masson";
 
     private List<System.Type> list = new List<System.Type>();
 

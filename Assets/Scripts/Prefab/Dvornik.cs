@@ -5,7 +5,7 @@ public class Dvornik : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Dvornik";
+    public static string ResourcePath = "Nip/Dvornik";
 
     public void NextStep ()
     {   
@@ -34,7 +34,7 @@ public class Dvornik : Nip, INip
             if (dvornik) {
                 Destroy(dvornik.gameObject);
                 Destroy(this.gameObject);
-                Instantiate(Resources.Load<Buldozer>(Buldozer.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Buldozer>(Buldozer.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

@@ -6,7 +6,7 @@ public class Valun : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Valun";
+    public static string ResourcePath = "Nip/Valun";
     public void NextStep()
     {
     }

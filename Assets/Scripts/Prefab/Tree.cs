@@ -6,7 +6,7 @@ public class Tree : Nip, INip
 {
     public bool CanDrag => false;
 
-    public static string resourcePath = "Nip/Tree";
+    public static string ResourcePath = "Nip/Tree";
     public void NextStep()
     {
     }

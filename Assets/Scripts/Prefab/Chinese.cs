@@ -6,7 +6,7 @@ public class Chinese : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Chinese";
+    public static string ResourcePath = "Nip/Chinese";
 
     private List<System.Type> list = new List<System.Type>();
     public void NextStep()
@@ -32,7 +32,7 @@ public class Chinese : Nip, INip
             if (chinese) {
                 Destroy(this.gameObject);
                 Destroy(chinese.gameObject);
-                Instantiate(Resources.Load<Powder>(Powder.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Powder>(Powder.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

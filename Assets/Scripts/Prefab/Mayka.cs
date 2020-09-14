@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mayka : Item, IItem
 {
-    public static string resourcePath = "Item/Mayka";
+    public static string ResourcePath = "Item/Mayka";
     public void OnDrop(GameObject cell)
     {
         var c = cell.GetComponent<Cell>();
@@ -15,7 +15,7 @@ public class Mayka : Item, IItem
 
         if (cell && cell.transform.childCount == 0) {
             Destroy(this.gameObject);
-            Instantiate(Resources.Load<Musorka>(Musorka.resourcePath), cell.transform);
+            Instantiate(Resources.Load<Musorka>(Musorka.ResourcePath), cell.transform);
             NextStep();
             return;
         }
@@ -24,7 +24,7 @@ public class Mayka : Item, IItem
         if (dog) {
             Destroy(this.gameObject);
             Destroy(dog.gameObject);
-            Instantiate(Resources.Load<HomeDog>(HomeDog.resourcePath), cell.transform);
+            Instantiate(Resources.Load<HomeDog>(HomeDog.ResourcePath), cell.transform);
             NextStep();
             return;   
         }
@@ -33,7 +33,7 @@ public class Mayka : Item, IItem
         if (bomj) {
             Destroy(this.gameObject);
             Destroy(bomj.gameObject);
-            Instantiate(Resources.Load<Dvornik>(Dvornik.resourcePath), cell.transform);
+            Instantiate(Resources.Load<Dvornik>(Dvornik.ResourcePath), cell.transform);
             NextStep();
             return;
         }
@@ -42,7 +42,7 @@ public class Mayka : Item, IItem
         if (musorka) {
             Destroy(this.gameObject);
             Destroy(musorka.gameObject);
-            Instantiate(Resources.Load<Svalka>(Svalka.resourcePath), cell.transform);
+            Instantiate(Resources.Load<Svalka>(Svalka.ResourcePath), cell.transform);
             NextStep();
             return;
         }

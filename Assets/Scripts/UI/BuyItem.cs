@@ -40,7 +40,7 @@ public class BuyItem : MonoBehaviour
 
     public void OnClickBuy () {
         if (controller) {
-            controller.CreateItem(resource);
+            GameController.CreateItem(resource);
             controller.AddPointsToPoints(-price);
         }
         if (animator) {

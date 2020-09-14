@@ -87,7 +87,7 @@ public class Collider : MonoBehaviour
                 draggable = false;
                 var itemField = GameObject.Find("ItemField") as GameObject;
                 if (itemField.transform.childCount == 0) {
-                    Instantiate(Resources.Load<Hand>(Hand.resourcePath), itemField.transform);
+                    Instantiate(Resources.Load<Hand>(Hand.ResourcePath), itemField.transform);
                 }
             }
             return;

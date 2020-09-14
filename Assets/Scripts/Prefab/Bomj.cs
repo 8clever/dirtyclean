@@ -4,7 +4,7 @@ public class Bomj : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Bomj";
+    public static string ResourcePath = "Nip/Bomj";
 
     public void NextStep()
     {   

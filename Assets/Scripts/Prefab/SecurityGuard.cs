@@ -6,7 +6,7 @@ public class SecurityGuard : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/SecurityGuard";
+    public static string ResourcePath = "Nip/SecurityGuard";
 
     private List<System.Type> list = new List<System.Type>();
 
@@ -27,7 +27,7 @@ public class SecurityGuard : Nip, INip
             if (security) {
                 Destroy(this.gameObject);
                 Destroy(security.gameObject);
-                Instantiate(Resources.Load<Police>(Police.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Police>(Police.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

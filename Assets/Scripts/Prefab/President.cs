@@ -6,7 +6,7 @@ public class President : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/President";
+    public static string ResourcePath = "Nip/President";
     public void NextStep()
     {
         RandomMove();
@@ -23,7 +23,7 @@ public class President : Nip, INip
             if (president) {
                 Destroy(president.gameObject);
                 Destroy(this.gameObject);
-                Instantiate(Resources.Load<Masson>(Masson.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Masson>(Masson.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

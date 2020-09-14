@@ -6,7 +6,7 @@ public class HomeDog : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/HomeDog";
+    public static string ResourcePath = "Nip/HomeDog";
 
     private List<System.Type> list = new List<System.Type>();
 
@@ -27,7 +27,7 @@ public class HomeDog : Nip, INip
             if (homeDog) {
                 Destroy(this.gameObject);
                 Destroy(homeDog.gameObject);
-                Instantiate(Resources.Load<SecurityGuard>(SecurityGuard.resourcePath), cell.transform);
+                Instantiate(Resources.Load<SecurityGuard>(SecurityGuard.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

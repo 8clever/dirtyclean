@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level1 : GameController
 {
-    // Start is called before the first frame update
+    public static readonly string Level = Levels.lvl1.ToString();
     private void Awake() {
         missions.Add(new Mission(typeof(Musorka), Mission.Type.Destroy, 20));
         missions.Add(new Mission(typeof(Dvornik), Mission.Type.Collect, 10));

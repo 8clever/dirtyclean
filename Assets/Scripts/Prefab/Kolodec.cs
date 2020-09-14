@@ -6,7 +6,7 @@ public class Kolodec : Nip, INip
 {
     public bool CanDrag => false;
 
-    public static string resourcePath = "Nip/Kolodec";
+    public static string ResourcePath = "Nip/Kolodec";
 
     public void NextStep()
     {

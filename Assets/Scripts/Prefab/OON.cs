@@ -6,7 +6,7 @@ public class OON : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/OON";
+    public static string ResourcePath = "Nip/OON";
 
     public void NextStep()
     {
@@ -19,7 +19,7 @@ public class OON : Nip, INip
         if (military != null) {
             AddPoints(1);
             Destroy(military.gameObject);
-            var police = Instantiate(Resources.Load<Police>(Police.resourcePath), military.transform.parent);
+            var police = Instantiate(Resources.Load<Police>(Police.ResourcePath), military.transform.parent);
             police.RandomMove();
         }
     }
@@ -31,7 +31,7 @@ public class OON : Nip, INip
             if (oon) {
                 Destroy(oon.gameObject);
                 Destroy(this.gameObject);
-                Instantiate(Resources.Load<President>(President.resourcePath), cell.transform);
+                Instantiate(Resources.Load<President>(President.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

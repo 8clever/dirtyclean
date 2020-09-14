@@ -6,7 +6,7 @@ public class Hunter : Nip, INip
 {
     public bool CanDrag => true;
 
-    public static string resourcePath = "Nip/Hunter";
+    public static string ResourcePath = "Nip/Hunter";
 
     private List<System.Type> list = new List<System.Type>();
 
@@ -33,7 +33,7 @@ public class Hunter : Nip, INip
             if (hunter) {
                 Destroy(this.gameObject);
                 Destroy(hunter.gameObject);
-                Instantiate(Resources.Load<Military>(Military.resourcePath), cell.transform);
+                Instantiate(Resources.Load<Military>(Military.ResourcePath), cell.transform);
                 GameNextStep();
                 return;
             }

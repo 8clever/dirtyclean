@@ -29,4 +29,19 @@ public class Item : MonoBehaviour
     public void NextStep () {
         controller.NextStep();
     }
+
+    [System.Serializable]
+    public class Save {
+        public string ResourcePath;
+
+        public void Restore () {
+            GameController.CreateItem(ResourcePath);
+        }
+    }
+
+    public Save GetSave () {
+        return new Save () {
+            ResourcePath = GetType().GetField("ResourcePath").GetValue(null) as string
+        };
+    }
 }
