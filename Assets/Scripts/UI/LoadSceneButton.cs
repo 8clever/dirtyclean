@@ -8,7 +8,8 @@ public enum Scenes {
     Options,
     Win,
     Tasks,
-    Shop
+    Shop,
+    Loading
 }
 
 public enum Levels {

@@ -281,8 +281,9 @@ public class GameController : MonoBehaviour
         public async void Restore () {
             // load previous level;
             var asyncLoad = SceneManager.LoadSceneAsync(level);
+            SceneManager.LoadScene(Scenes.Loading.ToString(), LoadSceneMode.Additive);
             while (!asyncLoad.isDone) {
-                await Task.Delay(100);
+                await Task.Delay(1000);
             }
             var root = SceneManager.GetActiveScene().GetRootGameObjects();
             
@@ -311,6 +312,7 @@ public class GameController : MonoBehaviour
             if (item != null) {
                 item.Restore();
             }
+            SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
         }    
     }
 
