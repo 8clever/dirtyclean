@@ -51,9 +51,7 @@ public class GameController : MonoBehaviour
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
         
-        // AddPointsToHealth(config.maxHealth);
-
-
+        AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
