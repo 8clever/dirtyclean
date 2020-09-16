@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+[System.Serializable]
 public class Mission {
 
     public enum Type
@@ -23,15 +24,22 @@ public class Mission {
         this.type = type;
         this.requiredCount = requiredCount;
     }
-    public string name;
-
     public int requiredCount;
 
     public int count;
 
     public Type type;
 
-    public System.Type nip;
+    [UnityEngine.SerializeField]
+    private string s_nip;
+    public System.Type nip {
+        get {
+            return System.Type.GetType(s_nip);
+        }
+        set {
+            s_nip = value.ToString();
+        }
+    }
 
     public bool IsComplete () {
         return count >= requiredCount;
