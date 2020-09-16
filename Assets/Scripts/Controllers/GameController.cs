@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     public int point = 0;
 
-    private bool addHealthPoints = false;
+    private System.DateTime? timeStartAddHealth;
 
     private GameObject shadow;
 
@@ -50,8 +50,7 @@ public class GameController : MonoBehaviour
 
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
-
-
+        
         AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
@@ -224,6 +223,9 @@ public class GameController : MonoBehaviour
 
     public void AddPointsToHealth (int num) {
         health += num;
+        if (health > config.maxHealth) {
+            health = config.maxHealth;
+        }
         RenderHealth();
     }
 
@@ -234,27 +236,29 @@ public class GameController : MonoBehaviour
 
     async Task AddHealthPointsByTime () {
         await Task.Delay(1000);
-        if (health == 0 && !addHealthPoints) {
-            addHealthPoints = true;
+        // start add health
+        if (health == 0 && timeStartAddHealth == null) {
+            timeStartAddHealth = System.DateTime.UtcNow;
         }
+        // end add health
         if (health == config.maxHealth) {
-            addHealthPoints = false;
+            timeStartAddHealth = null;
         }
-        if (addHealthPoints) {
-            await RenderHealthBar();
-            AddPointsToHealth(1);
+        var diffTime = System.DateTime.UtcNow.Subtract(timeStartAddHealth ?? System.DateTime.UtcNow);
+        var points = diffTime.TotalSeconds / config.healthPointsAtSeconds;
+        var bar = points - System.Math.Truncate(points);
+        var addPoints = System.Convert.ToInt32(System.Math.Truncate(points));
+        RenderHealthBar(bar);
+        if (addPoints > 0) {
+            AddPointsToHealth(addPoints);
+            timeStartAddHealth = System.DateTime.UtcNow;
         }
         await AddHealthPointsByTime();
     }
 
-    async Task RenderHealthBar () {
+    void RenderHealthBar (double bar) {
         var health = GameObject.Find("HealthIndicator/Indicator").GetComponent<Image>();
-        var seconds = config.healthPointsAtSeconds;
-        var tick = 1f / seconds;
-        for (int i = 1; i <= seconds; i++) {
-            health.fillAmount = tick * i;
-            await Task.Delay(1000);
-        }
+        health.fillAmount = System.Convert.ToSingle(bar);
     }
 
     public void SetMission (System.Type nip, Mission.Type type, int count) {
@@ -273,7 +277,17 @@ public class GameController : MonoBehaviour
 
         public int point;
 
-        public bool addHealthPoints;
+        [SerializeField]
+        private string s_timeStartAddHealth;
+        public System.DateTime? timeStartAddHealth {
+            get {
+                if (s_timeStartAddHealth == null) return null;
+                return System.Convert.ToDateTime(s_timeStartAddHealth);
+            } 
+            set {
+                s_timeStartAddHealth = value == null ? null : value.ToString();
+            }
+        }
 
         public List<Nip.Save> nips = new List<Nip.Save>();
 
@@ -303,7 +317,7 @@ public class GameController : MonoBehaviour
                     controller.step = step;
                     controller.health = health;
                     controller.point = point;
-                    controller.addHealthPoints = addHealthPoints;
+                    controller.timeStartAddHealth = timeStartAddHealth;
                     controller.missions = missions;
                     controller.RenderHealth();
                     controller.RenderPoints();
@@ -327,7 +341,7 @@ public class GameController : MonoBehaviour
             step = step,
             health = health,
             point = point,
-            addHealthPoints = addHealthPoints,
+            timeStartAddHealth = timeStartAddHealth,
             missions = missions
         };
         foreach (var o in GameObject.FindObjectsOfType<Nip>()) {

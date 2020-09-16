@@ -29,6 +29,9 @@ public class MissionController : MonoBehaviour
             var nipName = "";
             Mission.NipNames.TryGetValue(m.nip, out nipName);
             text.text = $"{n}. {m.type.ToString()} {m.count} / {m.requiredCount} {nipName}";
+            if (m.IsComplete()) {
+                text.text = $"{n}. {m.type.ToString()} {m.requiredCount} {nipName}. [Completed]";
+            }
             n += 1;
         }
     }
