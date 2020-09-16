@@ -277,6 +277,8 @@ public class GameController : MonoBehaviour
 
         public List<Nip.Save> nips = new List<Nip.Save>();
 
+        public List<Mission> missions = new List<Mission>();
+
         public Item.Save item;
         public async void Restore () {
             // load previous level;
@@ -302,6 +304,9 @@ public class GameController : MonoBehaviour
                     controller.health = health;
                     controller.point = point;
                     controller.addHealthPoints = addHealthPoints;
+                    controller.missions = missions;
+                    controller.RenderHealth();
+                    controller.RenderPoints();
                 }
             }
             // restore nips
@@ -323,6 +328,7 @@ public class GameController : MonoBehaviour
             health = health,
             point = point,
             addHealthPoints = addHealthPoints,
+            missions = missions
         };
         foreach (var o in GameObject.FindObjectsOfType<Nip>()) {
             save.nips.Add(o.GetSave());
