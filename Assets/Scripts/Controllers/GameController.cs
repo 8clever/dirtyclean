@@ -346,5 +346,3 @@ public class GameController : MonoBehaviour
         save.Restore();
     }
 }
-
-// check
