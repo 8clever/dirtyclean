@@ -2132,6 +2132,7 @@ MonoBehaviour:
   point: 0
   gameInitialized: 0
   isPause: 0
+  missions: []
 --- !u!114 &439614688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6643,7 +6644,7 @@ PrefabInstance:
     - target: {fileID: 969494997080969715, guid: 62b5073c25c7fa649924371d47b12550,
         type: 3}
       propertyPath: m_Name
-      value: Cell
+      value: CellPrison
       objectReference: {fileID: 0}
     - target: {fileID: 1369113456433712804, guid: 62b5073c25c7fa649924371d47b12550,
         type: 3}

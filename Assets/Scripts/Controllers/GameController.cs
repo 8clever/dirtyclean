@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     public int point = 0;
 
-    private System.DateTime? timeStartAddHealth;
+    private System.DateTime? timeStartAddHealth = System.DateTime.UtcNow.AddDays(-2);
 
     private GameObject shadow;
 
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
         
-        AddPointsToHealth(config.maxHealth);
+        //AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
@@ -278,14 +278,16 @@ public class GameController : MonoBehaviour
         public int point;
 
         [SerializeField]
-        private string s_timeStartAddHealth;
+        private string s_timeStartAddHealth = string.Empty;
         public System.DateTime? timeStartAddHealth {
             get {
-                if (s_timeStartAddHealth == null) return null;
+                if (s_timeStartAddHealth == string.Empty) {
+                    return null;
+                }
                 return System.Convert.ToDateTime(s_timeStartAddHealth);
             } 
             set {
-                s_timeStartAddHealth = value == null ? null : value.ToString();
+                s_timeStartAddHealth = value?.ToString() ?? string.Empty;
             }
         }
 
