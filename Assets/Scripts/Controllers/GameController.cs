@@ -132,6 +132,7 @@ public class GameController : MonoBehaviour
                 return;
             }
         }
+        PlayerPrefs.DeleteKey(saveKey);
         SceneManager.LoadScene(Scenes.GameOver.ToString());
     }
 
