@@ -13,17 +13,17 @@ public class GameController : MonoBehaviour
 
     public int point = 0;
 
-    private System.DateTime? timeStartAddHealth = System.DateTime.UtcNow.AddDays(-2);
+    private System.DateTime? timeStartAddHealth = null;
 
-    private GameObject shadow;
+    private GameObject shadow = null;
 
-    private Image setka;
+    private Image setka = null;
 
     public bool gameInitialized = false;
 
     public bool isPause = false;
 
-    private Config config;
+    private Config config = null;
 
     public List<Mission> missions = new List<Mission>();
 
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     public void DefaultStart () {
         setka = GameObject.Find("Cell").GetComponent<Image>();
         
-        //AddPointsToHealth(config.maxHealth);
+        AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
@@ -125,9 +125,8 @@ public class GameController : MonoBehaviour
     }
 
     private void ToggleShadow (bool active) {
-        shadow = shadow ? shadow : GameObject.Find("Shadow");
-        if (shadow == null) throw new System.Exception("Shadow GameObject is required");
-        shadow.SetActive(active);
+        shadow = shadow ?? GameObject.Find("Shadow");
+        shadow?.SetActive(active);
     }
 
     public void NextStep () {
