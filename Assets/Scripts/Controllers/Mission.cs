@@ -18,12 +18,6 @@ public class Mission {
         { typeof(GreenPeace), "Green Peace" },
         { typeof(President), "President" }
     };
-
-    public Mission (System.Type nip, Type type, int requiredCount) {
-        this.nip = nip;
-        this.type = type;
-        this.requiredCount = requiredCount;
-    }
     public int requiredCount;
 
     public int count;

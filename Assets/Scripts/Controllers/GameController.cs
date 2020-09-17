@@ -23,6 +23,10 @@ public class GameController : MonoBehaviour
 
     public bool isPause = false;
 
+    public bool EndlessMode = false;
+
+    public string Level = string.Empty;
+
     private Config config = null;
 
     public List<Mission> missions = new List<Mission>();
@@ -35,7 +39,9 @@ public class GameController : MonoBehaviour
         config = Config.GetConfig();
     }
 
-    // Update is called once per frame
+    private void Update () {
+        DefaultUpdate();
+    } 
     public void DefaultUpdate()
     {
         isPause = SceneManager.sceneCount > 1;     
@@ -46,6 +52,10 @@ public class GameController : MonoBehaviour
                 c.GetComponent<Image>().enabled = config.gameFieldWeb;
             }
         }
+    }
+
+    private void Start () {
+        DefaultStart();
     }
 
     public void DefaultStart () {
@@ -108,6 +118,7 @@ public class GameController : MonoBehaviour
     }
 
     private void IsComplete () {
+        if (EndlessMode) return;
         foreach (var m in missions) {
             if (!m.IsComplete()) return;
         }
@@ -338,7 +349,7 @@ public class GameController : MonoBehaviour
 
     public Save GetSave () {
         var save = new Save () {
-            level = GetType().GetField("Level").GetValue(null) as string,
+            level = Level,
             step = step,
             health = health,
             point = point,

@@ -9,10 +9,11 @@ public enum Scenes {
     Win,
     Tasks,
     Shop,
-    Loading
-}
+    Loading,
+    SelectLevel,
 
-public enum Levels {
+    // levels
+    endlessMode,
     lvl1
 }
 
@@ -20,9 +21,11 @@ public class LoadSceneButton : MonoBehaviour
 {
     public Scenes scene;
 
+    [Header("Required only for LoadScene")]
     public LoadSceneMode mode;
 
     public void OnClick () {
+
         SceneManager.LoadScene(scene.ToString(), mode);
     }
 

@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class MissionController : MonoBehaviour
 {
-    public Mission[] missions = {
-        new Mission(typeof(Dvornik), Mission.Type.Create, 20)
-    };
+    public Mission[] missions = {};
 
     private GameObject content;
     public void Start()
