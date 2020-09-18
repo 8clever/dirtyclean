@@ -2130,12 +2130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ed9d9c12b7d6f4098cf29177342472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 0
-  gameInitialized: 0
-  isPause: 0
-  EndlessMode: 1
-  Level: endlessMode
-  missions: []
 --- !u!114 &439614688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6041,6 +6035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 2
+  Async: 0
   mode: 1
 --- !u!1001 &1110798715
 PrefabInstance:
@@ -7102,6 +7097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 6
+  Async: 1
   mode: 1
 --- !u!1001 &1293767726
 PrefabInstance:
@@ -11752,6 +11748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 5
+  Async: 1
   mode: 1
 --- !u!224 &2058497675 stripped
 RectTransform:

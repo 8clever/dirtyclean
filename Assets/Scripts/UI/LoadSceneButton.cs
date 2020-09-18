@@ -21,11 +21,16 @@ public class LoadSceneButton : MonoBehaviour
 {
     public Scenes scene;
 
+    public bool Async = false;
+
     [Header("Required only for LoadScene")]
     public LoadSceneMode mode;
 
     public void OnClick () {
-
+        if (Async) {
+            SceneManager.LoadSceneAsync(scene.ToString(), mode);
+            return;
+        }
         SceneManager.LoadScene(scene.ToString(), mode);
     }
 

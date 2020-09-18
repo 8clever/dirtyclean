@@ -6042,6 +6042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 2
+  Async: 0
   mode: 1
 --- !u!1001 &1110798715
 PrefabInstance:
@@ -7103,6 +7104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 6
+  Async: 1
   mode: 1
 --- !u!1001 &1293767726
 PrefabInstance:
@@ -11753,6 +11755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 5
+  Async: 1
   mode: 1
 --- !u!224 &2058497675 stripped
 RectTransform:

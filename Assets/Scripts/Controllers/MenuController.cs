@@ -22,6 +22,16 @@ public class MenuController : MonoBehaviour
         if (continueButton) {
             continueButton.SetActive(isAdditive || hasSave);
         }
+        
+    }
+
+    private void Start() {
+        SceneManager.sceneLoaded += SceneLoaded;
+        var cutscene = SceneManager.GetSceneByName(Scenes.Cutscene.ToString());
+        if (isAdditive || cutscene.IsValid()) return;
+        if (config.ShowCutsceneOnStart) {
+            SceneManager.LoadSceneAsync(Scenes.Cutscene.ToString(), LoadSceneMode.Additive);
+        }
     }
 
     public void OnClickContinue () {
@@ -33,10 +43,6 @@ public class MenuController : MonoBehaviour
             GameController.LoadLevel();
             return;
         }
-    }
-
-    private void Start () {
-        SceneManager.sceneLoaded += SceneLoaded;
     }
 
     private void SceneLoaded (Scene scene, LoadSceneMode mode) {
