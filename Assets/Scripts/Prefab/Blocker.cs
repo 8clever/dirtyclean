@@ -33,9 +33,6 @@ public class Blocker : Nip, INip
     }
 
     new void Update () {
-        if (image.enabled) {
-            image.enabled = false;
-        }
         UpdateDefault();
     }
 }

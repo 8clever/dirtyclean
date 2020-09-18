@@ -10,7 +10,7 @@ public class CheckboxConfigController : MonoBehaviour
 
     private void Awake() {
         var config = Config.GetConfig();
-        var value = config.GetType().GetProperty(field).GetValue(config);
+        var value = config.GetType().GetField(field).GetValue(config);
         toggle.isOn = Convert.ToBoolean(value);
         toggle.onValueChanged.AddListener(delegate {
             OnChange(toggle);
@@ -20,7 +20,7 @@ public class CheckboxConfigController : MonoBehaviour
 
     void OnChange (Toggle toggle) {
         var config = Config.GetConfig();
-        config.GetType().GetProperty(field).SetValue(config, toggle.isOn);
+        config.GetType().GetField(field).SetValue(config, toggle.isOn);
         config.PersistConfig();
     }
 }

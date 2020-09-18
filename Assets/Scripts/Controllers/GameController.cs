@@ -17,8 +17,6 @@ public class GameController : MonoBehaviour
 
     private GameObject shadow = null;
 
-    private Image setka = null;
-
     public bool gameInitialized = false;
 
     public bool isPause = false;
@@ -45,13 +43,6 @@ public class GameController : MonoBehaviour
     public void DefaultUpdate()
     {
         isPause = SceneManager.sceneCount > 1;     
-
-        if (config.gameFieldWeb != setka.enabled) {
-            var cells = GameObject.FindGameObjectsWithTag("cell");
-            foreach(var c in cells) {
-                c.GetComponent<Image>().enabled = config.gameFieldWeb;
-            }
-        }
     }
 
     private void Start () {
@@ -59,8 +50,6 @@ public class GameController : MonoBehaviour
     }
 
     public void DefaultStart () {
-        setka = GameObject.Find("Cell").GetComponent<Image>();
-        
         AddPointsToHealth(config.maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);

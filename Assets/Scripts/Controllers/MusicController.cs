@@ -10,6 +10,6 @@ public class MusicController : MonoBehaviour
 
     private void Start() {
         config = Config.GetConfig();
-        audioSource.mute = !config.music;
+        audioSource.mute = !config.Music;
     }
 }
