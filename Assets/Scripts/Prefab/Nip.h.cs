@@ -211,6 +211,25 @@ public class Nip : MonoBehaviour
         transform.position = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
     }
 
+    public void MoveToClosestEmptyCell () {
+        var gameObjects = GameObject.FindGameObjectsWithTag("cell");
+        var emptyCells = new List<Cell>();
+        foreach(var g in gameObjects) {
+            var cell = g.GetComponent<Cell>();
+            if (cell?.transform.childCount == 0 && cell?.isPrison == false) {
+                emptyCells.Add(cell);
+            }
+        }
+        if (emptyCells.Count == 0) return;
+
+        emptyCells.Sort((cell1, cell2) => {
+            var distance1 = Vector3.Distance(cell1.transform.position, transform.position);
+            var distance2 = Vector3.Distance(cell2.transform.position, transform.position);
+            return distance1.CompareTo(distance2);
+        });
+        transform.SetParent(emptyCells[0].transform);
+    }
+
     public void AddPoints (int number) {
         controller.AddPointsToPoints(number);
     }

@@ -22,7 +22,7 @@ public class President : Nip, INip
             var president = cell.GetComponentInChildren<President>();
             if (president) {
                 Destroy(president.gameObject);
-                Destroy(this.gameObject);
+                Destroy(gameObject);
                 Instantiate(Resources.Load<Masson>(Masson.ResourcePath), cell.transform);
                 GameNextStep();
                 return;

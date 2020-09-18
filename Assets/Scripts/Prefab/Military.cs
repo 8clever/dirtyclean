@@ -20,7 +20,7 @@ public class Military : Nip, INip
             AddPoints(1);
             Destroy(president.gameObject);
             var bomj = Instantiate(Resources.Load<Bomj>(Bomj.ResourcePath), transform.parent);
-            bomj.RandomMove();
+            bomj.MoveToClosestEmptyCell();
         }
     }
 
@@ -29,7 +29,7 @@ public class Military : Nip, INip
         if (cell) {
             var military = cell.transform.GetComponentInChildren<Military>();
             if (military) {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
                 Destroy(military.gameObject);
                 Instantiate(Resources.Load<Tank>(Tank.ResourcePath), cell.transform);
                 GameNextStep();
