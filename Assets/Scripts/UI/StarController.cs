@@ -23,7 +23,7 @@ public class StarController : MonoBehaviour
                 done += 1;
             }
         }
-        text.text = $"{done} / {controller.missions.Count}";
+        text.text = $"{done}/{controller.missions.Count}";
         await Task.Delay(1000);
         await SetText();
     }
