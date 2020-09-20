@@ -32,8 +32,10 @@ public class Nip : MonoBehaviour
     }
 
     private void OnDestroy() {
-        controller.SetMission(GetType(), Mission.Type.Destroy, 1);    
-        controller.SetMission(GetType(), Mission.Type.Collect, -1);
+        if (controller.gameInitialized) {
+            controller.SetMission(GetType(), Mission.Type.Destroy, 1);    
+            controller.SetMission(GetType(), Mission.Type.Collect, -1);
+        }
     }
 
     public Nip GetClosestNip (System.Type type) {
