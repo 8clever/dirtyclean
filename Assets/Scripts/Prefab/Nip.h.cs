@@ -60,8 +60,8 @@ public class Nip : MonoBehaviour
             }
         });
         nips.Sort((a, b) => {
-            var distA = Vector3.Distance(this.transform.parent.position, a.transform.parent.position);
-            var distB = Vector3.Distance(this.transform.parent.position, b.transform.parent.position);
+            var distA = Vector3.Distance(transform.parent.position, a.transform.parent.position);
+            var distB = Vector3.Distance(transform.parent.position, b.transform.parent.position);
             return distA.CompareTo(distB);
         });
         if (nips.Count > 0) {
@@ -123,7 +123,7 @@ public class Nip : MonoBehaviour
 
         var destination = transform.parent.position + new Vector3(x, x == 0 ? y : 0, 0);
         var ray = new Ray(transform.parent.position, destination - transform.parent.position);
-        MoveByRay(ray, typeof(Cell));
+        MoveByRay(ray, null);
     }
 
     private RaycastHit[] GetCellHits (Ray ray) {
@@ -137,19 +137,17 @@ public class Nip : MonoBehaviour
             return false;
         }
 
-        if (hit.collider.transform.childCount > 1) return false;
-
-        for (int n = 0; n < hit.collider.transform.childCount; n++) {
-            var child = hit.collider.transform.GetChild(n);
-            var requiredNip = child.GetComponent(type);
-            if (requiredNip) {
-                return true;
-            }
-        }
-
-        if (hit.collider.transform.childCount > 0) {
-            return false;
-        }
+        if (cell.transform.childCount > 0) {
+            var powder = cell.GetComponentInChildren<Powder>();
+            var mine = cell.GetComponentInChildren<Mine>();
+            var requriedNip = type == null ? null : cell.GetComponentInChildren(type);
+            if (requriedNip && cell.transform.childCount == 1) {}
+            // allow move throw specific nips
+            else if (powder) {}
+            else if (mine) {}
+            // no allow move
+            else return false;
+        };
 
         return true;
     }

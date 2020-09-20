@@ -16,7 +16,28 @@ public class Mine : Nip, INip
 
     public void OnCollision(Collision collision)
     {
-        OnCollisionList(collision, list);
+        var explosiveRange = GetComponentInChildren<ExpliseveMineRange>();
+        var collider = explosiveRange?.GetComponent<BoxCollider>();
+        var nipColliders = GameObject.FindObjectsOfType<Collider>();
+
+        void DestroyNip (Nip nip) {
+            // not allow remove blockers
+            if (nip.GetType() == typeof(Blocker)) return;
+
+            AddPoints(1);
+            Destroy(nip.gameObject);
+        }
+
+        foreach (var c in nipColliders) {
+            var sphere = c.GetComponent<SphereCollider>();
+            var intersected = sphere?.bounds.Intersects(collider.bounds) ?? false;
+            if (intersected) {
+                var nip = c.GetComponentInParent<Nip>();
+                DestroyNip(nip);
+            }
+        }
+        
+        Destroy(gameObject);
     }
 
     public void OnDrop(GameObject cell)
@@ -27,8 +48,6 @@ public class Mine : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        list.Add(typeof(Alien));
-
         AddPoints(7);
     }
 

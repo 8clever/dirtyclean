@@ -15,7 +15,11 @@ public class Powder : Nip, INip
 
     public void OnCollision(Collision collision)
     {
-        OnCollisionList(collision, list);
+        var cell = collision.gameObject.GetComponentInParent<Cell>();
+        foreach(Transform t in cell.transform) {
+            Destroy(t.gameObject);
+            AddPoints(1);
+        }
     }
 
     public void OnDrop(GameObject cell)
@@ -37,8 +41,6 @@ public class Powder : Nip, INip
     // Start is called before the first frame update
     void Start()
     {
-        list.Add(typeof(Alien));
-
         AddPoints(6);
     }
 
