@@ -16,6 +16,7 @@ public class Powder : Nip, INip
     public void OnCollision(Collision collision)
     {
         var cell = collision.gameObject.GetComponentInParent<Cell>();
+        if (cell.transform.childCount == 1) return;
         foreach(Transform t in cell.transform) {
             Destroy(t.gameObject);
             AddPoints(1);

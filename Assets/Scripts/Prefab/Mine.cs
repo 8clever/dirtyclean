@@ -16,6 +16,9 @@ public class Mine : Nip, INip
 
     public void OnCollision(Collision collision)
     {
+        var cell = GetComponentInParent<Cell>();
+        if (cell.transform.childCount == 1) return;
+        
         var explosiveRange = GetComponentInChildren<ExpliseveMineRange>();
         var collider = explosiveRange?.GetComponent<BoxCollider>();
         var nipColliders = GameObject.FindObjectsOfType<Collider>();

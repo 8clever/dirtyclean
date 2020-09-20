@@ -30,7 +30,7 @@ public class Chinese : Nip, INip
         if (cell) {
             var chinese = cell.transform.GetComponentInChildren<Chinese>();
             if (chinese) {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
                 Destroy(chinese.gameObject);
                 Instantiate(Resources.Load<Powder>(Powder.ResourcePath), cell.transform);
                 GameNextStep();
