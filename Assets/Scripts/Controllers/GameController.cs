@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public int CurrentTime () {
+    public int RenderCurrentTime () {
         var time = step % 8;
         var dayTime = GameObject.Find("DayTime");
         if (dayTime == null) throw new System.Exception("DayTime not exist");
@@ -134,7 +134,7 @@ public class GameController : MonoBehaviour
         AddPointsToHealth(-1);
         step += 1;
 
-        var time = CurrentTime();
+        var time = RenderCurrentTime();
         
         if (time == 0) {
             ToggleShadow(false);
@@ -332,6 +332,7 @@ public class GameController : MonoBehaviour
                     controller.missions = missions;
                     controller.RenderHealth();
                     controller.RenderPoints();
+                    controller.RenderCurrentTime();
                 }
             }
             SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
