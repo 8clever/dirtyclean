@@ -32,8 +32,9 @@ public class Musorka : Nip, INip
         OnDropDefault(cell);
     }
 
-    void Start()
+    void Awake()
     {
+        DefAwake();
         AddPoints(1);
     }
 

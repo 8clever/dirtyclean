@@ -21,7 +21,10 @@ public class Nip : MonoBehaviour
 
     private GameController controller;
 
-    private void Awake() {
+    private void Awake () {
+        DefAwake();
+    }
+    public void DefAwake () {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
         controller.SetMission(GetType(), Mission.Type.Create, 1);

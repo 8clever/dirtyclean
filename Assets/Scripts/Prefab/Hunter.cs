@@ -42,8 +42,10 @@ public class Hunter : Nip, INip
         OnDropDefault(cell);
     }
 
-    void Start()
+    void Awake()
     {
+        DefAwake();
+        
         list.Add(typeof(Cat));
         list.Add(typeof(StreetDog));
         list.Add(typeof(HomeDog));

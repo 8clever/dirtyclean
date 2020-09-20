@@ -34,8 +34,10 @@ public class Cat : Nip, INip
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        DefAwake();
+
         list.Add(typeof(Rat));
         list.Add(typeof(Alien));
 

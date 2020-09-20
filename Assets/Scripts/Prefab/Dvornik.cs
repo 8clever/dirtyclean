@@ -13,8 +13,9 @@ public class Dvornik : Nip, INip
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        DefAwake();
         AddPoints(1);
     }
 

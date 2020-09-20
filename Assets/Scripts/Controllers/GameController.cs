@@ -131,7 +131,6 @@ public class GameController : MonoBehaviour
 
     public void NextStep () {
         gameInitialized = true;
-        Dump();
         AddPointsToHealth(-1);
         step += 1;
 
@@ -168,6 +167,7 @@ public class GameController : MonoBehaviour
         }
 
         GenerateItem();
+        Dump();
     }
 
     public static void CreateItem (string resource) {
@@ -303,13 +303,20 @@ public class GameController : MonoBehaviour
                 await Task.Delay(1000);
             }
             var root = SceneManager.GetActiveScene().GetRootGameObjects();
-            
             // clear game field
             foreach(var nip in GameObject.FindObjectsOfType<Nip>()) {
                 Destroy(nip.gameObject);
             }
             foreach(var i in GameObject.FindObjectsOfType<Item>()) {
                 Destroy(i.gameObject);
+            }
+            // restore nips
+            foreach (var n in nips) {
+                n.Restore();
+            }
+            // restore item
+            if (item != null) {
+                item.Restore();
             }
             // restore controller data
             foreach (var o in root) {
@@ -323,14 +330,6 @@ public class GameController : MonoBehaviour
                     controller.RenderHealth();
                     controller.RenderPoints();
                 }
-            }
-            // restore nips
-            foreach (var n in nips) {
-                n.Restore();
-            }
-            // restore item
-            if (item != null) {
-                item.Restore();
             }
             SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
         }    
@@ -363,7 +362,9 @@ public class GameController : MonoBehaviour
     }
 
     public static void LoadLevel () {
-        var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString(saveKey));
+        var json = PlayerPrefs.GetString(saveKey);
+        var save = JsonUtility.FromJson<Save>(json);
+        Debug.Log(json);
         save.Restore();
     }
 }
