@@ -32,8 +32,8 @@ public class Nip : MonoBehaviour
     }
 
     private void OnDestroy() {
-        controller.SetMission(this.GetType(), Mission.Type.Destroy, 1);    
-        controller.SetMission(this.GetType(), Mission.Type.Collect, -1);
+        controller.SetMission(GetType(), Mission.Type.Destroy, 1);    
+        controller.SetMission(GetType(), Mission.Type.Collect, -1);
     }
 
     public Nip GetClosestNip (System.Type type) {
@@ -170,10 +170,10 @@ public class Nip : MonoBehaviour
     }
 
     public void UpdateDefault () {
-        var parentPos = new Vector3(this.transform.parent.position.x, this.transform.parent.position.y, config.layers.nips);
-        if (parentPos != this.transform.position) {
-            var nextPosition = Vector3.MoveTowards(this.transform.position, parentPos, config.nip.moveSpeed);
-            this.transform.position = nextPosition;
+        var parentPos = new Vector3(transform.parent.position.x, transform.parent.position.y, config.layers.nips);
+        if (parentPos != transform.position) {
+            var nextPosition = Vector3.MoveTowards(transform.position, parentPos, config.nip.moveSpeed);
+            transform.position = nextPosition;
         }
     }
 

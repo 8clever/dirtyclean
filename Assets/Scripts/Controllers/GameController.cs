@@ -167,6 +167,9 @@ public class GameController : MonoBehaviour
         }
 
         GenerateItem();
+
+        // dump after complete move
+        await Task.Delay(System.Convert.ToInt32(config.nip.moveSpeed) * 1000);
         Dump();
     }
 
