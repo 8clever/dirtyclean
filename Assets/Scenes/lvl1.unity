@@ -10000,7 +10000,7 @@ PrefabInstance:
     - target: {fileID: 969494997080969715, guid: 62b5073c25c7fa649924371d47b12550,
         type: 3}
       propertyPath: m_Name
-      value: Cell
+      value: Cell (0)
       objectReference: {fileID: 0}
     - target: {fileID: 3363186245707460181, guid: 62b5073c25c7fa649924371d47b12550,
         type: 3}
