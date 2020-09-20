@@ -364,7 +364,6 @@ public class GameController : MonoBehaviour
     public static void LoadLevel () {
         var json = PlayerPrefs.GetString(saveKey);
         var save = JsonUtility.FromJson<Save>(json);
-        Debug.Log(json);
         save.Restore();
     }
 }
