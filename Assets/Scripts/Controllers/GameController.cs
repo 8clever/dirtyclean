@@ -71,11 +71,10 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveNips () {
+    private void MoveNips () {
         var persons = GameObject.FindObjectsOfType<Nip>();
         foreach (var p in persons) {
             (p as INip).NextStep();
-            yield return new WaitForSeconds(0);
         }
     }
 
@@ -132,6 +131,7 @@ public class GameController : MonoBehaviour
 
     public void NextStep () {
         gameInitialized = true;
+        Dump();
         AddPointsToHealth(-1);
         step += 1;
 
@@ -153,7 +153,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        StartCoroutine(MoveNips());
+        MoveNips();
         AfterNextStep();
     }
 
@@ -168,7 +168,6 @@ public class GameController : MonoBehaviour
         }
 
         GenerateItem();
-        Dump();
     }
 
     public static void CreateItem (string resource) {
