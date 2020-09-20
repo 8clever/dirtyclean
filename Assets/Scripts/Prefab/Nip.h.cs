@@ -142,7 +142,7 @@ public class Nip : MonoBehaviour
             var mine = cell.GetComponentInChildren<Mine>();
             var requriedNip = type == null ? null : cell.GetComponentInChildren(type);
             if (requriedNip && cell.transform.childCount == 1) {}
-            // allow move throw specific nips
+            // allow move for specific nips
             else if (powder) {}
             else if (mine) {}
             // no allow move
