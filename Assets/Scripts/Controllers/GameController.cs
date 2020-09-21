@@ -8,26 +8,16 @@ using System.Threading.Tasks;
 public class GameController : MonoBehaviour
 {
     private int step = 0;
-
     private int health = 0;
-
     public int point = 0;
-
-    private System.DateTime? timeStartAddHealth = null;
-
-    private GameObject shadow = null;
-
-    public bool gameInitialized = false;
-
     public bool isPause = false;
-
     public bool EndlessMode = false;
-
     public string Level = string.Empty;
-
-    private Config config = null;
-
+    public bool gameInitialized = false;
     public List<Mission> missions = new List<Mission>();
+    private System.DateTime? timeStartAddHealth = null;
+    private GameObject shadow = null;
+    private Config config = null;
 
     private void Awake() {
         DefaultAwake();
