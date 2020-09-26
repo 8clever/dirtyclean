@@ -110,11 +110,14 @@ public class GameController : MonoBehaviour
 
     private void IsGameOver () {
         var cells = GameObject.FindGameObjectsWithTag("cell");
+        if (cells.Length == 0) return;
+
         foreach (var cell in cells) {
             if (cell.transform.childCount == 0) {
                 return;
             }
         }
+        
         PlayerPrefs.DeleteKey(saveKey);
         SceneManager.LoadScene(Scenes.GameOver.ToString());
     }
@@ -291,8 +294,7 @@ public class GameController : MonoBehaviour
         public List<Nip.Save> nips = new List<Nip.Save>();
 
         public List<Mission> missions = new List<Mission>();
-
-        public Item.Save item;
+        public Item.Save item = null;
         public async void Restore () {
             // load previous level;
             var asyncLoad = SceneManager.LoadSceneAsync(level);
@@ -312,10 +314,6 @@ public class GameController : MonoBehaviour
             foreach (var n in nips) {
                 n.Restore();
             }
-            // restore item
-            if (item != null) {
-                item.Restore();
-            }
             // restore controller data
             foreach (var o in root) {
                 var controller = o.GetComponent<GameController>();
@@ -328,8 +326,16 @@ public class GameController : MonoBehaviour
                     controller.RenderHealth();
                     controller.RenderPoints();
                     controller.RenderCurrentTime();
+
+                    // restore item;
+                    if (item?.ResourcePath == string.Empty) {
+                        controller.AfterNextStep();
+                    } else {
+                        item.Restore();
+                    }
                 }
             }
+            
             SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
         }    
     }
