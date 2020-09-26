@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 public class BuyItem : MonoBehaviour
 {
     [Header("Required fields")]
-    public string resource;
+    public ItemMain item;
+
+    [Header("Prefab GameObjects")]
     public Image cell;
     public Text text;
-    public int price;
     public Button button;
 
     [Header("Optional fields")]
-    public GameController controller;
-
     public Animator animator;
+    private GameController controller;
 
     private void Awake () {
         var scene = SceneManager.GetActiveScene();
@@ -27,21 +27,20 @@ public class BuyItem : MonoBehaviour
                 this.controller = controller;
             }
         }
-    }
-    private void Start() {
-        var obj = Resources.Load<GameObject>(resource);
-        var sprite = obj.GetComponent<SpriteRenderer>();
-        text.text = price.ToString();
+        var sprite = item.GetComponent<SpriteRenderer>();
+        text.text = item.Price.ToString();
         cell.sprite = sprite.sprite;
+    }
+    private void Update() {
         if (controller) {
-            button.interactable = controller.point >= price;
+            button.interactable = controller.point >= item.Price;
         }
     }
 
     public void OnClickBuy () {
         if (controller) {
-            GameController.CreateItem(resource);
-            controller.AddPointsToPoints(-price);
+            GameController.CreateItem(item);
+            controller.AddPointsToPoints(-item.Price);
         }
         if (animator) {
             animator.Play("HIDE");

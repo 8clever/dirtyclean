@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938280299901763707}
   - component: {fileID: 389947170879184095}
-  - component: {fileID: 3837523707524312080}
+  - component: {fileID: 2410604537901935689}
   m_Layer: 5
   m_Name: Mayka
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3837523707524312080
+--- !u!114 &2410604537901935689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 830128256493638427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d10c35f86ebd8d2409c0ff4d6fbab8fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b46ed23fa8f754288aafc05a58c142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DropList:
+  - To: {fileID: 3533387958670113521, guid: a2da82b255f33da4aa34e74982671ada, type: 3}
+    CreateAfterDrop: {fileID: 3751267418208506904, guid: b91b7a58c114ba3409881e76da288fa8,
+      type: 3}
+  - To: {fileID: 3145895766767999957, guid: af7050dc1ec4db64ea571c592e28ea5b, type: 3}
+    CreateAfterDrop: {fileID: 7595459949829024495, guid: aa0f89c9fd73b19499a960af945d85f7,
+      type: 3}
+  - To: {fileID: 2413446800035206142, guid: e7b91dc9ac714164c9cdddaae52c0939, type: 3}
+    CreateAfterDrop: {fileID: 7436548747230810264, guid: bb241da202c13094bbe8a22e5cdc0027,
+      type: 3}
+  AllowDropToPrison: 0
+  CreateAfterDropOnEmptyCell: {fileID: 2413446800035206142, guid: e7b91dc9ac714164c9cdddaae52c0939,
+    type: 3}
+  Price: 75
 --- !u!1001 &3927046601525805655
 PrefabInstance:
   m_ObjectHideFlags: 0

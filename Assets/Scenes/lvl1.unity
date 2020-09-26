@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880f322774d4e1a4ba29ae398d015dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 0
+  point: 50000
   isPause: 0
   EndlessMode: 0
   Level: lvl1
@@ -1944,6 +1944,8 @@ MonoBehaviour:
     count: 0
     type: 2
     s_nip: President
+  Mayka: {fileID: 2410604537901935689, guid: e08e4b45ae1dff7409a33101a7524f50, type: 3}
+  Hand: {fileID: 5246221446093740214, guid: 2bab69857b217d44493e46e635e6b079, type: 3}
 --- !u!114 &439614688
 MonoBehaviour:
   m_ObjectHideFlags: 0

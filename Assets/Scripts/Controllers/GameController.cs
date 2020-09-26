@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     public string Level = string.Empty;
     public bool gameInitialized = false;
     public List<Mission> missions = new List<Mission>();
+    public Item Mayka;
+    public Item Hand;
+
     
     private int step = 0;
     private int health = 0;
@@ -164,22 +167,22 @@ public class GameController : MonoBehaviour
         Dump();
     }
 
-    public static void CreateItem (string resource) {
+    public static void CreateItem (Item resource) {
         var itemField = GameObject.Find("ItemField");
         if (itemField == null) throw new System.Exception("ItemField is required");
         foreach (Transform child in itemField.transform) {
             Destroy(child.gameObject);
         }
-        Instantiate(Resources.Load(resource), itemField.transform);
+        Instantiate(resource, itemField.transform);
     }
 
     public void GenerateItem () {
         var chance = Random.Range(0, 100);
         if (chance > 50) {
-            CreateItem("Item/Hand");
+            CreateItem(Hand);
             return;
         }
-        CreateItem("Item/Mayka");
+        CreateItem(Mayka);
     }
 
     public Cell GetRandomRespawnCell () {

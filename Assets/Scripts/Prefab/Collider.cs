@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(SphereCollider))]
 public class Collider : MonoBehaviour
 {
     public bool draggable = false;
@@ -50,12 +51,11 @@ public class Collider : MonoBehaviour
 
         // required for items which placed directly on cell
         if (Input.GetMouseButtonDown(0) && dragged == false) {
-            var mayka = transform.parent.GetComponent<Mayka>();
-            var hand = transform.parent.GetComponent<Hand>();
-            if (mayka) {
+            var parentName = transform.parent.name;
+            if (parentName.Contains("Mayka")) {
                 OnMouseUp();
             }
-            if (hand) {
+            if (parentName.Contains("Hand")) {
                 var cell = Hit();
                 if (cell && cell.transform.childCount == 0) {
                     OnMouseUp();
@@ -97,17 +97,23 @@ public class Collider : MonoBehaviour
             MoveBackNip();
         }
 
-        if (item != null) (item as IItem).OnDrop(cell.gameObject);
-        if (nip != null) (nip as INip).OnDrop(cell.gameObject);
+        (item as IItem)?.OnDrop(cell.gameObject);
+        (item as ItemMain)?.OnDrop(cell.gameObject);
+        (nip as INip)?.OnDrop(cell.gameObject);
     }
 
     void OnCellCanDrop (Cell cell) {
         if (!cell) return;
 
         var nip = GetComponentInParent<INip>();
-        var item = GetComponentInParent<IItem>();
+        var item = GetComponentInParent<Item>();
         var img = cell.GetComponent<Image>();
-        var canDrop = (nip != null && nip.CanDrop(cell)) || (item != null && item.CanDrop(cell));
+        bool canDrop = (
+            nip?.CanDrop(cell) ??
+            (item as IItem)?.CanDrop(cell) ??
+            (item as ItemMain)?.CanDrop(cell) ??
+            false
+        );
         img.color = canDrop ? cell.canDrop : cell.cantDrop;
     }
 

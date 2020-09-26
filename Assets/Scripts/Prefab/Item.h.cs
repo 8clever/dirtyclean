@@ -8,9 +8,15 @@ public interface IItem {
     bool CanDrop (Cell cell);
 }
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Item : MonoBehaviour
 {
-    public GameController controller;
+    [System.Serializable]
+    public class Drop {
+        public Nip To;
+        public Nip CreateAfterDrop;
+    }
+    private GameController controller;
     private Config config;
 
     private void Awake() {
@@ -35,13 +41,14 @@ public class Item : MonoBehaviour
         public string ResourcePath;
 
         public void Restore () {
-            GameController.CreateItem(ResourcePath);
+            Item item = Resources.Load<Item>(ResourcePath);
+            GameController.CreateItem(item);
         }
     }
 
     public Save GetSave () {
         return new Save () {
-            ResourcePath = GetType().GetField("ResourcePath").GetValue(null) as string
+            ResourcePath = $"Item/{GetType()}"
         };
     }
 }
