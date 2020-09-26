@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public interface IItem {
     void OnDrop (GameObject cell);
@@ -41,14 +42,14 @@ public class Item : MonoBehaviour
         public string ResourcePath;
 
         public void Restore () {
-            Item item = Resources.Load<Item>(ResourcePath);
+            var item = AssetDatabase.LoadAssetAtPath<Item>(ResourcePath);
             GameController.CreateItem(item);
         }
     }
 
     public Save GetSave () {
         return new Save () {
-            ResourcePath = $"Item/{GetType()}"
+            ResourcePath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(this)
         };
     }
 }
