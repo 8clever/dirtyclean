@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
-using UnityEditor;
 
 public class GameController : MonoBehaviour
 {
@@ -177,7 +176,7 @@ public class GameController : MonoBehaviour
         foreach (Transform child in itemField.transform) {
             Destroy(child.gameObject);
         }
-        PrefabUtility.InstantiatePrefab(resource, itemField.transform);
+        Instantiate(resource, itemField.transform);
     }
 
     public void GenerateItem () {
