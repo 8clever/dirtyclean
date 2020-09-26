@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880f322774d4e1a4ba29ae398d015dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 50000
+  point: 0
   isPause: 0
   EndlessMode: 0
   Level: lvl1
