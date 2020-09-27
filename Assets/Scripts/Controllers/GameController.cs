@@ -9,14 +9,10 @@ public class GameController : MonoBehaviour
 {
     public int point = 0;
     public bool isPause = false;
-    public bool EndlessMode = false;
-    public string Level = string.Empty;
+    public Scenes Level;
     public bool gameInitialized = false;
     public List<Mission> missions = new List<Mission>();
-    public Item Mayka;
-    public Item Hand;
-
-    
+    public List<Item> GenerateItems = new List<Item>();
     private int step = 0;
     private int health = 0;
     private System.DateTime? timeStartAddHealth = null;
@@ -100,7 +96,7 @@ public class GameController : MonoBehaviour
     }
 
     private void IsComplete () {
-        if (EndlessMode) return;
+        if (Level == Scenes.endlessMode) return;
         foreach (var m in missions) {
             if (!m.IsComplete()) return;
         }
@@ -180,12 +176,11 @@ public class GameController : MonoBehaviour
     }
 
     public void GenerateItem () {
-        var chance = Random.Range(0, 100);
-        if (chance > 50) {
-            CreateItem(Hand);
-            return;
+        if (GenerateItems.Count == 0) {
+            throw new System.Exception("Items for generator not assigned to GameController");
         }
-        CreateItem(Mayka);
+        var idx = Random.Range(0, GenerateItems.Count);
+        CreateItem(GenerateItems[idx]);
     }
 
     public Cell GetRandomRespawnCell () {
@@ -341,7 +336,7 @@ public class GameController : MonoBehaviour
 
     public Save GetSave () {
         var save = new Save () {
-            level = Level,
+            level = Level.ToString(),
             step = step,
             health = health,
             point = point,

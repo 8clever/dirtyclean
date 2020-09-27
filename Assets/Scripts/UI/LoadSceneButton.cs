@@ -14,7 +14,8 @@ public enum Scenes {
 
     // levels
     endlessMode,
-    lvl1
+    lvl1,
+    Lvl2
 }
 
 public class LoadSceneButton : MonoBehaviour
