@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class BuyItem : MonoBehaviour
 {
     [Header("Required fields")]
@@ -16,17 +17,9 @@ public class BuyItem : MonoBehaviour
 
     [Header("Optional fields")]
     public Animator animator;
-    private GameController controller;
+    public GameController controller;
 
-    private void Awake () {
-        var scene = SceneManager.GetActiveScene();
-        var objects = scene.GetRootGameObjects();
-        foreach (var o in objects) {
-            var controller = o.GetComponent<GameController>();
-            if (controller) {
-                this.controller = controller;
-            }
-        }
+    private void Start () {
         var sprite = item.GetComponent<SpriteRenderer>();
         text.text = item.Price.ToString();
         cell.sprite = sprite.sprite;
