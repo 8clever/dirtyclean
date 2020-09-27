@@ -25,10 +25,12 @@ public class MissionController : MonoBehaviour
             var obj = Instantiate(Resources.Load<GameObject>("UI/MissionText"), content.transform);
             var text = obj.GetComponent<Text>();
             var nipName = "";
-            Mission.NipNames.TryGetValue(m.nip, out nipName);
-            text.text = $"{n}. {m.type.ToString()} {m.count} / {m.requiredCount} {nipName}";
+            var missionName = "";
+            Mission.NipNames.TryGetValue(m.Nip, out nipName);
+            Mission.TypeNames.TryGetValue(m.type, out missionName);
+            text.text = $"{n}. {missionName} {m.count} / {m.requiredCount} {nipName}";
             if (m.IsComplete()) {
-                text.text = $"{n}. {m.type.ToString()} {m.requiredCount} {nipName}. [Completed]";
+                text.text = $"{n}. {missionName} {m.requiredCount} {nipName}. [Completed]";
             }
             n += 1;
         }

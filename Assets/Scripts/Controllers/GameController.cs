@@ -145,6 +145,10 @@ public class GameController : MonoBehaviour
             }
         }
 
+        foreach(var m in missions) {
+            m.NotCreateInSteps();
+        }
+
         MoveNips();
         AfterNextStep();
     }
@@ -255,8 +259,8 @@ public class GameController : MonoBehaviour
         health.fillAmount = System.Convert.ToSingle(bar);
     }
 
-    public void SetMission (System.Type nip, Mission.Type type, int count) {
-        var mission = missions.Find(m => m.nip == nip && m.type == type);
+    public void SetMission (string nip, Mission.Type type, int count) {
+        var mission = missions.Find(m => m.Nip == nip && m.type == type);
         if (mission == null) return;
 
         mission.count += count;

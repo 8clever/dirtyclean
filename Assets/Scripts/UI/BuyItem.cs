@@ -34,6 +34,7 @@ public class BuyItem : MonoBehaviour
         if (controller) {
             GameController.CreateItem(item);
             controller.AddPointsToPoints(-item.Price);
+            controller.SetMission(item.GetName(), Mission.Type.Buy, 1);
         }
         if (animator) {
             animator.Play("HIDE");

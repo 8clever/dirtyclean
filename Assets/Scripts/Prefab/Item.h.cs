@@ -36,6 +36,11 @@ public class Item : MonoBehaviour
         controller.NextStep();
     }
 
+    public string GetName () {
+        var naem = name.Replace("(Clone)", "");
+        return name;
+    }
+
     [System.Serializable]
     public class Save {
         public string ResourcePath;
@@ -47,9 +52,8 @@ public class Item : MonoBehaviour
     }
 
     public Save GetSave () {
-        var name = gameObject.name.Replace("(Clone)", "");
         return new Save () {
-            ResourcePath = $"Item/{name}"
+            ResourcePath = $"Item/{GetName()}"
         };
     }
 }
