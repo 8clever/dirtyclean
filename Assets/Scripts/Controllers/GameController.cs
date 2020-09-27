@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public bool gameInitialized = false;
     public List<Mission> missions = new List<Mission>();
     public List<Item> GenerateItems = new List<Item>();
+    public List<Nip> GenerateNipsOnStart = new List<Nip>();
     private int step = 0;
     private int health = 0;
     private System.DateTime? timeStartAddHealth = null;
@@ -44,16 +45,7 @@ public class GameController : MonoBehaviour
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
-        var cell = GetRandomRespawnCell();
-        if (cell) {
-            Instantiate(Resources.Load<Dvornik>(Dvornik.ResourcePath), cell.transform);
-        }
-        var staticNips = new List<Nip>();
-        staticNips.Add(Resources.Load<Valun>(Valun.ResourcePath));
-        staticNips.Add(Resources.Load<Tree>(Tree.ResourcePath));
-        staticNips.Add(Resources.Load<Kolodec>(Kolodec.ResourcePath));
-        staticNips.Add(Resources.Load<Kust>(Kust.ResourcePath));
-        foreach (var nip in staticNips) {
+        foreach (var nip in GenerateNipsOnStart) {
             var emptyCell = GetRandomCell();
             if (emptyCell) {
                 Instantiate(nip, emptyCell.transform);

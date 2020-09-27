@@ -63,30 +63,15 @@ MonoBehaviour:
   isPause: 0
   Level: 10
   gameInitialized: 0
-  missions:
-  - requiredCount: 20
-    count: 0
-    type: 0
-    s_nip: Musorka
-  - requiredCount: 10
-    count: 0
-    type: 1
-    s_nip: Dvornik
-  - requiredCount: 10
-    count: 0
-    type: 2
-    s_nip: Buldozer
-  - requiredCount: 5
-    count: 0
-    type: 2
-    s_nip: GreenPeace
-  - requiredCount: 1
-    count: 0
-    type: 2
-    s_nip: President
+  missions: []
   GenerateItems:
   - {fileID: 5246221446093740214, guid: 2bab69857b217d44493e46e635e6b079, type: 3}
   - {fileID: 2410604537901935689, guid: e08e4b45ae1dff7409a33101a7524f50, type: 3}
+  GenerateNipsOnStart:
+  - {fileID: 1407230723081927859, guid: b8b0c70e21c2cae429a8f1b4392eee2a, type: 3}
+  - {fileID: 5508171308614452930, guid: 3ae9ee2be47f3304bb6b455f17468715, type: 3}
+  - {fileID: 2180195719495126719, guid: 3a1139672baa4a549bde9214236e91c1, type: 3}
+  - {fileID: 1198830526206379194, guid: 408353f3136705848bc67763b8d37610, type: 3}
 --- !u!114 &6892683133512162667
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class Collider : MonoBehaviour
 
     private bool isNip;
 
+    private bool isItem;
+
     private GameObject handPicked;
 
     private GameController controller;
@@ -21,12 +23,8 @@ public class Collider : MonoBehaviour
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-    }
-
-    void Start()
-    {
-        var nip = transform.parent.GetComponent<INip>();
-        isNip = nip != null;
+        isNip = transform.parent.GetComponent<INip>() != null;
+        isItem = transform.parent.GetComponent<Item>() != null;
     }
 
     // Update is called once per frame
@@ -50,17 +48,16 @@ public class Collider : MonoBehaviour
         }
 
         // required for items which placed directly on cell
-        if (Input.GetMouseButtonDown(0) && dragged == false) {
+        if (isItem && Input.GetMouseButtonDown(0) && dragged == false) {
             var parentName = transform.parent.name;
-            if (parentName.Contains("Mayka")) {
-                OnMouseUp();
-            }
             if (parentName.Contains("Hand")) {
                 var cell = Hit();
                 if (cell && cell.transform.childCount == 0) {
                     OnMouseUp();
                 }
+                return;
             }
+            OnMouseUp();
         }
     }
 

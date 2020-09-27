@@ -37,8 +37,7 @@ public class Item : MonoBehaviour
     }
 
     public string GetName () {
-        var naem = name.Replace("(Clone)", "");
-        return name;
+        return name.Replace("(Clone)", "");
     }
 
     [System.Serializable]

@@ -54,10 +54,13 @@ public class Mission {
 
     public void NotCreateInSteps () {
         if (type == Type.NotCreateInSteps) {
-            if (GameObject.Find(Nip)) {
-                count = 0;
-                return;
-            };
+            var nips = GameObject.FindGameObjectsWithTag("nip");
+            foreach (var n in nips) {
+                if (n.name.Contains(Nip)) {
+                    count = 0;
+                    return;
+                }
+            }
             count += 1;
         }   
     }
