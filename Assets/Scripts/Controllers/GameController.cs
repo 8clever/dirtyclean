@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
         }
         IsGameEnd = true;
         PlayerPrefs.SetString(Level.ToString(), "done");
-        SceneManager.LoadScene(Scenes.Win.ToString());
+        SceneManager.LoadScene(Scenes.Win.ToString(), LoadSceneMode.Additive);
     }
 
     private void IsGameOver () {
@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
         }
         
         IsGameEnd = true;
-        SceneManager.LoadScene(Scenes.GameOver.ToString());
+        SceneManager.LoadScene(Scenes.GameOver.ToString(), LoadSceneMode.Additive);
     }
 
     private void ToggleShadow (bool active) {
