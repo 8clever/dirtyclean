@@ -12331,7 +12331,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GenerateItems.Array.data[2]
       value: 
-      objectReference: {fileID: 7681038920551183193, guid: 18dc2c12205b68e4e9d6d027e0b46884,
+      objectReference: {fileID: 1676711884615732281, guid: f59feecc626169349b6767fa3a82c377,
         type: 3}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
