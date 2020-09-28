@@ -352,9 +352,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -433,7 +433,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e86349db5b99608418668eafb1a5afbd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -453,13 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ef6fab15e4694c968025adff414a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: Item/Valun
+  item: {fileID: 0}
   cell: {fileID: 2832302618651986126}
   text: {fileID: 2832302618179467314}
-  price: 0
   button: {fileID: 2832302618446443892}
-  controller: {fileID: 0}
   animator: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!1 &2832302619623451303
 GameObject:
   m_ObjectHideFlags: 0
