@@ -92,6 +92,7 @@ public class GameController : MonoBehaviour
         foreach (var m in missions) {
             if (!m.IsComplete()) return;
         }
+        PlayerPrefs.SetString(Level.ToString(), "done");
         SceneManager.LoadScene(Scenes.Win.ToString());
     }
 
