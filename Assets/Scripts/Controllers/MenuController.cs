@@ -20,8 +20,6 @@ public class MenuController : MonoBehaviour
         isAdditive = SceneManager.GetActiveScene().name != Scenes.Menu.ToString();
         hasSave = PlayerPrefs.HasKey(GameController.saveKey);
         if (continueButton) {
-            Debug.Log(isAdditive);
-            Debug.Log(hasSave);
             continueButton.SetActive(isAdditive || hasSave);
         }
         
