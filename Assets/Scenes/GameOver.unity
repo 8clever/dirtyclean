@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 2
+  Async: 0
   mode: 0
 --- !u!1 &1807030380
 GameObject:

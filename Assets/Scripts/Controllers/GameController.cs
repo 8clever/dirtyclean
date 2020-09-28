@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     private System.DateTime? timeStartAddHealth = null;
     private GameObject shadow = null;
     private Config config = null;
+    private bool IsGameEnd = false;
 
     private void Awake() {
         DefaultAwake();
@@ -92,21 +93,24 @@ public class GameController : MonoBehaviour
         foreach (var m in missions) {
             if (!m.IsComplete()) return;
         }
+        IsGameEnd = true;
         PlayerPrefs.SetString(Level.ToString(), "done");
         SceneManager.LoadScene(Scenes.Win.ToString());
     }
 
     private void IsGameOver () {
-        var cells = GameObject.FindGameObjectsWithTag("cell");
-        if (cells.Length == 0) return;
+        var gameObjects = GameObject.FindGameObjectsWithTag("cell");
+        if (gameObjects.Length == 0) return;
 
-        foreach (var cell in cells) {
+        foreach (var go in gameObjects) {
+            var cell = go.GetComponent<Cell>();
+            if (cell.isPrison) continue;
             if (cell.transform.childCount == 0) {
                 return;
             }
         }
         
-        PlayerPrefs.DeleteKey(saveKey);
+        IsGameEnd = true;
         SceneManager.LoadScene(Scenes.GameOver.ToString());
     }
 
@@ -352,6 +356,10 @@ public class GameController : MonoBehaviour
 
     public static readonly string saveKey = "GameController";
     private void Dump () {
+        if (IsGameEnd) {
+            PlayerPrefs.DeleteKey(saveKey);
+            return;
+        }
         var save = GetSave();
         var json = JsonUtility.ToJson(save);
         PlayerPrefs.SetString(saveKey, json);
