@@ -11,7 +11,6 @@ public class Mission {
         Buy,
         NotCreateInSteps
     }
-
     private static readonly Dictionary<string, string> NipNames = new Dictionary<string, string>()
     {
         { "Musorka", "Garbage" },
@@ -24,7 +23,30 @@ public class Mission {
         { "Police", "Police" },
         { "Chinese", "Chinese" },
     };
-
+    public int requiredCount;
+    public int count;
+    public Type type;
+    [UnityEngine.SerializeField]
+    public string Nip;
+    private bool Completed = false;
+    public bool IsComplete () {
+        if (Completed) return true;
+        if (count < requiredCount) return false;
+        Completed = true;
+        return true;
+    }
+    public void NotCreateInSteps () {
+        if (type == Type.NotCreateInSteps) {
+            var nips = GameObject.FindGameObjectsWithTag("nip");
+            foreach (var n in nips) {
+                if (n.name.Contains(Nip)) {
+                    count = 0;
+                    return;
+                }
+            }
+            count += 1;
+        }   
+    }
     public string GetMissionInfo ()
     {
         string nipName = "";
@@ -48,37 +70,6 @@ public class Mission {
             default:
                 return $"Type '{type.ToString()}' is not assigned";
         }
-    }
-
-    public int requiredCount;
-
-    public int count;
-
-    public Type type;
-
-    [UnityEngine.SerializeField]
-    public string Nip;
-
-    private bool Completed = false;
-
-    public bool IsComplete () {
-        if (Completed) return true;
-        if (count < requiredCount) return false;
-        Completed = true;
-        return true;
-    }
-
-    public void NotCreateInSteps () {
-        if (type == Type.NotCreateInSteps) {
-            var nips = GameObject.FindGameObjectsWithTag("nip");
-            foreach (var n in nips) {
-                if (n.name.Contains(Nip)) {
-                    count = 0;
-                    return;
-                }
-            }
-            count += 1;
-        }   
     }
 }
 
