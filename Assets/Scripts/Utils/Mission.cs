@@ -52,7 +52,7 @@ public class Mission {
         string nipName = "";
         string humanizeCount = (
             IsComplete() ?
-            $"{requiredCount} [Completed]" :
+            $"{requiredCount}" :
             $"{count}/{requiredCount}"
         );
         NipNames.TryGetValue(Nip, out nipName);
