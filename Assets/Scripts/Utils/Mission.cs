@@ -12,7 +12,7 @@ public class Mission {
         NotCreateInSteps
     }
 
-    public static readonly Dictionary<string, string> NipNames = new Dictionary<string, string>()
+    private static readonly Dictionary<string, string> NipNames = new Dictionary<string, string>()
     {
         { "Musorka", "Garbage" },
         { "Dvornik", "Street Worker" },
@@ -25,14 +25,30 @@ public class Mission {
         { "Chinese", "Chinese" },
     };
 
-    public static readonly Dictionary<Type, string> TypeNames = new Dictionary<Type, string>()
+    public string GetMissionInfo ()
     {
-        { Type.Destroy, "Destroy" },
-        { Type.Collect, "Collect" },
-        { Type.Create, "Create" },
-        { Type.Buy, "Buy" },
-        { Type.NotCreateInSteps, "Not create for steps" },
-    };
+        string nipName = "";
+        string humanizeCount = (
+            IsComplete() ?
+            $"{requiredCount} [Completed]" :
+            $"{count}/{requiredCount}"
+        );
+        NipNames.TryGetValue(Nip, out nipName);
+        switch (type) {
+            case Type.Destroy:
+                return $"Destroy {nipName} {humanizeCount}";
+            case Type.Collect:
+                return $"Collect {requiredCount} {nipName} together on map {humanizeCount}";
+            case Type.Create:
+                return $"Create {nipName} {humanizeCount}";
+            case Type.Buy:
+                return $"Buy item {nipName} in shop {humanizeCount}";
+            case Type.NotCreateInSteps:
+                return $"Do not create {nipName} {requiredCount} rounds in a row {humanizeCount}";
+            default:
+                return $"Type '{type.ToString()}' is not assigned";
+        }
+    }
 
     public int requiredCount;
 

@@ -24,14 +24,7 @@ public class MissionController : MonoBehaviour
         foreach(var m in missions) {
             var obj = Instantiate(Resources.Load<GameObject>("UI/MissionText"), content.transform);
             var text = obj.GetComponent<Text>();
-            var nipName = "";
-            var missionName = "";
-            Mission.NipNames.TryGetValue(m.Nip, out nipName);
-            Mission.TypeNames.TryGetValue(m.type, out missionName);
-            text.text = $"{n}. {missionName} {m.count} / {m.requiredCount} {nipName}";
-            if (m.IsComplete()) {
-                text.text = $"{n}. {missionName} {m.requiredCount} {nipName}. [Completed]";
-            }
+            text.text = $"{n}. {m.GetMissionInfo()}";
             n += 1;
         }
     }
