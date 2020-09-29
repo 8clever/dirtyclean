@@ -1251,7 +1251,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1419,7 +1419,7 @@ MonoBehaviour:
     type: 4
     Nip: Buldozer
   content: {fileID: 1377648348}
-  prefab: {fileID: 4177943363371685953, guid: cc5c7462555a47342ab86b3196d9b5db, type: 3}
+  prefab: {fileID: 655880049546036744, guid: cc5c7462555a47342ab86b3196d9b5db, type: 3}
 --- !u!4 &1992290933
 Transform:
   m_ObjectHideFlags: 0
