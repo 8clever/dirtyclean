@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6513671163437850375}
   - component: {fileID: 6513671163437850374}
-  - component: {fileID: 6513671163437850369}
+  - component: {fileID: 676350002477158664}
   m_Layer: 5
   m_Name: Hunter
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6513671163437850369
+--- !u!114 &676350002477158664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6513671163437850368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c55982672b857645b5134b537501fc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6909481519915534566, guid: aa0f89c9fd73b19499a960af945d85f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 7666695988516116434, guid: 1d6ca3dee751c374baebacd92934f136, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 5
+  Synthesis: {fileID: 6676474175013132844, guid: 24ced309a2026f044a33c9693b4a0835,
+    type: 3}
 --- !u!1001 &6764440188447080621
 PrefabInstance:
   m_ObjectHideFlags: 0

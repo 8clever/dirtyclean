@@ -23,8 +23,8 @@ public class ItemMain: Item
             return;
         }
         foreach(var drop in DropList) {
-            var nip = cell.GetComponentInChildren(drop.To.GetType());
-            if (nip) {
+            var nip = cell.GetComponentInChildren<Nip>();
+            if (nip?.GetName() == drop.To.GetName()) {
                 Destroy(gameObject);
                 Destroy(nip.gameObject);
                 Instantiate(drop.CreateAfterDrop, cell.transform);
@@ -43,8 +43,8 @@ public class ItemMain: Item
             return true;
         }
         foreach(var drop in DropList) {
-            var nip = cell.GetComponentInChildren(drop.To.GetType());
-            if (nip) {
+            var nip = cell.GetComponentInChildren<Nip>();
+            if (nip?.GetName() == drop.To.GetName()) {
                 return true;
             }
         }

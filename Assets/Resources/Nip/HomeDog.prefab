@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685228660327014571}
   - component: {fileID: 685228660327014570}
-  - component: {fileID: 7595459949829024495}
+  - component: {fileID: 6909481519915534566}
   m_Layer: 5
   m_Name: HomeDog
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7595459949829024495
+--- !u!114 &6909481519915534566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 685228660327014572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602de269330f569448faecb229617a21, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 2
+  Synthesis: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b,
+    type: 3}
 --- !u!1001 &1010847270093831937
 PrefabInstance:
   m_ObjectHideFlags: 0

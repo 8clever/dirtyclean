@@ -17,9 +17,9 @@ public interface INip
 public class Nip : MonoBehaviour
 {
     private Config config;
-    public Transform prevParent;
-
+    private Transform prevParent;
     private GameController controller;
+    public static readonly string TAG = "nip";
 
     private void Awake () {
         DefAwake();
@@ -54,6 +54,23 @@ public class Nip : MonoBehaviour
         return destination;
     }
 
+    public Nip GetClosestNip (Nip nip) {
+        var nips = new List<Nip>(GameObject.FindObjectsOfType<Nip>()).FindAll(obj => {
+            return nip.GetName() == obj.GetName();
+        });
+        if (nips.Count == 0) return null;
+
+        var destination = nips[0];
+        foreach (var obj in nips) {
+            var currentDist = Vector3.Distance(this.transform.parent.position, destination.transform.position);
+            var newDist = Vector3.Distance(this.transform.parent.position, obj.transform.parent.position);
+            if (newDist < currentDist) {
+                destination = obj;
+            }
+        }
+        return destination;
+    }
+
     public void MoveToNips (List<System.Type> list) {
         if (this == null) return;
 
@@ -76,6 +93,27 @@ public class Nip : MonoBehaviour
         }
     }
 
+    public void MoveToNips (List<Nip> list) {
+        if (this == null) return;
+
+        var nips = new List<Nip>();
+        list.ForEach(l => {
+            var n = GetClosestNip(l);
+            if (!n) return;
+            nips.Add(n);
+        });
+        nips.Sort((a, b) => {
+            var distA = Vector3.Distance(transform.parent.position, a.transform.parent.position);
+            var distB = Vector3.Distance(transform.parent.position, b.transform.parent.position);
+            return distA.CompareTo(distB);
+        });
+        if (nips.Count > 0) {
+            MoveToNip(nips[0]);
+        } else {
+            RandomMove();
+        }
+    }
+
     public void MoveToNip (System.Type type) {
         if (this == null) return;
 
@@ -89,6 +127,21 @@ public class Nip : MonoBehaviour
         var direction =  destination.transform.parent.position - transform.parent.position;
         var ray = new Ray(startPoint, direction);
         MoveByRay(ray, type);
+    }
+
+    public void MoveToNip (Nip nip) {
+        if (this == null) return;
+
+        var destination = GetClosestNip(nip);
+        if (destination == null) {
+            RandomMove();
+            return;
+        };
+        
+        var startPoint = transform.parent.position;
+        var direction =  destination.transform.parent.position - transform.parent.position;
+        var ray = new Ray(startPoint, direction);
+        MoveByRay(ray, nip);
     }
 
     public void MoveByRay (Ray destination, System.Type type) {
@@ -121,6 +174,36 @@ public class Nip : MonoBehaviour
         }
     }
 
+    public void MoveByRay (Ray destination, Nip nip) {
+        var cell = transform.parent.GetComponent<Cell>();
+        if (cell.isPrison) return;
+
+        var pos = transform.parent.position;
+        var dist = 100;
+        List<Ray> rays = new List<Ray>();
+        rays.Add(new Ray(pos, new Vector3(pos.x, pos.y + dist, pos.z) - pos));
+        rays.Add(new Ray(pos, new Vector3(pos.x - dist, pos.y, pos.z) - pos));
+        rays.Add(new Ray(pos, new Vector3(pos.x + dist, pos.y, pos.z) - pos));
+        rays.Add(new Ray(pos, new Vector3(pos.x, pos.y - dist, pos.z) - pos));
+        rays.Sort((ray1, ray2) => {
+            var distance1 = Vector3.Distance(destination.direction, ray1.direction);
+            var distance2 = Vector3.Distance(destination.direction, ray2.direction);
+            return distance1.CompareTo(distance2);
+        });
+        foreach (var ray in rays) {
+            var hits = GetCellHits(ray);
+            if (hits.Length > 0) {
+                var hit = GetClosestHit(hits);
+                var isValid = IsValidHit(hit, nip);
+                if (isValid) {
+                    prevParent = transform.parent;
+                    transform.SetParent(hit.collider.transform);
+                    return;
+                };
+            }
+        }
+    }
+
     public void RandomMove () {
         var x = Random.Range(-1, 2) * 100;
         var y = Random.Range(-1, 2) * 100;
@@ -128,7 +211,7 @@ public class Nip : MonoBehaviour
 
         var destination = transform.parent.position + new Vector3(x, x == 0 ? y : 0, 0);
         var ray = new Ray(transform.parent.position, destination - transform.parent.position);
-        MoveByRay(ray, null);
+        MoveByRay(ray, null as Nip);
     }
 
     private RaycastHit[] GetCellHits (Ray ray) {
@@ -146,6 +229,31 @@ public class Nip : MonoBehaviour
             var powder = cell.GetComponentInChildren<Powder>();
             var mine = cell.GetComponentInChildren<Mine>();
             var requriedNip = type == null ? null : cell.GetComponentInChildren(type);
+            if (requriedNip && cell.transform.childCount == 1) {}
+            // allow move for specific nips
+            else if (powder) {}
+            else if (mine) {}
+            // no allow move
+            else return false;
+        };
+
+        return true;
+    }
+
+    private bool IsValidHit (RaycastHit hit, Nip nip) {
+        var cell = hit.collider.GetComponent<Cell>();
+        if (cell && cell.isPrison) {
+            return false;
+        }
+
+        if (cell.transform.childCount > 0) {
+            var powder = cell.GetComponentInChildren<Powder>();
+            var mine = cell.GetComponentInChildren<Mine>();
+            var requriedNip = (
+                nip == null ? 
+                false :
+                nip.GetName() == cell.GetComponentInChildren<Nip>()?.GetName()
+            );
             if (requriedNip && cell.transform.childCount == 1) {}
             // allow move for specific nips
             else if (powder) {}
@@ -258,11 +366,15 @@ public class Nip : MonoBehaviour
         }
     }
 
+    public string GetName () {
+        return name.Replace("(Clone)", "");
+    }
+
     public Save GetSave () {
         return new Save()
         {
             cellName = transform.parent.name,
-            resourcePath = GetType().GetField("ResourcePath").GetValue(null) as string
+            resourcePath = $"Nip/{GetName()}"
         };
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2560484816105628586}
   - component: {fileID: 2560484816105628587}
-  - component: {fileID: 2560484816105628588}
+  - component: {fileID: 5289683741908913829}
   m_Layer: 5
   m_Name: SecurityGuard
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2560484816105628588
+--- !u!114 &5289683741908913829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2560484816105628589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa4ea2b58c046a4ab9a4e647c227d39, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35,
+      type: 3}
+  AddPointsOnCreate: 3
+  Synthesis: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7,
+    type: 3}
 --- !u!1001 &2597874076222045184
 PrefabInstance:
   m_ObjectHideFlags: 0

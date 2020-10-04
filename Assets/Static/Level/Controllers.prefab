@@ -68,10 +68,14 @@ MonoBehaviour:
   - {fileID: 5246221446093740214, guid: 2bab69857b217d44493e46e635e6b079, type: 3}
   - {fileID: 2410604537901935689, guid: e08e4b45ae1dff7409a33101a7524f50, type: 3}
   GenerateNipsOnStart:
-  - {fileID: 1407230723081927859, guid: b8b0c70e21c2cae429a8f1b4392eee2a, type: 3}
-  - {fileID: 5508171308614452930, guid: 3ae9ee2be47f3304bb6b455f17468715, type: 3}
-  - {fileID: 2180195719495126719, guid: 3a1139672baa4a549bde9214236e91c1, type: 3}
-  - {fileID: 1198830526206379194, guid: 408353f3136705848bc67763b8d37610, type: 3}
+  - {fileID: 1204603354799892921, guid: 3ae9ee2be47f3304bb6b455f17468715, type: 3}
+  - {fileID: 7163209898615762191, guid: b8b0c70e21c2cae429a8f1b4392eee2a, type: 3}
+  - {fileID: 3305790453594225567, guid: 408353f3136705848bc67763b8d37610, type: 3}
+  - {fileID: -1467946308806501006, guid: 3a1139672baa4a549bde9214236e91c1, type: 3}
+  GenerateNipOnMorning: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8,
+    type: 3}
+  GenerateNipOnNight: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b,
+    type: 3}
 --- !u!114 &6892683133512162667
 MonoBehaviour:
   m_ObjectHideFlags: 0

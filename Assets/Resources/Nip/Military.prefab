@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6456842532237049539}
   - component: {fileID: 6456842532237049538}
-  - component: {fileID: 5403936909694701673}
+  - component: {fileID: 6676474175013132844}
   m_Layer: 5
   m_Name: Military
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5403936909694701673
+--- !u!114 &6676474175013132844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 6456842532237049540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f644e4bac63482499906940bec06f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 7940873708066264303, guid: a2da82b255f33da4aa34e74982671ada, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5119007338859887955, guid: f0ebdd7496921ed43b2fe7393347e56b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 3732903996548839517, guid: 918a264e871e90348a970a886606fb61, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 8476513207906413400, guid: 177d10927ad05e24b90d2d72e40e0ca7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 6
+  Synthesis: {fileID: 2732921935429965578, guid: ff1d4e0e1d54f7d498e39379f4fba034,
+    type: 3}
 --- !u!1001 &6781994395026039145
 PrefabInstance:
   m_ObjectHideFlags: 0

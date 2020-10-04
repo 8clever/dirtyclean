@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2687401029927091102}
   - component: {fileID: 2687401029927091103}
-  - component: {fileID: 7441838693609749771}
+  - component: {fileID: 3732903996548839517}
   m_Layer: 5
   m_Name: OON
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7441838693609749771
+--- !u!114 &3732903996548839517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2687401029927091097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a2baee45f67864fb1c98832e715147, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves: []
+  AddPointsOnCreate: 4
+  Synthesis: {fileID: 8476513207906413400, guid: 177d10927ad05e24b90d2d72e40e0ca7,
+    type: 3}
 --- !u!1001 &2508147741586777140
 PrefabInstance:
   m_ObjectHideFlags: 0

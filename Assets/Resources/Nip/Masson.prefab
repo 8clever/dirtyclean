@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7283319446204791815}
   - component: {fileID: 7283319446204791814}
-  - component: {fileID: 9120112564484726774}
+  - component: {fileID: 5880475958353706824}
   m_Layer: 5
   m_Name: Masson
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9120112564484726774
+--- !u!114 &5880475958353706824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7283319446204791808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5cf8a677ebbf64cbab6743457c0bfe, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 7940873708066264303, guid: a2da82b255f33da4aa34e74982671ada, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5119007338859887955, guid: f0ebdd7496921ed43b2fe7393347e56b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 3732903996548839517, guid: 918a264e871e90348a970a886606fb61, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 8476513207906413400, guid: 177d10927ad05e24b90d2d72e40e0ca7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6676474175013132844, guid: 24ced309a2026f044a33c9693b4a0835, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 6
+  Synthesis: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35,
+    type: 3}
 --- !u!1001 &7104049733904360365
 PrefabInstance:
   m_ObjectHideFlags: 0

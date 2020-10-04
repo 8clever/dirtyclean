@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7507201027513179414}
   - component: {fileID: 7507201027513179415}
-  - component: {fileID: 7507201027513179408}
+  - component: {fileID: 4318897261311359098}
   m_Layer: 5
   m_Name: Police
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7507201027513179408
+--- !u!114 &4318897261311359098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7507201027513179409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e011fa149d7aaca4685c90eb9a47464e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8, type: 3}
+    ChangeTo: {fileID: 7940873708066264303, guid: a2da82b255f33da4aa34e74982671ada,
+      type: 3}
+  AddPointsOnCreate: 4
+  Synthesis: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0,
+    type: 3}
 --- !u!1001 &8046741100636275388
 PrefabInstance:
   m_ObjectHideFlags: 0

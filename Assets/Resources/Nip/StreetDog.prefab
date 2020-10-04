@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506769427625262802}
   - component: {fileID: 1506769427625262803}
-  - component: {fileID: 3145895766767999957}
+  - component: {fileID: 6217842556066679451}
   m_Layer: 5
   m_Name: StreetDog
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3145895766767999957
+--- !u!114 &6217842556066679451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506769427625262805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36215715af1b3a458f20fe0d3fd9622, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 0
+  Synthesis: {fileID: 0}
 --- !u!1001 &1399552017985003896
 PrefabInstance:
   m_ObjectHideFlags: 0

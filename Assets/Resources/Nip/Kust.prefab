@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2710409953532422919}
   - component: {fileID: 2710409953532422918}
-  - component: {fileID: 1198830526206379194}
+  - component: {fileID: 3305790453594225567}
   m_Layer: 5
   m_Name: Kust
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1198830526206379194
+--- !u!114 &3305790453594225567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2710409953532422912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b689173ee9b4a341825ce3bc1d3c88e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 1
+  Moves: []
+  AddPointsOnCreate: 0
+  Synthesis: {fileID: 0}
 --- !u!1001 &2456824185886045357
 PrefabInstance:
   m_ObjectHideFlags: 0

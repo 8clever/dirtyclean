@@ -23,7 +23,7 @@ public class Collider : MonoBehaviour
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-        isNip = transform.parent.GetComponent<INip>() != null;
+        isNip = transform.parent.GetComponent<Nip>() != null;
         isItem = transform.parent.GetComponent<Item>() != null;
     }
 
@@ -97,16 +97,18 @@ public class Collider : MonoBehaviour
         (item as IItem)?.OnDrop(cell.gameObject);
         (item as ItemMain)?.OnDrop(cell.gameObject);
         (nip as INip)?.OnDrop(cell.gameObject);
+        (nip as NpcMain)?.OnDrop(cell.gameObject);
     }
 
     void OnCellCanDrop (Cell cell) {
         if (!cell) return;
 
-        var nip = GetComponentInParent<INip>();
+        var nip = GetComponentInParent<Nip>();
         var item = GetComponentInParent<Item>();
         var img = cell.GetComponent<Image>();
         bool canDrop = (
-            nip?.CanDrop(cell) ??
+            (nip as INip)?.CanDrop(cell) ??
+            (nip as NpcMain)?.CanDrop(cell) ??
             (item as IItem)?.CanDrop(cell) ??
             (item as ItemMain)?.CanDrop(cell) ??
             false
@@ -135,7 +137,9 @@ public class Collider : MonoBehaviour
         if (controller.isPause) return;
 
         var hand = GameObject.FindObjectOfType<Hand>();
-        if (isNip && hand && transform.parent.GetComponent<INip>().CanDrag) {
+        var nip = transform.parent.GetComponent<Nip>();
+        var CanDrag = (nip as INip)?.CanDrag ?? (nip as NpcMain)?.CanDrag ?? false;
+        if (isNip && hand && CanDrag) {
             draggable = true;
             Destroy(hand.gameObject);
         }
@@ -162,9 +166,8 @@ public class Collider : MonoBehaviour
         if (collider && collider.dragged) return;
         if (isNip && draggable) return;
 
-        var nip = this.transform.parent.GetComponent<INip>();
-        if (nip != null) {
-            nip.OnCollision(other);
-        }
+        var nip = this.transform.parent.GetComponent<Nip>();
+        (nip as INip)?.OnCollision(other);
+        (nip as NpcMain)?.OnCollision(other);
     }
 }

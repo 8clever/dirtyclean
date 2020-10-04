@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142213003546938003}
   - component: {fileID: 2142213003546938002}
-  - component: {fileID: 2180195719495126719}
+  - component: {fileID: -1467946308806501006}
   m_Layer: 5
   m_Name: Kolodec
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2180195719495126719
+--- !u!114 &-1467946308806501006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2142213003546938004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206c2c8e849dbf24fabe3279228e2118, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
+  DisableMove: 1
+  Moves: []
+  AddPointsOnCreate: 0
+  Synthesis: {fileID: 0}
 --- !u!1001 &1891371702823916857
 PrefabInstance:
   m_ObjectHideFlags: 0

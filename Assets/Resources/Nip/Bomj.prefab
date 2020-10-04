@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5995351780006924811}
   - component: {fileID: 5995351780006924810}
-  - component: {fileID: 3533387958670113521}
+  - component: {fileID: 7940873708066264303}
   m_Layer: 5
   m_Name: Bomj
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3533387958670113521
+--- !u!114 &7940873708066264303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5995351780006924812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8f284c40000b54683a0fbba681606d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  Moves: []
+  AddPointsOnCreate: -10
+  Synthesis: {fileID: 0}
 --- !u!1001 &6104329434754010529
 PrefabInstance:
   m_ObjectHideFlags: 0

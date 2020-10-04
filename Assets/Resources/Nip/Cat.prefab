@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5422616970353002533}
   - component: {fileID: 5422616970353002532}
-  - component: {fileID: 9213879044080517229}
+  - component: {fileID: 6280408041085566285}
   m_Layer: 5
   m_Name: Cat
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9213879044080517229
+--- !u!114 &6280408041085566285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5422616970353002530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a172b2e71a0924b91767aa8755dfc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 7666695988516116434, guid: 1d6ca3dee751c374baebacd92934f136, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 4
+  Synthesis: {fileID: 5119007338859887955, guid: f0ebdd7496921ed43b2fe7393347e56b,
+    type: 3}
 --- !u!1001 &5531593031663064975
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4527042570576553159}
   - component: {fileID: 4527042570576553158}
-  - component: {fileID: 2478448338204939987}
+  - component: {fileID: 2732921935429965578}
   m_Layer: 5
   m_Name: Tank
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2478448338204939987
+--- !u!114 &2732921935429965578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 4527042570576553152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c84147db7c0a7f4781cf48dd75d58c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 7940873708066264303, guid: a2da82b255f33da4aa34e74982671ada, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5119007338859887955, guid: f0ebdd7496921ed43b2fe7393347e56b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6909481519915534566, guid: aa0f89c9fd73b19499a960af945d85f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5880475958353706824, guid: 9bfb8b7e2b42f344c98165dfa1da7ebe, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6676474175013132844, guid: 24ced309a2026f044a33c9693b4a0835, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 3732903996548839517, guid: 918a264e871e90348a970a886606fb61, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6323638751694235356, guid: d9dfa8faefa13f84985f2731cb16e281, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 8476513207906413400, guid: 177d10927ad05e24b90d2d72e40e0ca7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 7666695988516116434, guid: 1d6ca3dee751c374baebacd92934f136, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 7
+  Synthesis: {fileID: 0}
 --- !u!1001 &4131598358196370285
 PrefabInstance:
   m_ObjectHideFlags: 0

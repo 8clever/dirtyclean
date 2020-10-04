@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137964088686229969}
   - component: {fileID: 137964088686229968}
-  - component: {fileID: 1598652666675167742}
+  - component: {fileID: 4593857464139769079}
   m_Layer: 5
   m_Name: Alien
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1598652666675167742
+--- !u!114 &4593857464139769079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,10 +97,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 137964088686229974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39d7f90559b9b3749a5ea63b69e61467, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prevParent: {fileID: 0}
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 7940873708066264303, guid: a2da82b255f33da4aa34e74982671ada, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5119007338859887955, guid: f0ebdd7496921ed43b2fe7393347e56b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 5880475958353706824, guid: 9bfb8b7e2b42f344c98165dfa1da7ebe, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6676474175013132844, guid: 24ced309a2026f044a33c9693b4a0835, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 3732903996548839517, guid: 918a264e871e90348a970a886606fb61, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 8476513207906413400, guid: 177d10927ad05e24b90d2d72e40e0ca7, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 7
+  Synthesis: {fileID: 0}
 --- !u!1001 &463605165426992763
 PrefabInstance:
   m_ObjectHideFlags: 0

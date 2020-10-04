@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662014458851718006}
   - component: {fileID: 662014458851718007}
-  - component: {fileID: 524460490545992395}
+  - component: {fileID: 8476513207906413400}
   m_Layer: 5
   m_Name: President
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &524460490545992395
+--- !u!114 &8476513207906413400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 662014458851718001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f1cbeeed496274d9856c9a93589646, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 6676474175013132844, guid: 24ced309a2026f044a33c9693b4a0835, type: 3}
+    ChangeTo: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7,
+      type: 3}
+  AddPointsOnCreate: 5
+  Synthesis: {fileID: 5880475958353706824, guid: 9bfb8b7e2b42f344c98165dfa1da7ebe,
+    type: 3}
 --- !u!1001 &1056895991882427612
 PrefabInstance:
   m_ObjectHideFlags: 0

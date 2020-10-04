@@ -166,6 +166,6 @@ MonoBehaviour:
   CanDrag: 1
   DropList: []
   AllowDropToPrison: 0
-  CreateAfterDropOnEmptyCell: {fileID: 7436548747230810264, guid: bb241da202c13094bbe8a22e5cdc0027,
+  CreateAfterDropOnEmptyCell: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
     type: 3}
   Price: 100

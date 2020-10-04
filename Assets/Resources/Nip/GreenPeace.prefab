@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8451756683490893507}
   - component: {fileID: 8451756683490893506}
-  - component: {fileID: 4226962500401003039}
+  - component: {fileID: 6756198704959304835}
   m_Layer: 5
   m_Name: GreenPeace
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4226962500401003039
+--- !u!114 &6756198704959304835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8451756683490893508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e87024f13d886b449ce458850615a10, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 676350002477158664, guid: f8352dcaab153d547ad9e96e9c0c68d0, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 3
+  Synthesis: {fileID: 3732903996548839517, guid: 918a264e871e90348a970a886606fb61,
+    type: 3}
 --- !u!1001 &8272971804283945321
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995044820446526148}
   - component: {fileID: 995044820446526149}
-  - component: {fileID: 7436548747230810264}
+  - component: {fileID: 4174735299716594917}
   m_Layer: 5
   m_Name: Svalka
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7436548747230810264
+--- !u!114 &4174735299716594917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 995044820446526147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b547adceaa4a95a4c92cf6d2d8f009bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 1
+  Moves: []
+  AddPointsOnCreate: 2
+  Synthesis: {fileID: 7666695988516116434, guid: 1d6ca3dee751c374baebacd92934f136,
+    type: 3}
 --- !u!1001 &741457953309484398
 PrefabInstance:
   m_ObjectHideFlags: 0

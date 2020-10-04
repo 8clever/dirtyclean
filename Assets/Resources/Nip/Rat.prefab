@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3668277919139029942}
   - component: {fileID: 3668277919139029943}
-  - component: {fileID: 8450243336740484945}
+  - component: {fileID: 7666695988516116434}
   m_Layer: 5
   m_Name: Rat
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8450243336740484945
+--- !u!114 &7666695988516116434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3668277919139029937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b1712d8a37b7a48b97be97ed86e14e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves: []
+  AddPointsOnCreate: 3
+  Synthesis: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b,
+    type: 3}
 --- !u!1001 &3849870418451643420
 PrefabInstance:
   m_ObjectHideFlags: 0

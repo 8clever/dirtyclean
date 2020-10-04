@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4782788535100161433}
   - component: {fileID: 4782788535100161432}
-  - component: {fileID: 1407230723081927859}
+  - component: {fileID: 7163209898615762191}
   m_Layer: 5
   m_Name: Valun
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1407230723081927859
+--- !u!114 &7163209898615762191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4782788535100161438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e475aab23baa1184c92d3812b537a4a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 1
+  Moves: []
+  AddPointsOnCreate: 0
+  Synthesis: {fileID: 0}
 --- !u!1001 &5033559007514354227
 PrefabInstance:
   m_ObjectHideFlags: 0

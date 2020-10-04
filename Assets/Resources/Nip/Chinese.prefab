@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568236788566869800}
   - component: {fileID: 568236788566869801}
-  - component: {fileID: 6440665107466592417}
+  - component: {fileID: 5119007338859887955}
   m_Layer: 5
   m_Name: Chinese
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6440665107466592417
+--- !u!114 &5119007338859887955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 568236788566869807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d7027f37e3b2141a2fcd36588b502b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 7666695988516116434, guid: 1d6ca3dee751c374baebacd92934f136, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6909481519915534566, guid: aa0f89c9fd73b19499a960af945d85f7, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 5
+  Synthesis: {fileID: 6323638751694235356, guid: d9dfa8faefa13f84985f2731cb16e281,
+    type: 3}
 --- !u!1001 &29242283668707458
 PrefabInstance:
   m_ObjectHideFlags: 0

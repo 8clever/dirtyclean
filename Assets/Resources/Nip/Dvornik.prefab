@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5302695244538600070}
   - component: {fileID: 7576837516493090737}
-  - component: {fileID: 3751267418208506904}
+  - component: {fileID: 5333699589407889682}
   m_Layer: 5
   m_Name: Dvornik
   m_TagString: nip
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3751267418208506904
+--- !u!114 &5333699589407889682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,9 +97,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4681886088175476561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e27e93a6984264d999782b7d0f5470, type: 3}
+  m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 1
+  DisableMove: 0
+  Moves:
+  - To: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939, type: 3}
+    ChangeTo: {fileID: 0}
+  AddPointsOnCreate: 1
+  Synthesis: {fileID: 1946465081989880242, guid: 41cf855431f49ea49b3d179f95ce106c,
+    type: 3}
 --- !u!1001 &8624937396991330035
 PrefabInstance:
   m_ObjectHideFlags: 0

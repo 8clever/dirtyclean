@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public List<Mission> missions = new List<Mission>();
     public List<Item> GenerateItems = new List<Item>();
     public List<Nip> GenerateNipsOnStart = new List<Nip>();
+    public Nip GenerateNipOnMorning;
+    public Nip GenerateNipOnNight;
     private int step = 0;
     private int health = 0;
     private System.DateTime? timeStartAddHealth = null;
@@ -57,7 +59,8 @@ public class GameController : MonoBehaviour
     private void MoveNips () {
         var persons = GameObject.FindObjectsOfType<Nip>();
         foreach (var p in persons) {
-            (p as INip).NextStep();
+            (p as INip)?.NextStep();
+            (p as NpcMain)?.NextStep();
         }
     }
 
@@ -130,7 +133,7 @@ public class GameController : MonoBehaviour
             ToggleShadow(false);
             var cell = GetRandomRespawnCell();
             if (cell) {
-                Instantiate(Resources.Load<Dvornik>(Dvornik.ResourcePath), cell.transform);
+                Instantiate(GenerateNipOnMorning, cell.transform);
             }
         }
 
@@ -138,7 +141,7 @@ public class GameController : MonoBehaviour
             ToggleShadow(true);
             var cell = GetRandomRespawnCell();
             if (cell) {
-                Instantiate(Resources.Load<StreetDog>(StreetDog.ResourcePath), cell.transform);
+                Instantiate(GenerateNipOnNight, cell.transform);
             }
         }
 
