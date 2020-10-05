@@ -27,14 +27,14 @@ public class Nip : MonoBehaviour
     public void DefAwake () {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-        controller.SetMission(GetType().ToString(), Mission.Type.Create, 1);
-        controller.SetMission(GetType().ToString(), Mission.Type.Collect, 1);
+        controller.SetMission(GetName(), Mission.Type.Create, 1);
+        controller.SetMission(GetName(), Mission.Type.Collect, 1);
     }
 
     private void OnDestroy() {
         if (controller.gameInitialized) {
-            controller.SetMission(GetType().ToString(), Mission.Type.Destroy, 1);    
-            controller.SetMission(GetType().ToString(), Mission.Type.Collect, -1);
+            controller.SetMission(GetName(), Mission.Type.Destroy, 1);    
+            controller.SetMission(GetName(), Mission.Type.Collect, -1);
         }
     }
 

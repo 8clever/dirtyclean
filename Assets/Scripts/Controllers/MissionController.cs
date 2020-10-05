@@ -8,7 +8,7 @@ public class MissionController : MonoBehaviour
 {
     public Mission[] missions = {};
     public GameObject content;
-    public MissionInfo prefab;
+    public Checkbox Checkbox;
     public void Start()
     {
         var scene = SceneManager.GetActiveScene();
@@ -20,8 +20,9 @@ public class MissionController : MonoBehaviour
             }
         }
         foreach(var m in missions) {
-            var obj = Instantiate(prefab, content.transform);
-            obj.mission = m;
+            var obj = Instantiate(Checkbox, content.transform);
+            obj.text = m.GetMissionInfo();
+            obj.Checked = m.IsComplete();
         }
     }
 }
