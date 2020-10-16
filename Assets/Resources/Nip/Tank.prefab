@@ -141,6 +141,10 @@ MonoBehaviour:
     ChangeTo: {fileID: 0}
   - To: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b, type: 3}
     ChangeTo: {fileID: 0}
+  - To: {fileID: 7163209898615762191, guid: b8b0c70e21c2cae429a8f1b4392eee2a, type: 3}
+    ChangeTo: {fileID: 0}
+  - To: {fileID: 3305790453594225567, guid: 408353f3136705848bc67763b8d37610, type: 3}
+    ChangeTo: {fileID: 0}
   AddPointsOnCreate: 7
   Synthesis: {fileID: 0}
 --- !u!1001 &4131598358196370285

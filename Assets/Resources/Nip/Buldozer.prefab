@@ -105,6 +105,8 @@ MonoBehaviour:
   Moves:
   - To: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027, type: 3}
     ChangeTo: {fileID: 0}
+  - To: {fileID: 3305790453594225567, guid: 408353f3136705848bc67763b8d37610, type: 3}
+    ChangeTo: {fileID: 0}
   AddPointsOnCreate: 2
   Synthesis: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d,
     type: 3}
