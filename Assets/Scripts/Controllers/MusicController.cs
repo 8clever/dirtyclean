@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
 {
-    private Config config;
-
     public AudioSource audioSource;
-
-    private void Start() {
-        config = Config.GetConfig();
-        audioSource.mute = !config.Music;
+    private void Update () {
+        if (audioSource) {
+            var config = Config.GetConfig();
+            var cutscene = SceneManager.GetSceneByName(Scenes.Cutscene.ToString());
+            if (cutscene.IsValid()) {
+                audioSource.mute = true;
+                return;
+            }
+            audioSource.mute = !config.Music;
+        }
     }
 }

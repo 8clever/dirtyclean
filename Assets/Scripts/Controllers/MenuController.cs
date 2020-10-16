@@ -14,9 +14,7 @@ public class MenuController : MonoBehaviour
     private bool hasSave;
 
     private bool isAdditive;
-
     private void Awake() {
-        config = Config.GetConfig();
         isAdditive = SceneManager.GetActiveScene().name != Scenes.Menu.ToString();
         hasSave = PlayerPrefs.HasKey(GameController.saveKey);
         if (continueButton) {
@@ -24,16 +22,18 @@ public class MenuController : MonoBehaviour
         }
         
     }
-
     private void Start() {
         SceneManager.sceneLoaded += SceneLoaded;
-        var cutscene = SceneManager.GetSceneByName(Scenes.Cutscene.ToString());
-        if (isAdditive || cutscene.IsValid()) return;
-        if (config.ShowCutsceneOnStart) {
-            SceneManager.LoadSceneAsync(Scenes.Cutscene.ToString(), LoadSceneMode.Additive);
-        }
     }
 
+    private void Update () {
+        config = Config.GetConfig();
+        if (config.ShowCutscene) {
+            config.ShowCutscene = false;
+            config.PersistConfig();
+            SceneManager.LoadScene(Scenes.Cutscene.ToString(), LoadSceneMode.Additive);
+        }
+    }
     public void OnClickContinue () {
         if (isAdditive) {
             SceneManager.UnloadSceneAsync(Scenes.Menu.ToString());

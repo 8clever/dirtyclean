@@ -595,8 +595,8 @@ MonoBehaviour:
   - Field: Music
     Label: Music On/Off
     Type: 0
-  - Field: ShowCutsceneOnStart
-    Label: Show Cutscene On Start
+  - Field: ShowCutscene
+    Label: Show Cutscene
     Type: 0
   Inputs:
   - Type: 0

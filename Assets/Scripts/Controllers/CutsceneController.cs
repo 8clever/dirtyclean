@@ -11,7 +11,7 @@ public class CutsceneController : MonoBehaviour
         config = Config.GetConfig();
     }
     public void OnEnd () {
-        config.ShowCutsceneOnStart = false;
+        config.ShowCutscene = false;
         config.PersistConfig();
     }    
 }
