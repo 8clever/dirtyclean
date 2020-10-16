@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanDrag: 1
-  DropList: []
+  DropList:
+  - To: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939, type: 3}
+    CreateAfterDrop: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
+      type: 3}
   AllowDropToPrison: 0
   CreateAfterDropOnEmptyCell: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939,
     type: 3}
