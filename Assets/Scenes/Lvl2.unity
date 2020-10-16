@@ -12361,7 +12361,7 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[3].requiredCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
