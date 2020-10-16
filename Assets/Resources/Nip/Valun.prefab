@@ -104,7 +104,8 @@ MonoBehaviour:
   DisableMove: 1
   Moves: []
   AddPointsOnCreate: 0
-  Synthesis: {fileID: 0}
+  Synthesis: {fileID: -1467946308806501006, guid: 3a1139672baa4a549bde9214236e91c1,
+    type: 3}
 --- !u!1001 &5033559007514354227
 PrefabInstance:
   m_ObjectHideFlags: 0
