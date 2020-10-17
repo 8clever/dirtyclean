@@ -589,8 +589,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fields:
-  - Field: GameFieldWeb
-    Label: Game Field Web
+  - Field: HideCells
+    Label: Hide Cells
     Type: 0
   - Field: Music
     Label: Music On/Off

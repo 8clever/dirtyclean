@@ -26,7 +26,6 @@ public class Cell : MonoBehaviour
     void Start()
     {
         isBlocker = GetComponentInChildren<Blocker>() != null;
-        config = Config.GetConfig();
         current = GetComponent<Image>();
         empty = current.color;
         canDrop = current.color;
@@ -38,6 +37,8 @@ public class Cell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        config = Config.GetConfig();
+
         // change color on mouse hover
         if (current.color != empty) {
             current.color = empty;
@@ -50,8 +51,9 @@ public class Cell : MonoBehaviour
             return;
         }
         // for all active cells
-        if (config.GameFieldWeb != current.enabled) {
-            current.enabled = config.GameFieldWeb;
+        var hideCells = !current.enabled;
+        if (config.HideCells != hideCells) {
+            current.enabled = hideCells;
         }
     }
 }
