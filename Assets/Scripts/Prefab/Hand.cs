@@ -6,8 +6,14 @@ public class Hand : Item, IItem
 {
 
     public static string ResourcePath = "Item/Hand";
-    public void OnDrop(GameObject cell)
+    public void OnDrop(GameObject go_cell)
     {   
+        var cell = go_cell.GetComponent<Cell>();
+        if (cell.isPrison) {
+            MoveToItemField();
+            return;
+        }
+
         if (cell.transform.childCount == 0) {
             Destroy(this.gameObject);
             var controller = GameObject.FindObjectOfType<GameController>();
@@ -33,6 +39,7 @@ public class Hand : Item, IItem
 
     public bool CanDrop(Cell cell)
     {
+        if (cell.isPrison) return false;
         if (cell.transform.childCount == 0) return true;
         if (cell.transform.childCount > 0) {
             var nip = cell.GetComponentInChildren<INip>();
