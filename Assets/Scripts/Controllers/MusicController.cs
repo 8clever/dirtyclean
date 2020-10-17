@@ -14,7 +14,13 @@ public class MusicController : MonoBehaviour
                 audioSource.mute = true;
                 return;
             }
-            audioSource.mute = !config.Music;
+            var mute = !config.Music;
+            if (audioSource.mute != mute) {
+                audioSource.mute = mute;
+                if (config.Music) {
+                    audioSource.time = 0f;
+                }
+            }
         }
     }
 }
