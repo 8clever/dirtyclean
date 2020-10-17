@@ -18,7 +18,7 @@ public class Config {
     }
     public Layers layers = new Layers();
     public Nip nip = new Nip();
-    public bool HideCells = true;
+    public bool HideCells = false;
     public bool Music = true;
     public int healthPointsAtSeconds = 15; 
     public int maxHealth = 300;
