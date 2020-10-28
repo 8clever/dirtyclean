@@ -16,6 +16,8 @@ public interface INip
 
 public class Nip : MonoBehaviour
 {
+    public AudioClip awakeAudio;
+    public AudioClip destroyAudio;
     private Config config;
     private Transform prevParent;
     private GameController controller;
@@ -29,12 +31,18 @@ public class Nip : MonoBehaviour
         controller = GameObject.FindObjectOfType<GameController>();
         controller.SetMission(GetName(), Mission.Type.Create, 1);
         controller.SetMission(GetName(), Mission.Type.Collect, 1);
+        if (awakeAudio) {
+            MusicController.PlayOnce(awakeAudio);
+        }
     }
 
     private void OnDestroy() {
         if (controller.gameInitialized) {
             controller.SetMission(GetName(), Mission.Type.Destroy, 1);    
             controller.SetMission(GetName(), Mission.Type.Collect, -1);
+        }
+        if (destroyAudio) {
+            MusicController.PlayOnce(destroyAudio);
         }
     }
 
@@ -303,6 +311,9 @@ public class Nip : MonoBehaviour
 
     public void OnDropDefault (GameObject cell) {
         if (cell.transform.childCount == 0) {
+            if (awakeAudio) {
+                MusicController.PlayOnce(awakeAudio);
+            }
             var c = cell.GetComponent<Cell>();
             if (c.isPrison) {
                 AddPoints(1);

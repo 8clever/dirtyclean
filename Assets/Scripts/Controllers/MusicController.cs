@@ -23,4 +23,14 @@ public class MusicController : MonoBehaviour
             }
         }
     }
+    public static async void PlayOnce (AudioClip clip) {
+        var scene = SceneManager.GetActiveScene();
+        var listener = scene.GetRootGameObjects()[0];
+        var source = listener.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.Play();
+        var delay = System.Convert.ToInt32(clip.length * 1000);
+        await System.Threading.Tasks.Task.Delay(delay);
+        Destroy(source);
+    }
 }

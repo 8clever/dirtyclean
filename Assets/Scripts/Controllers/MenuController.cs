@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
 
     public GameObject continueButton;
     public AudioSource audioSource;
+    public AudioClip audioClickContinue;
     private Toggle gameFieldWeb;
     private Config config;
     private bool hasSave;
@@ -34,8 +35,10 @@ public class MenuController : MonoBehaviour
             SceneManager.LoadScene(Scenes.Cutscene.ToString(), LoadSceneMode.Additive);
         }
     }
-    public async void OnClickContinue () {
-        await Task.Delay(LoadSceneButton.Delay);
+    public void OnClickContinue () {
+        if (audioClickContinue) {
+            MusicController.PlayOnce(audioClickContinue);
+        }
         if (isAdditive) {
             SceneManager.UnloadSceneAsync(Scenes.Menu.ToString());
             return;

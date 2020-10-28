@@ -12,7 +12,6 @@ public enum Scenes {
     Shop,
     Loading,
     SelectLevel,
-
     // levels
     endlessMode,
     lvl1,
@@ -22,27 +21,31 @@ public enum Scenes {
 public class LoadSceneButton : MonoBehaviour
 {
     public Scenes scene;
-
     public bool Async = false;
 
     [Header("Required only for LoadScene")]
     public LoadSceneMode mode;
-    public static int Delay = 150;
-    public async void OnClick () {
-        await Task.Delay(Delay); 
+    public AudioClip audioClick;
+    public static readonly int Delay = 0;
+    public void OnClick () {
         if (Async) {
             SceneManager.LoadSceneAsync(scene.ToString(), mode);
-            return;
+        } else {
+            SceneManager.LoadScene(scene.ToString(), mode);
         }
-        SceneManager.LoadScene(scene.ToString(), mode);
+        if (audioClick) {
+            MusicController.PlayOnce(audioClick);
+        }
     }
 
     public void LoadScene () {
         OnClick();
     }
 
-    public async void UnloadScene () {
-        await Task.Delay(Delay);
+    public void UnloadScene () {
         SceneManager.UnloadSceneAsync(scene.ToString());
+        if (audioClick) {
+            MusicController.PlayOnce(audioClick);
+        }
     }
 }

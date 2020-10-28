@@ -34,8 +34,7 @@ public class Collider : MonoBehaviour
         if (isNip) {
             if (draggable && handPicked == null) {
                 handPicked = Instantiate(Resources.Load("Item/HandPicked"), this.transform.parent) as GameObject;
-                controller.audioSource.clip = handPickedAudio;
-                controller.audioSource.Play();
+                MusicController.PlayOnce(handPickedAudio);
             }
 
             if (!draggable && handPicked != null) {
@@ -152,9 +151,8 @@ public class Collider : MonoBehaviour
 
         dragged = false;
         var cell = Hit();
-        if (OnCellCanDrop(cell)) {
-            controller.audioSource.clip = placeAudio;
-            controller.audioSource.Play();
+        if (OnCellCanDrop(cell) && placeAudio) {
+            MusicController.PlayOnce(placeAudio);
         }
         OnCellDrop(cell);
     }
