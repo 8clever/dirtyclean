@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 0
+  handPickedAudio: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7, type: 3}
+  placeAudio: {fileID: 8300000, guid: 1f7bc2244f7f55a47a219c1968b8c918, type: 3}
 --- !u!54 &-3740114943814084946
 Rigidbody:
   m_ObjectHideFlags: 0

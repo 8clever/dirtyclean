@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public enum Scenes {
     Cutscene,
@@ -26,8 +27,9 @@ public class LoadSceneButton : MonoBehaviour
 
     [Header("Required only for LoadScene")]
     public LoadSceneMode mode;
-
-    public void OnClick () {
+    public static int Delay = 150;
+    public async void OnClick () {
+        await Task.Delay(Delay); 
         if (Async) {
             SceneManager.LoadSceneAsync(scene.ToString(), mode);
             return;
@@ -39,7 +41,8 @@ public class LoadSceneButton : MonoBehaviour
         OnClick();
     }
 
-    public void UnloadScene () {
+    public async void UnloadScene () {
+        await Task.Delay(Delay);
         SceneManager.UnloadSceneAsync(scene.ToString());
     }
 }

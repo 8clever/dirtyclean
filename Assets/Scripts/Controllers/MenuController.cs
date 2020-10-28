@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class MenuController : MonoBehaviour
 {
 
     public GameObject continueButton;
-
+    public AudioSource audioSource;
     private Toggle gameFieldWeb;
-
     private Config config;
-
     private bool hasSave;
-
     private bool isAdditive;
     private void Awake() {
         isAdditive = SceneManager.GetActiveScene().name != Scenes.Menu.ToString();
@@ -20,10 +18,12 @@ public class MenuController : MonoBehaviour
         if (continueButton) {
             continueButton.SetActive(isAdditive || hasSave);
         }
-        
+        if (isAdditive && audioSource) {
+            audioSource.Pause();
+        }
     }
     private void Start() {
-        SceneManager.sceneLoaded += SceneLoaded;
+
     }
 
     private void Update () {
@@ -34,7 +34,8 @@ public class MenuController : MonoBehaviour
             SceneManager.LoadScene(Scenes.Cutscene.ToString(), LoadSceneMode.Additive);
         }
     }
-    public void OnClickContinue () {
+    public async void OnClickContinue () {
+        await Task.Delay(LoadSceneButton.Delay);
         if (isAdditive) {
             SceneManager.UnloadSceneAsync(Scenes.Menu.ToString());
             return;
@@ -42,18 +43,6 @@ public class MenuController : MonoBehaviour
         if (hasSave) {
             GameController.LoadLevel();
             return;
-        }
-    }
-
-    private void SceneLoaded (Scene scene, LoadSceneMode mode) {
-        if (mode == LoadSceneMode.Additive) {
-            var objects = scene.GetRootGameObjects();
-            foreach (var obj in objects) {
-                var audioSource = obj.GetComponentInChildren<AudioSource>();
-                var audioListener = obj.GetComponentInChildren<AudioListener>();
-                Destroy(audioSource);
-                Destroy(audioListener);
-            }
         }
     }
 }

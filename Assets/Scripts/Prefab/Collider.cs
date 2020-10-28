@@ -7,19 +7,14 @@ using UnityEngine.UI;
 public class Collider : MonoBehaviour
 {
     public bool draggable = false;
-
+    public AudioClip handPickedAudio;
+    public AudioClip placeAudio;
     private bool dragged = false;
-
     private bool isNip;
-
     private bool isItem;
-
     private GameObject handPicked;
-
     private GameController controller;
-
     private Config config;
-
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
@@ -39,6 +34,8 @@ public class Collider : MonoBehaviour
         if (isNip) {
             if (draggable && handPicked == null) {
                 handPicked = Instantiate(Resources.Load("Item/HandPicked"), this.transform.parent) as GameObject;
+                controller.audioSource.clip = handPickedAudio;
+                controller.audioSource.Play();
             }
 
             if (!draggable && handPicked != null) {
@@ -100,8 +97,8 @@ public class Collider : MonoBehaviour
         (nip as NpcMain)?.OnDrop(cell.gameObject);
     }
 
-    void OnCellCanDrop (Cell cell) {
-        if (!cell) return;
+    bool OnCellCanDrop (Cell cell) {
+        if (!cell) return false;
 
         var nip = GetComponentInParent<Nip>();
         var item = GetComponentInParent<Item>();
@@ -114,6 +111,7 @@ public class Collider : MonoBehaviour
             false
         );
         img.color = canDrop ? cell.canDrop : cell.cantDrop;
+        return canDrop;
     }
 
     Cell Hit (bool setPosition = false) {
@@ -154,6 +152,10 @@ public class Collider : MonoBehaviour
 
         dragged = false;
         var cell = Hit();
+        if (OnCellCanDrop(cell)) {
+            controller.audioSource.clip = placeAudio;
+            controller.audioSource.Play();
+        }
         OnCellDrop(cell);
     }
 

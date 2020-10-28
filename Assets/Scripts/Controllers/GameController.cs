@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 {
     public int point = 0;
     public bool isPause = false;
+    public AudioSource audioSource;
     public Scenes Level;
     public bool gameInitialized = false;
     public List<Mission> missions = new List<Mission>();
