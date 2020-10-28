@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 9
-  Async: 1
+  Async: 0
   mode: 0
   audioClick: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7, type: 3}
 --- !u!1 &248801436
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 11
-  Async: 1
+  Async: 0
   mode: 0
   audioClick: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7, type: 3}
 --- !u!114 &926593560
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 10
-  Async: 1
+  Async: 0
   mode: 0
   audioClick: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7, type: 3}
 --- !u!1 &2051525954

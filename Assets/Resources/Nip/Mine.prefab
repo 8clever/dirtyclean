@@ -163,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a00fc0e18d3ce4099c944d3ffaaf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prevParent: {fileID: 0}
+  awakeAudio: {fileID: 8300000, guid: c272c6a633213bc42b3654d820825399, type: 3}
+  destroyAudio: {fileID: 0}
 --- !u!1001 &7249370489942609045
 PrefabInstance:
   m_ObjectHideFlags: 0

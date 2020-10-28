@@ -28,7 +28,7 @@ public class Collider : MonoBehaviour
         if (controller.isPause) return;
 
         if (dragged) {
-            OnCellCanDrop(Hit(true));
+            OnCellCanDrop(Hit(true), true);
         }
 
         if (isNip) {
@@ -96,7 +96,7 @@ public class Collider : MonoBehaviour
         (nip as NpcMain)?.OnDrop(cell.gameObject);
     }
 
-    bool OnCellCanDrop (Cell cell) {
+    bool OnCellCanDrop (Cell cell, bool colored = false) {
         if (!cell) return false;
 
         var nip = GetComponentInParent<Nip>();
@@ -109,7 +109,9 @@ public class Collider : MonoBehaviour
             (item as ItemMain)?.CanDrop(cell) ??
             false
         );
-        img.color = canDrop ? cell.canDrop : cell.cantDrop;
+        if (colored) {
+            img.color = canDrop ? cell.canDrop : cell.cantDrop;
+        }
         return canDrop;
     }
 
@@ -151,10 +153,10 @@ public class Collider : MonoBehaviour
 
         dragged = false;
         var cell = Hit();
+        OnCellDrop(cell);
         if (OnCellCanDrop(cell) && placeAudio) {
             MusicController.PlayOnce(placeAudio);
         }
-        OnCellDrop(cell);
     }
 
     void OnCollisionEnter(Collision other) {
