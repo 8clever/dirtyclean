@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3732b7e73bc09154994e33256e142462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  awakeAudio: {fileID: 8300000, guid: a02f8eda07114284bbd92a0044a66db6, type: 3}
+  destroyAudio: {fileID: 0}
   CanDrag: 1
   DisableMove: 0
   Moves:

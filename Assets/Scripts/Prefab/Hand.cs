@@ -24,8 +24,13 @@ public class Hand : Item, IItem
         }
 
         if (cell.transform.childCount > 0) {
-            var nip = cell.GetComponentInChildren<INip>();
-            if (nip != null && nip.CanDrag) {
+            var nip = cell.GetComponentInChildren<Nip>();
+            var canDrag = (
+                (nip as INip)?.CanDrag ??
+                (nip as NpcMain)?.CanDrag ??
+                false
+            );
+            if (canDrag) {
                 Destroy(this.gameObject);
                 var obj = cell.transform.GetChild(0);
                 var collider = obj.GetComponentInChildren<Collider>();
@@ -42,10 +47,13 @@ public class Hand : Item, IItem
         if (cell.isPrison) return false;
         if (cell.transform.childCount == 0) return true;
         if (cell.transform.childCount > 0) {
-            var nip = cell.GetComponentInChildren<INip>();
-            if (nip != null && nip.CanDrag) {
-                return true;
-            }
+            var nip = cell.GetComponentInChildren<Nip>();
+            var canDrag = (
+                (nip as INip)?.CanDrag ??
+                (nip as NpcMain)?.CanDrag ??
+                false
+            );
+            if (canDrag) return true;
         }
         return false;
     }
