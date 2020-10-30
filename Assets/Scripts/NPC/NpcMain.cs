@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NpcMain : Nip
 {
+    public AudioClip audioCatchEnemy;
     public bool CanDrag = true;
     public bool DisableMove = false;
 
@@ -30,6 +31,9 @@ public class NpcMain : Nip
         foreach(var move in Moves) {
             var nip = collision.gameObject.GetComponentInParent<Nip>();
             if (move.To.GetName() == nip?.GetName()) {
+                if (audioCatchEnemy) {
+                    MusicController.PlayOnce(audioCatchEnemy);
+                }
                 AddPoints(1);
                 Destroy(nip.gameObject);
                 if (move.ChangeTo) {
