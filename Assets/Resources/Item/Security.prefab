@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanDrag: 1
-  DropList: []
+  DropList:
+  - To: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b, type: 3}
+    CreateAfterDrop: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7,
+      type: 3}
   AllowDropToPrison: 0
   CreateAfterDropOnEmptyCell: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b,
     type: 3}
@@ -156,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
+  handPickedAudio: {fileID: 0}
+  placeAudio: {fileID: 0}
 --- !u!135 &6629975353747406960
 SphereCollider:
   m_ObjectHideFlags: 0

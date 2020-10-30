@@ -12,10 +12,10 @@ public enum Scenes {
     Shop,
     Loading,
     SelectLevel,
-    // levels
     endlessMode,
     lvl1,
-    Lvl2
+    Lvl2,
+    Library
 }
 
 public class LoadSceneButton : MonoBehaviour
