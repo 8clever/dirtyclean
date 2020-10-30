@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   awakeAudio: {fileID: 8300000, guid: c272c6a633213bc42b3654d820825399, type: 3}
-  destroyAudio: {fileID: 0}
+  destroyAudio: {fileID: 8300000, guid: 1cacdfb96da91c1468636eec473fd166, type: 3}
 --- !u!1001 &7249370489942609045
 PrefabInstance:
   m_ObjectHideFlags: 0
