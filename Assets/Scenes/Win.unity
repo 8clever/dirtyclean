@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 474370779}
   - component: {fileID: 474370778}
   - component: {fileID: 474370777}
+  - component: {fileID: 474370781}
   m_Layer: 5
   m_Name: Facebook
   m_TagString: Untagged
@@ -311,6 +312,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 474370781}
+        m_MethodName: ShareLink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &474370779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +360,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474370775}
   m_CullTransparentMesh: 0
+--- !u!114 &474370781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474370775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b846433063ea9409578b68b2a42be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &1204981406
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +978,7 @@ GameObject:
   - component: {fileID: 1890329668}
   - component: {fileID: 1890329667}
   - component: {fileID: 1890329670}
+  - component: {fileID: 1890329671}
   m_Layer: 5
   m_Name: Twitter
   m_TagString: Untagged
@@ -1029,6 +1055,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1890329671}
+        m_MethodName: ShareLink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1167,3 +1204,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1890329671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890329665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b846433063ea9409578b68b2a42be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
