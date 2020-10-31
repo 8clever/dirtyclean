@@ -6,6 +6,7 @@ public class Mine : Nip, INip
 {
     public bool CanDrag => true;
     public static string ResourcePath = "Nip/Mine";
+    public GameObject ExplodeAnimation;
     private List<System.Type> list = new List<System.Type>();
     public void NextStep()
     {
@@ -27,6 +28,8 @@ public class Mine : Nip, INip
             AddPoints(1);
             Destroy(nip.gameObject);
         }
+
+        Instantiate(ExplodeAnimation, cell.transform);
 
         foreach (var c in nipColliders) {
             var sphere = c.GetComponent<SphereCollider>();

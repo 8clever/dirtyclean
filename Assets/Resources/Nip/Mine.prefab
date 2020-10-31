@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 7142669322481193791}
   - component: {fileID: 7142669322481193790}
   - component: {fileID: 5301850034150795258}
+  - component: {fileID: -94762061225878407}
   m_Layer: 5
   m_Name: Mine
   m_TagString: nip
@@ -165,6 +166,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakeAudio: {fileID: 8300000, guid: c272c6a633213bc42b3654d820825399, type: 3}
   destroyAudio: {fileID: 8300000, guid: 1cacdfb96da91c1468636eec473fd166, type: 3}
+  ExplodeAnimation: {fileID: 3917246813796912261, guid: d00b8fce34468464c9efe6b4d0f35920,
+    type: 3}
+--- !u!95 &-94762061225878407
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142669322481193784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7249370489942609045
 PrefabInstance:
   m_ObjectHideFlags: 0
