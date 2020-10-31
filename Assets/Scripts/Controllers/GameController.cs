@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public Nip GenerateNipOnMorning;
     public Nip GenerateNipOnNight;
     private int step = 0;
-    private int health = 0;
+    public int health = 0;
     private System.DateTime? timeStartAddHealth = null;
     private GameObject shadow = null;
     private Config config = null;
