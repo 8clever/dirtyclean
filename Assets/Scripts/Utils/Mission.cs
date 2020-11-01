@@ -66,7 +66,7 @@ public class Mission {
             case Type.Buy:
                 return $"Buy item {nipName} in shop {humanizeCount}";
             case Type.NotCreateInSteps:
-                return $"Do not create {nipName} {requiredCount} rounds in a row {humanizeCount}";
+                return $"Do not create {nipName} {requiredCount} turns {humanizeCount}";
             default:
                 return $"Type '{type.ToString()}' is not assigned";
         }
