@@ -10,7 +10,8 @@ public class Mission {
         Create,
         Buy,
         NotCreateInSteps,
-        Move
+        Move,
+        PlayTurns
     }
     private static readonly Dictionary<string, string> NipNames = new Dictionary<string, string>()
     {
@@ -23,13 +24,14 @@ public class Mission {
         { "Svalka", "Trash can" },
         { "Police", "Police" },
         { "Chinese", "Chinese" },
-        { "StreetDog", "Dog" },
+        { "StreetDog", "Dog" }
     };
     public int requiredCount;
     public int count;
     public Type type;
     [UnityEngine.SerializeField]
     public string Nip;
+    public string CustomMissionText = string.Empty;
     private bool Completed = false;
     public bool IsComplete () {
         if (Completed) return true;
@@ -58,6 +60,9 @@ public class Mission {
             $"{count}/{requiredCount}"
         );
         NipNames.TryGetValue(Nip, out nipName);
+        if (CustomMissionText != string.Empty) {
+            return $"{CustomMissionText} {humanizeCount}";
+        }
         switch (type) {
             case Type.Destroy:
                 return $"Destroy {nipName} {humanizeCount}";
@@ -71,6 +76,8 @@ public class Mission {
                 return $"Do not create {nipName} {requiredCount} turns {humanizeCount}";
             case Type.Move:
                 return $"Move {nipName} {humanizeCount}";
+            case Type.PlayTurns:
+                return $"Play turns {humanizeCount}";
             default:
                 return $"Type '{type.ToString()}' is not assigned";
         }

@@ -123,6 +123,7 @@ public class GameController : MonoBehaviour
     }
 
     public void NextStep () {
+        SetMission("Play", Mission.Type.PlayTurns, 1);
         gameInitialized = true;
         AddPointsToHealth(-1);
         step += 1;

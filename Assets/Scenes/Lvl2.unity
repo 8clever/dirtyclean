@@ -11721,12 +11721,17 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: GenerateNipsOnStart.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateItems.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
@@ -11736,48 +11741,48 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[1].Nip
-      value: Dvornik
+      value: HomeDog
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[2].Nip
-      value: Buldozer
+      value: Svalka
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[3].Nip
-      value: GreenPeace
+      value: Dvornik
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[4].Nip
-      value: President
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: GenerateNipsOnStart.Array.data[4]
       value: 
-      objectReference: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8,
+      objectReference: {fileID: 1946465081989880242, guid: 41cf855431f49ea49b3d179f95ce106c,
         type: 3}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[0].requiredCount
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[1].requiredCount
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[1].type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[2].requiredCount
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
@@ -11792,23 +11797,74 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[3].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
-        type: 3}
-      propertyPath: missions.Array.data[4].requiredCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
+      propertyPath: missions.Array.data[4].requiredCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
       propertyPath: missions.Array.data[4].type
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: Level
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 2410604537901935689, guid: e08e4b45ae1dff7409a33101a7524f50,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[0].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[1].CustomMissionText
+      value: Use the clothes on the dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[2].CustomMissionText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[2]
+      value: 
+      objectReference: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[3]
+      value: 
+      objectReference: {fileID: 5333699589407889682, guid: b91b7a58c114ba3409881e76da288fa8,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[5]
+      value: 
+      objectReference: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
+        type: 3}
     - target: {fileID: 6892683133512162647, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: m_Name
@@ -11958,5 +12014,11 @@ PrefabInstance:
       propertyPath: m_FillClockwise
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7689959299841905127, guid: 5166eae865d906e4680c5c4f88113524,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 371b694226ab3ab4d8c2a15fae1a4464,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5166eae865d906e4680c5c4f88113524, type: 3}
