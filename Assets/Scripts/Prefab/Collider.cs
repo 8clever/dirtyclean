@@ -154,8 +154,14 @@ public class Collider : MonoBehaviour
         dragged = false;
         var cell = Hit();
         OnCellDrop(cell);
-        if (OnCellCanDrop(cell) && placeAudio) {
-            MusicController.PlayOnce(placeAudio);
+        if (OnCellCanDrop(cell)) {
+            var nip = transform.parent.GetComponent<Nip>();
+            if (nip) {
+                controller.SetMission(nip.GetName(), Mission.Type.Move, 1);
+            }
+            if (placeAudio) {
+                MusicController.PlayOnce(placeAudio);
+            }
         }
     }
 

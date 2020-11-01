@@ -9,19 +9,21 @@ public class Mission {
         Collect,
         Create,
         Buy,
-        NotCreateInSteps
+        NotCreateInSteps,
+        Move
     }
     private static readonly Dictionary<string, string> NipNames = new Dictionary<string, string>()
     {
-        { "Musorka", "Garbage" },
-        { "Dvornik", "Street Worker" },
+        { "Musorka", "Dump" },
+        { "Dvornik", "Janitor" },
         { "Buldozer", "Buldozer" },
         { "GreenPeace", "Green Peace" },
         { "President", "President" },
         { "Valun", "Stone" },
-        { "Svalka", "Dump" },
+        { "Svalka", "Trash can" },
         { "Police", "Police" },
         { "Chinese", "Chinese" },
+        { "StreetDog", "Dog" },
     };
     public int requiredCount;
     public int count;
@@ -67,6 +69,8 @@ public class Mission {
                 return $"Buy item {nipName} in shop {humanizeCount}";
             case Type.NotCreateInSteps:
                 return $"Do not create {nipName} {requiredCount} turns {humanizeCount}";
+            case Type.Move:
+                return $"Move {nipName} {humanizeCount}";
             default:
                 return $"Type '{type.ToString()}' is not assigned";
         }

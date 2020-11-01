@@ -13,9 +13,11 @@ public enum Scenes {
     Loading,
     SelectLevel,
     endlessMode,
-    lvl1,
-    Lvl2,
-    Library
+    LVL1,
+    LVL2,
+    Library,
+    LVL3,
+    LVL4
 }
 
 public class LoadSceneButton : MonoBehaviour
