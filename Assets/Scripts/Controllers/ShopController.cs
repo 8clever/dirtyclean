@@ -21,6 +21,9 @@ public class ShopController : MonoBehaviour
         }
     }
     private void Start () {
+        Items.Sort((a, b) => {
+            return a.Price.CompareTo(b.Price);
+        });
         foreach (var i in Items) {
             var obj = Instantiate(Prefab, Container.transform);
             obj.item = i;

@@ -905,41 +905,55 @@ MonoBehaviour:
       and characters or transforms them into new figures. In this case, 1 turn is
       spent
     Image: {fileID: 21300000, guid: b0cdc607af4b1ae4e9f872ff4628f0bf, type: 3}
+    Order: 1
   - Text: 'Clothes - Do you want to litter? Forward! The janitors are already for
       the general cleaning. Spend it rationally: on an empty cell, on a dog, on another
       trash or a homeless person. In this case, 1 turn is spent'
     Image: {fileID: 21300000, guid: 52033b9ec83939b468dfd17cf97f1d29, type: 3}
+    Order: 2
   - Text: Time of day - Every morning a new janitor comes out on the street and every
       new night pleases us with a new dog
     Image: {fileID: 21300000, guid: 9512d2e32750c8048b0f5fdab3a00e9d, type: 3}
+    Order: 3
   - Text: Prison - Wanted to save the character - hide him here
     Image: {fileID: 21300000, guid: b009c6bb49b15eb4aaaf56e5e797dbb6, type: 3}
+    Order: 7
   - Text: Shop - Here you can buy new objects and characters
     Image: {fileID: 21300000, guid: e683de6366c73814d8fe328266c77a72, type: 3}
+    Order: 8
   - Text: Janitor - Excessive cleanliness lover who dreams of becoming president.
       He is task is simple - to clear the yard of debris
     Image: {fileID: 21300000, guid: 1dd66aab2fb3cb146829b74de206406d, type: 3}
+    Order: 9
   - Text: Bulldozer - Appears after the collusion of two janitors. The driver inside
       loves to crush trash cans
     Image: {fileID: 21300000, guid: 98ff243e3e1ad6e4a923f78dd0054630, type: 3}
+    Order: 10
   - Text: 'Dump - Rumor has it that a textile maniac has started up in the city,
       he throws T-shirts and litters the environment  '
     Image: {fileID: 21300000, guid: 7bf7da50ad5820f44a6c0180db9ddecb, type: 3}
+    Order: 11
   - Text: Trash can - Soulless bucket with a bulldozer phobia, transforms from two
       dumps
     Image: {fileID: 21300000, guid: 262e9f217f640954ca8369d100578eea, type: 3}
+    Order: 12
   - Text: Dog - Likes to chase local cats and most often at night
     Image: {fileID: 21300000, guid: 57176dcb849fe484ebffd671cb45630e, type: 3}
+    Order: 13
   - Text: Trained Dog - Dress up a regular dog in a T-shirt and see what happens!
     Image: {fileID: 21300000, guid: db96f33f260f1db49a63130c05485545, type: 3}
+    Order: 14
   - Text: This is your amount of in-game currency, spend it in the shop
     Image: {fileID: 21300000, guid: 81ff4bf28119a234389082063b9bd454, type: 3}
+    Order: 5
   - Text: This is your number of available moves per level. If this amount becomes
       equal to 0, then you will have to wait and accumulate it
-    Image: {fileID: 0}
+    Image: {fileID: 21300000, guid: f2f5f4836504a0f4c80412fc92955dba, type: 3}
+    Order: 4
   - Text: This is the number of completed tasks per level. To complete the level,
       complete them all
-    Image: {fileID: 0}
+    Image: {fileID: 21300000, guid: a305e237f281c94478db8e0a0177cdb7, type: 3}
+    Order: 6
   Container: {fileID: 302975016}
   Factory: {fileID: 4428188754698242909, guid: 520fc413da3a06b4a812efca303c02c5, type: 3}
 --- !u!1 &1202977484
