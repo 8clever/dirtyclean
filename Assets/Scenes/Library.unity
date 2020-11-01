@@ -932,6 +932,14 @@ MonoBehaviour:
     Image: {fileID: 21300000, guid: 57176dcb849fe484ebffd671cb45630e, type: 3}
   - Text: Trained Dog - Dress up a regular dog in a T-shirt and see what happens!
     Image: {fileID: 21300000, guid: db96f33f260f1db49a63130c05485545, type: 3}
+  - Text: This is your amount of in-game currency, spend it in the shop
+    Image: {fileID: 21300000, guid: 81ff4bf28119a234389082063b9bd454, type: 3}
+  - Text: This is your number of available moves per level. If this amount becomes
+      equal to 0, then you will have to wait and accumulate it
+    Image: {fileID: 0}
+  - Text: This is the number of completed tasks per level. To complete the level,
+      complete them all
+    Image: {fileID: 0}
   Container: {fileID: 302975016}
   Factory: {fileID: 4428188754698242909, guid: 520fc413da3a06b4a812efca303c02c5, type: 3}
 --- !u!1 &1202977484
