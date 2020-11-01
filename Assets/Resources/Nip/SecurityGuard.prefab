@@ -107,8 +107,7 @@ MonoBehaviour:
   DisableMove: 0
   Moves:
   - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
-    ChangeTo: {fileID: 4593857464139769079, guid: 583d1f08e6497b94ebdad74d01d4ca35,
-      type: 3}
+    ChangeTo: {fileID: 0}
   AddPointsOnCreate: 3
   Synthesis: {fileID: 4318897261311359098, guid: 0e5462f75e6f2e34190e04b3310780f7,
     type: 3}
