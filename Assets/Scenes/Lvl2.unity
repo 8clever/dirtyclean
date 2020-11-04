@@ -13137,12 +13137,12 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[1].CustomMissionText
-      value: Use the clothes on the dog
+      value: Use the clothes on the dogs
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: missions.Array.data[2].CustomMissionText
-      value: 
+      value: Create Trash cans
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
@@ -13174,6 +13174,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
         type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[0].CustomMissionText
+      value: Create Dumps
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[3].CustomMissionText
+      value: Collect 5 Janitors together on level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[4].CustomMissionText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162647, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: m_Name
