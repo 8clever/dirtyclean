@@ -11690,6 +11690,26 @@ PrefabInstance:
       propertyPath: Level
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[0].CustomMissionText
+      value: Destroy Dumps
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[1].CustomMissionText
+      value: Collect 10 Janitors together on level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[3].CustomMissionText
+      value: Create Greenpeace members
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: missions.Array.data[2].CustomMissionText
+      value: Create Bulldozers
+      objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162647, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: m_Name
