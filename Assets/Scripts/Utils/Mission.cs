@@ -17,7 +17,7 @@ public class Mission {
     {
         { "Musorka", "Dump" },
         { "Dvornik", "Janitor" },
-        { "Buldozer", "Buldozer" },
+        { "Buldozer", "Bulldozer" },
         { "GreenPeace", "Green Peace" },
         { "President", "President" },
         { "Valun", "Stone" },
