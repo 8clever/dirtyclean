@@ -1240,6 +1240,7 @@ MonoBehaviour:
   - {fileID: 2410604537901935689, guid: e08e4b45ae1dff7409a33101a7524f50, type: 3}
   - {fileID: 5913872894314311949, guid: 11bff8b2ec67abe4b9978ce5d9435886, type: 3}
   - {fileID: 6139111870893950935, guid: debbe73fd65cba64fb1425ad58b8262d, type: 3}
+  - {fileID: 2972582994226101027, guid: beb1be5fa8fc73f4ca497f2b8113c46c, type: 3}
   Prefab: {fileID: 2832302619138482465, guid: 9cb693ad3796ea04ca9b6dabd42a5d35, type: 3}
   Container: {fileID: 302975016}
   Animator: {fileID: 2135260164}
