@@ -11602,7 +11602,7 @@ PrefabInstance:
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: GenerateNipsOnStart.Array.size
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
@@ -11710,6 +11710,48 @@ PrefabInstance:
       propertyPath: missions.Array.data[2].CustomMissionText
       value: Create Bulldozers
       objectReference: {fileID: 0}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[5]
+      value: 
+      objectReference: {fileID: 1946465081989880242, guid: 41cf855431f49ea49b3d179f95ce106c,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[6]
+      value: 
+      objectReference: {fileID: 6909481519915534566, guid: aa0f89c9fd73b19499a960af945d85f7,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[7]
+      value: 
+      objectReference: {fileID: 3305790453594225567, guid: 408353f3136705848bc67763b8d37610,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[8]
+      value: 
+      objectReference: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[9]
+      value: 
+      objectReference: {fileID: 4174735299716594917, guid: bb241da202c13094bbe8a22e5cdc0027,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[10]
+      value: 
+      objectReference: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939,
+        type: 3}
+    - target: {fileID: 6892683133512162645, guid: 9c3cc8a644656664cbd189835c335a81,
+        type: 3}
+      propertyPath: GenerateNipsOnStart.Array.data[11]
+      value: 
+      objectReference: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939,
+        type: 3}
     - target: {fileID: 6892683133512162647, guid: 9c3cc8a644656664cbd189835c335a81,
         type: 3}
       propertyPath: m_Name
