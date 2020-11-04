@@ -913,13 +913,13 @@ MonoBehaviour:
     Order: 2
   - Text: Time of day - Every morning a new janitor comes out on the street and every
       new night pleases us with a new dog
-    Image: {fileID: 21300000, guid: 9512d2e32750c8048b0f5fdab3a00e9d, type: 3}
+    Image: {fileID: 21300000, guid: c74fa92ebdd8a1d4895ddd80d5f42c98, type: 3}
     Order: 3
   - Text: Prison - Wanted to save the character - hide him here
-    Image: {fileID: 21300000, guid: b009c6bb49b15eb4aaaf56e5e797dbb6, type: 3}
+    Image: {fileID: 21300000, guid: 5cefde48feaba81469cd51bcc504efca, type: 3}
     Order: 7
   - Text: Shop - Here you can buy new objects and characters
-    Image: {fileID: 21300000, guid: e683de6366c73814d8fe328266c77a72, type: 3}
+    Image: {fileID: 21300000, guid: c3e11b4a16a4c1d4ca7b04d8fbaf09b4, type: 3}
     Order: 8
   - Text: Janitor - Excessive cleanliness lover who dreams of becoming president.
       He is task is simple - to clear the yard of debris
