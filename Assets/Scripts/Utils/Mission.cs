@@ -23,7 +23,7 @@ public class Mission {
         { "Valun", "Stone" },
         { "Svalka", "Trash can" },
         { "Police", "Police" },
-        { "Chinese", "Chinese" },
+        { "Chinese", "Asian" },
         { "StreetDog", "Dog" }
     };
     public int requiredCount;
