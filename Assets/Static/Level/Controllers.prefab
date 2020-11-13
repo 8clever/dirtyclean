@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6892683133512162667}
   - component: {fileID: 6892683133512162664}
   - component: {fileID: 1509090013869018651}
+  - component: {fileID: 5210751774383720850}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   continueButton: {fileID: 0}
   audioSource: {fileID: 0}
+  audioClickContinue: {fileID: 0}
 --- !u!114 &6892683133512162645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: 0
   isPause: 0
-  audioSource: {fileID: 1509090013869018651}
   Level: 10
   gameInitialized: 0
   missions: []
@@ -79,6 +80,7 @@ MonoBehaviour:
     type: 3}
   GenerateNipOnNight: {fileID: 6217842556066679451, guid: af7050dc1ec4db64ea571c592e28ea5b,
     type: 3}
+  health: 0
 --- !u!114 &6892683133512162667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +204,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5210751774383720850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892683133512162647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d19237c6b6ad454391411ce6428d0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

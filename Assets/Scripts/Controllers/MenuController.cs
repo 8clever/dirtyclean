@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
 
 public class MenuController : MonoBehaviour
 {
-
     public GameObject continueButton;
     public AudioSource audioSource;
     public AudioClip audioClickContinue;
