@@ -2,10 +2,13 @@
 using UnityEngine.Advertisements;
 public class AdsController : MonoBehaviour
 {
-    private string[] gameIds = {
-        "3900694",
-        "3900695"
-    };
+
+    #if UNITY_IOS
+    private string gameId = "3900694";
+
+    #elif UNITY_ANDROID
+    private string gameId = "3900695";
+    #endif
     private System.DateTime nextTimeAd;
     private int ShowAdEachMinute = 10;
     private void Awake() {
@@ -13,9 +16,7 @@ public class AdsController : MonoBehaviour
     }
     void Start()
     {
-        foreach (var id in gameIds) {
-            Advertisement.Initialize (id);   
-        }
+        Advertisement.Initialize (gameId);   
     }
     private void SetNextTimeAd () {
         nextTimeAd = System.DateTime.UtcNow.Add(System.TimeSpan.FromMinutes(ShowAdEachMinute));
