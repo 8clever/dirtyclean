@@ -9,14 +9,16 @@ public class AdsController : MonoBehaviour, IUnityAdsListener
     #elif UNITY_ANDROID
     private string gameId = "3900695";
     #endif
+
     public GameController controller;
     public bool showBanner = false;
-    private string rewardedHealthAd = "rewardedVideo";
-    private string bannerAd = "bannerAd";
+    private string rewardedHealthAd = "healthReward";
+    private string bannerAd = "bannerTop";
+    private bool testMode = false;
     void Start()
     {
         Advertisement.AddListener(this);
-        Advertisement.Initialize (gameId, true);   
+        Advertisement.Initialize(gameId, testMode);   
         if (showBanner) {
             Advertisement.Banner.SetPosition (BannerPosition.TOP_CENTER);
             StartCoroutine(ShowBannerWhenInitialized());
@@ -34,21 +36,20 @@ public class AdsController : MonoBehaviour, IUnityAdsListener
         while (!Advertisement.isInitialized) {
             yield return new WaitForSeconds(0.5f);
         }
-        Advertisement.Banner.Show (bannerAd);
+        Advertisement.Banner.Show(bannerAd);
     }
     public void OnUnityAdsReady(string placementId)
     {
+        Debug.Log($"READY AD: {placementId}");
     }
-
     public void OnUnityAdsDidError(string message)
     {
-        Debug.Log(message);
+        Debug.Log($"AD ERROR: {message}");
     }
-
     public void OnUnityAdsDidStart(string placementId)
     {
+        Debug.Log($"Show AD: {placementId}");
     }
-
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         if (showResult == ShowResult.Failed) return;
