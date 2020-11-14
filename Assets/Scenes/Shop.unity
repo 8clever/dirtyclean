@@ -203,7 +203,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1202977485}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -279,7 +279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000033908, y: -0.000061019513}
+  m_AnchoredPosition: {x: 0.000033908, y: 0.000064611435}
   m_SizeDelta: {x: 0, y: 1028.5907}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &302975018
@@ -1258,7 +1258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  showBanner: 1
+  loadBanner: 1
+  loadReward: 0
 --- !u!1 &1202977484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1293,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.99999994, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

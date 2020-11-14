@@ -1,67 +1,53 @@
 ﻿using UnityEngine;
-using UnityEngine.Advertisements;
-using System.Collections;
-public class AdsController : MonoBehaviour, IUnityAdsListener
-{
+using GoogleMobileAds.Api;
 
-    #if UNITY_IOS
-    private string gameId = "3900694";
-    #elif UNITY_ANDROID
-    private string gameId = "3900695";
+public class AdsController : MonoBehaviour
+{
+    #if UNITY_ANDROID
+        private string bannerId = "ca-app-pub-7579927697787840/9033894090";
+        private string rewardId = "ca-app-pub-7579927697787840/7090257032";
+    #elif UNITY_IPHONE
+        private string bannerId = "not-have-yet";
+        private string rewardId = "not-have-yet";
+    #else
+        private string bannerId = "unexpected_platform";
+        private string rewardId = "unexpected_platform";
     #endif
 
-    public GameController controller;
-    public bool showBanner = false;
-    private string rewardedHealthAd = "healthReward";
-    private string bannerAd = "bannerTop";
-    private bool testMode = false;
+    public bool loadBanner = false;
+    public bool loadReward = false;
+    private BannerView banner;
+    private RewardedAd reward;
     void Start()
     {
-        Advertisement.AddListener(this);
-        Advertisement.Initialize(gameId, testMode);   
-        if (showBanner) {
-            Advertisement.Banner.SetPosition (BannerPosition.TOP_CENTER);
-            StartCoroutine(ShowBannerWhenInitialized());
+        MobileAds.Initialize(initStatus => {});
+        banner = new BannerView(bannerId, AdSize.Banner, AdPosition.Top);
+        reward = new RewardedAd(rewardId);
+        reward.OnUserEarnedReward += HandlerUserEarnedReward;
+        reward.OnAdClosed += HandleRewardClosed;
+        if (loadBanner) {
+            banner.LoadAd(GetAdRequest());
         }
-        
-    }
-    public void ShowHealthAd() {
-        if (Advertisement.IsReady(rewardedHealthAd)) {
-            Advertisement.Show(rewardedHealthAd);
-            return;
+        if (loadReward) {
+            reward.LoadAd(GetAdRequest());
         }
-        Debug.Log("Rewarded video not ready yet!");
     }
-    IEnumerator ShowBannerWhenInitialized () {
-        while (!Advertisement.isInitialized) {
-            yield return new WaitForSeconds(0.5f);
-        }
-        Advertisement.Banner.Show(bannerAd);
-    }
-    public void OnUnityAdsReady(string placementId)
-    {
-        Debug.Log($"READY AD: {placementId}");
-    }
-    public void OnUnityAdsDidError(string message)
-    {
-        Debug.Log($"AD ERROR: {message}");
-    }
-    public void OnUnityAdsDidStart(string placementId)
-    {
-        Debug.Log($"Show AD: {placementId}");
-    }
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
-    {
-        if (showResult == ShowResult.Failed) return;
-        if (controller && placementId == rewardedHealthAd) {
-            controller.AddPointsToHealth(20);
-        }
-        Debug.Log("Health added!");
+    private AdRequest GetAdRequest () {
+        return new AdRequest.Builder().Build();
     }
     private void OnDestroy() {
-        if (showBanner) {
-            Advertisement.Banner.Hide();
-        }    
-        Advertisement.RemoveListener(this);
+        banner.Destroy();
+    }
+    public void ShowHealthAd() {
+        if (reward.IsLoaded()) {
+            reward.Show();
+        }
+    }
+    public void HandlerUserEarnedReward(object sender, Reward args) {
+        GameController controller = GameObject.FindObjectOfType<GameController>();
+        controller.AddPointsToHealth(System.Convert.ToInt32(args.Amount));
+    }
+    public void HandleRewardClosed(object sender, System.EventArgs args) {
+        reward.LoadAd(GetAdRequest());
     }
 }

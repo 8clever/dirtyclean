@@ -940,4 +940,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  showBanner: 1
+  loadBanner: 1
+  loadReward: 0
