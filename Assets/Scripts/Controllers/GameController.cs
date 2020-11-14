@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public Nip GenerateNipOnMorning;
     public Nip GenerateNipOnNight;
     private int step = 0;
+    private int maxHealth = 150;
     public int health = 0;
     private System.DateTime? timeStartAddHealth = null;
     private GameObject shadow = null;
@@ -44,7 +45,7 @@ public class GameController : MonoBehaviour
     }
 
     public void DefaultStart () {
-        AddPointsToHealth(config.maxHealth);
+        AddPointsToHealth(maxHealth);
         AddHealthPointsByTime().GetAwaiter();
         ToggleShadow(false);
         GenerateItem();
@@ -222,8 +223,8 @@ public class GameController : MonoBehaviour
 
     public void AddPointsToHealth (int num) {
         health += num;
-        if (health > config.maxHealth) {
-            health = config.maxHealth;
+        if (health > maxHealth) {
+            health = maxHealth;
         }
         RenderHealth();
     }
@@ -240,7 +241,7 @@ public class GameController : MonoBehaviour
             timeStartAddHealth = System.DateTime.UtcNow;
         }
         // end add health
-        if (health == config.maxHealth) {
+        if (health == maxHealth) {
             timeStartAddHealth = null;
         }
         var diffTime = System.DateTime.UtcNow.Subtract(timeStartAddHealth ?? System.DateTime.UtcNow);

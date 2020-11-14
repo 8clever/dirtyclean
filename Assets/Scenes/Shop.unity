@@ -399,7 +399,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 915671154}
   m_HandleRect: {fileID: 915671153}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1199,6 +1199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059368854}
   - component: {fileID: 1059368855}
+  - component: {fileID: 1059368856}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -1244,6 +1245,20 @@ MonoBehaviour:
   Prefab: {fileID: 2832302619138482465, guid: 9cb693ad3796ea04ca9b6dabd42a5d35, type: 3}
   Container: {fileID: 302975016}
   Animator: {fileID: 2135260164}
+--- !u!114 &1059368856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059368853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d19237c6b6ad454391411ce6428d0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  showBanner: 1
 --- !u!1 &1202977484
 GameObject:
   m_ObjectHideFlags: 0

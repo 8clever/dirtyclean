@@ -875,6 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992290933}
   - component: {fileID: 1992290932}
+  - component: {fileID: 1992290934}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -899,14 +900,17 @@ MonoBehaviour:
     count: 0
     type: 0
     Nip: Musorka
+    CustomMissionText: 
   - requiredCount: 10
     count: 0
     type: 4
     Nip: Buldozer
+    CustomMissionText: 
   - requiredCount: 10
     count: 0
     type: 4
     Nip: Buldozer
+    CustomMissionText: 
   content: {fileID: 1377648348}
   Checkbox: {fileID: 655880049546036744, guid: cc5c7462555a47342ab86b3196d9b5db, type: 3}
 --- !u!4 &1992290933
@@ -923,3 +927,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1992290934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992290931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d19237c6b6ad454391411ce6428d0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  showBanner: 1

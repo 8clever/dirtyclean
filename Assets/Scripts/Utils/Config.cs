@@ -21,7 +21,6 @@ public class Config {
     public bool HideCells = false;
     public bool Music = true;
     public int healthPointsAtSeconds = 15; 
-    public int maxHealth = 300;
     public bool ShowCutscene = true;
     private static string configKey = "configKey";
     private static Config config;
