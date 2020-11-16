@@ -17,7 +17,8 @@ public enum Scenes {
     LVL2,
     Library,
     LVL3,
-    LVL4
+    LVL4,
+    NeedTurns
 }
 
 public class LoadSceneButton : MonoBehaviour

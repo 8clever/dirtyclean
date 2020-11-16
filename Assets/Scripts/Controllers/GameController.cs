@@ -129,6 +129,10 @@ public class GameController : MonoBehaviour
         AddPointsToHealth(-1);
         step += 1;
 
+        if (health == 0) {
+            SceneManager.LoadSceneAsync(Scenes.NeedTurns.ToString(), LoadSceneMode.Additive);
+        }
+
         var time = RenderCurrentTime();
         
         if (time == 0) {

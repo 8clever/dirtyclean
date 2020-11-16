@@ -46,6 +46,7 @@ public class AdsController : MonoBehaviour
     public void HandlerUserEarnedReward(object sender, Reward args) {
         GameController controller = GameObject.FindObjectOfType<GameController>();
         controller.AddPointsToHealth(System.Convert.ToInt32(args.Amount));
+        Debug.Log($"ReceivedPoints: {args.Amount}");
     }
     public void HandleRewardClosed(object sender, System.EventArgs args) {
         reward.LoadAd(GetAdRequest());

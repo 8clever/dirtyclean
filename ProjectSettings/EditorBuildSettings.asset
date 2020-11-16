@@ -45,9 +45,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Library.unity
     guid: 98578d71f8dfe844e86572942f246559
   - enabled: 1
-    path: Assets/Scenes/LVL1.unity
+    path: Assets/Scenes/lvl1.unity
     guid: 1f70f571c6d369a4a9a341690913b3f3
   - enabled: 1
     path: Assets/Scenes/LVL2.unity
     guid: 5b32c2a5c784aa4458393b3de696ccde
+  - enabled: 1
+    path: Assets/Scenes/NeedTurns.unity
+    guid: fe0b78f2be3f06d449b7cc60429096b9
   m_configObjects: {}
