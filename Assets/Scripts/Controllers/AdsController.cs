@@ -7,8 +7,8 @@ public class AdsController : MonoBehaviour
         private string bannerId = "ca-app-pub-7579927697787840/9033894090";
         private string rewardId = "ca-app-pub-7579927697787840/7090257032";
     #elif UNITY_IPHONE
-        private string bannerId = "not-have-yet";
-        private string rewardId = "not-have-yet";
+        private string bannerId = "ca-app-pub-7579927697787840/7409875131";
+        private string rewardId = "ca-app-pub-7579927697787840/6621221850";
     #else
         private string bannerId = "unexpected_platform";
         private string rewardId = "unexpected_platform";
