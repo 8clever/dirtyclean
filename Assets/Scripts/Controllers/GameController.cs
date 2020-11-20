@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
                 Instantiate(nip, emptyCell.transform);
             }
         }
+        SceneManager.LoadSceneAsync(Scenes.Tasks.ToString(), LoadSceneMode.Additive);
     }
 
     private void MoveNips () {

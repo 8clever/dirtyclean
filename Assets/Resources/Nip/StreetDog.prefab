@@ -111,7 +111,8 @@ MonoBehaviour:
   - To: {fileID: 6280408041085566285, guid: 8866c95b18f7aee46b6c830ae3e3c37b, type: 3}
     ChangeTo: {fileID: 0}
   AddPointsOnCreate: 0
-  Synthesis: {fileID: 0}
+  Synthesis: {fileID: 6909481519915534566, guid: aa0f89c9fd73b19499a960af945d85f7,
+    type: 3}
 --- !u!1001 &1399552017985003896
 PrefabInstance:
   m_ObjectHideFlags: 0
