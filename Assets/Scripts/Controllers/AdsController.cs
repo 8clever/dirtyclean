@@ -25,7 +25,10 @@ public class AdsController : MonoBehaviour
         reward = new RewardedAd(rewardId);
         reward.OnUserEarnedReward += HandlerUserEarnedReward;
         reward.OnAdClosed += HandleRewardClosed;
+        banner.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        banner.OnAdLoaded += HandleOnAdLoaded;
         if (loadBanner) {
+
             banner.LoadAd(GetAdRequest());
         }
         if (loadReward) {
@@ -50,5 +53,14 @@ public class AdsController : MonoBehaviour
     }
     public void HandleRewardClosed(object sender, System.EventArgs args) {
         reward.LoadAd(GetAdRequest());
+    }
+    public void HandleOnAdLoaded(object sender, System.EventArgs args)
+    {
+        Debug.Log("Banner AD loaded success");
+    }
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        Debug.Log("Banner AD error: " + args.Message);
     }
 }
