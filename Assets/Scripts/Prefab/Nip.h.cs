@@ -18,19 +18,19 @@ public class Nip : MonoBehaviour
 {
     public AudioClip awakeAudio;
     public AudioClip destroyAudio;
+    public int Grade = 0;
     private Config config;
     private Transform prevParent;
     private GameController controller;
     public static readonly string TAG = "nip";
-
     private void Awake () {
         DefAwake();
     }
     public void DefAwake () {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-        controller.SetMission(GetName(), Mission.Type.Create, 1);
-        controller.SetMission(GetName(), Mission.Type.Collect, 1);
+        controller.SetMission(this, Mission.Type.Create, 1);
+        controller.SetMission(this, Mission.Type.Collect, 1);
         if (controller.gameInitialized && awakeAudio) {
             MusicController.PlayOnce(awakeAudio);
         }
@@ -38,8 +38,8 @@ public class Nip : MonoBehaviour
 
     private void OnDestroy() {
         if (controller.gameInitialized) {
-            controller.SetMission(GetName(), Mission.Type.Destroy, 1);    
-            controller.SetMission(GetName(), Mission.Type.Collect, -1);
+            controller.SetMission(this, Mission.Type.Destroy, 1);    
+            controller.SetMission(this, Mission.Type.Collect, -1);
         }
         if (destroyAudio) {
             MusicController.PlayOnce(destroyAudio);

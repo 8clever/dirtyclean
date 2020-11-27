@@ -366,7 +366,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 1000, y: 50}
+  m_CellSize: {x: 700, y: 100}
   m_Spacing: {x: 0, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -898,20 +898,21 @@ MonoBehaviour:
   - requiredCount: 20
     count: 0
     type: 0
-    Nip: Musorka
+    Nip: {fileID: 6756198704959304835, guid: 2b6870aa085c4c145908cd5e704f856d, type: 3}
     CustomMissionText: 
   - requiredCount: 10
     count: 0
-    type: 4
-    Nip: Buldozer
+    type: 1
+    Nip: {fileID: 8472655838353643482, guid: e7b91dc9ac714164c9cdddaae52c0939, type: 3}
     CustomMissionText: 
   - requiredCount: 10
     count: 0
-    type: 4
-    Nip: Buldozer
+    type: 2
+    Nip: {fileID: 5289683741908913829, guid: 37362ac78ae2b84449e41d3e74cc972b, type: 3}
     CustomMissionText: 
   content: {fileID: 1377648348}
-  Checkbox: {fileID: 655880049546036744, guid: cc5c7462555a47342ab86b3196d9b5db, type: 3}
+  TaskItem: {fileID: 1689146795619876818, guid: 9720d467617bf384390f205e5eac927f,
+    type: 3}
 --- !u!4 &1992290933
 Transform:
   m_ObjectHideFlags: 0

@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakeAudio: {fileID: 8300000, guid: c272c6a633213bc42b3654d820825399, type: 3}
   destroyAudio: {fileID: 8300000, guid: 1cacdfb96da91c1468636eec473fd166, type: 3}
+  Grade: 7
   ExplodeAnimation: {fileID: 3917246813796912261, guid: d00b8fce34468464c9efe6b4d0f35920,
     type: 3}
 --- !u!95 &-94762061225878407

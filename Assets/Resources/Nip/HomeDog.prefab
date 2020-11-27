@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awakeAudio: {fileID: 8300000, guid: c41f2f00c228ad446a96efbe308c2baf, type: 3}
   destroyAudio: {fileID: 0}
+  Grade: 2
   audioCatchEnemy: {fileID: 8300000, guid: 0d87f09949ecced488800b0acba6157f, type: 3}
   CanDrag: 1
   DisableMove: 0

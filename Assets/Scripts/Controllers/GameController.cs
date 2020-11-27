@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public List<Nip> GenerateNipsOnStart = new List<Nip>();
     public Nip GenerateNipOnMorning;
     public Nip GenerateNipOnNight;
+    public List<Nip> missionNips = new List<Nip>();
     private int step = 0;
     private int maxHealth = 150;
     public int health = 0;
@@ -23,7 +24,8 @@ public class GameController : MonoBehaviour
     private GameObject shadow = null;
     private Config config = null;
     private bool IsGameEnd = false;
-
+    private int currentGrade = 1;
+    public int stars = 0;
     private void Awake() {
         DefaultAwake();
     }
@@ -55,6 +57,30 @@ public class GameController : MonoBehaviour
                 Instantiate(nip, emptyCell.transform);
             }
         }
+        GenerateMission();
+        GenerateMission();
+    }
+
+    private Nip GetRandomNip () {
+        var rnd = new System.Random();
+        var nips = missionNips.FindAll(i => i.Grade <= currentGrade);
+        Nip rndNip = nips[rnd.Next(nips.Count)];
+        if (missions.Find(m => m.Nip.GetName() == rndNip.GetName()) == null) return rndNip;
+        return GetRandomNip();
+    }
+
+    private void GenerateMission () {
+        var rnd = new System.Random();
+        var types = System.Enum.GetValues(typeof(Mission.Type));
+        var rndType = (Mission.Type)types.GetValue(rnd.Next(types.Length));
+        var rndNip = GetRandomNip();
+
+        Mission mission = new Mission() {
+            type = rndType,
+            requiredCount = Random.Range(0, 10),
+            Nip = rndNip
+        };
+        missions.Add(mission);
     }
 
     private void MoveNips () {
@@ -124,7 +150,6 @@ public class GameController : MonoBehaviour
     }
 
     public void NextStep () {
-        SetMission("Play", Mission.Type.PlayTurns, 1);
         gameInitialized = true;
         AddPointsToHealth(-1);
         step += 1;
@@ -155,10 +180,6 @@ public class GameController : MonoBehaviour
 
         if (time == 4) {
             ToggleShadow(true);
-        }
-
-        foreach(var m in missions) {
-            m.NotCreateInSteps();
         }
 
         MoveNips();
@@ -271,11 +292,19 @@ public class GameController : MonoBehaviour
         health.fillAmount = System.Convert.ToSingle(bar);
     }
 
-    public void SetMission (string nip, Mission.Type type, int count) {
-        var mission = missions.Find(m => m.Nip == nip && m.type == type);
+    public void SetMission (Nip nip, Mission.Type type, int count) {
+        var mission = missions.Find(m => m.Nip.GetName() == nip.GetName() && m.type == type);
         if (mission == null) return;
 
         mission.count += count;
+        if (mission.count < 0) mission.count = 0;
+        if (mission.IsComplete()) {
+            stars += 1;
+            var newGrade = mission.Nip.Grade + 1;
+            if (newGrade > currentGrade) currentGrade = newGrade;
+            missions.Remove(mission);
+            GenerateMission();
+        }
     }
 
     [System.Serializable]

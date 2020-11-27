@@ -8,21 +8,19 @@ public class MissionController : MonoBehaviour
 {
     public Mission[] missions = {};
     public GameObject content;
-    public Checkbox Checkbox;
+    public GameObject TaskItem;
     public void Start()
     {
-        var scene = SceneManager.GetActiveScene();
-        var objects = scene.GetRootGameObjects();
-        foreach (var o in objects) {
-            var controller = o.GetComponent<GameController>();
-            if (controller) {
-                missions = controller.missions.ToArray();
-            }
+        var controller = FindObjectOfType<GameController>();
+        if (controller) {
+            missions = controller.missions.ToArray();
         }
         foreach(var m in missions) {
-            var obj = Instantiate(Checkbox, content.transform);
-            obj.text = m.GetMissionInfo();
-            obj.Checked = m.IsComplete();
+            var i = Instantiate(TaskItem, content.transform);
+            i.GetComponentInChildren<Text>().text = $"{m.type.ToString()} {m.count}/{m.requiredCount}";
+            SpriteRenderer renderer;
+            m.Nip.TryGetComponent<SpriteRenderer>(out renderer);
+            i.GetComponentInChildren<Image>().sprite = renderer.sprite;
         }
     }
 }
