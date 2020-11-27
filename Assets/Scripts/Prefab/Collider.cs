@@ -29,6 +29,10 @@ public class Collider : MonoBehaviour
     {
         if (controller.isPause) return;
 
+        if (handPicked && !dragged) {
+            clickable = true;
+        }
+
         if (clickable && !clickableAnimation) {
             var animation = Resources.Load<GameObject>("Animations/ClickableAnimation");
             var render = animation.GetComponent<SpriteRenderer>();

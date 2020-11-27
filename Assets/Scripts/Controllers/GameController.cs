@@ -55,7 +55,6 @@ public class GameController : MonoBehaviour
                 Instantiate(nip, emptyCell.transform);
             }
         }
-        SceneManager.LoadSceneAsync(Scenes.Tasks.ToString(), LoadSceneMode.Additive);
     }
 
     private void MoveNips () {
@@ -136,20 +135,26 @@ public class GameController : MonoBehaviour
 
         var time = RenderCurrentTime();
         
+        var halfTime = time % 2;
+
+        var cell = GetRandomRespawnCell();
+
+        if (cell) {
+            Instantiate(
+                halfTime == 0 ?
+                GenerateNipOnMorning :
+                GenerateNipOnNight, 
+                cell.transform
+            );
+        }
+        
+
         if (time == 0) {
             ToggleShadow(false);
-            var cell = GetRandomRespawnCell();
-            if (cell) {
-                Instantiate(GenerateNipOnMorning, cell.transform);
-            }
         }
 
         if (time == 4) {
             ToggleShadow(true);
-            var cell = GetRandomRespawnCell();
-            if (cell) {
-                Instantiate(GenerateNipOnNight, cell.transform);
-            }
         }
 
         foreach(var m in missions) {
