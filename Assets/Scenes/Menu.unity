@@ -303,9 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33a1636d6cc19a4eb6c78a3935123c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 8
-  Async: 0
-  mode: 1
+  scene: 13
+  Async: 1
+  mode: 0
   audioClick: {fileID: 8300000, guid: c64f6421392b74948b61a3aa82e8b0a7, type: 3}
 --- !u!1 &387065529 stripped
 GameObject:

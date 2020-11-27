@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     }
     private GameController controller;
     private Config config;
-
+    private Collider innerCollier;
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
@@ -54,5 +54,16 @@ public class Item : MonoBehaviour
         return new Save () {
             ResourcePath = $"Item/{GetName()}"
         };
+    }
+
+    private void Update() {
+        var clickable = (
+            transform.position.x == transform.parent.position.x &&
+            transform.position.y == transform.parent.position.y
+        );
+        if (!innerCollier) {
+            innerCollier = transform.GetComponentInChildren<Collider>();
+        }
+        innerCollier.clickable = clickable;
     }
 }

@@ -15,6 +15,8 @@ public class Collider : MonoBehaviour
     private GameObject handPicked;
     private GameController controller;
     private Config config;
+    public bool clickable = false;
+    private GameObject clickableAnimation;
     private void Awake() {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
@@ -27,9 +29,30 @@ public class Collider : MonoBehaviour
     {
         if (controller.isPause) return;
 
+        if (clickable && !clickableAnimation) {
+            var animation = Resources.Load<GameObject>("Animations/ClickableAnimation");
+            var render = animation.GetComponent<SpriteRenderer>();
+            render.sprite = gameObject.transform.parent.GetComponent<SpriteRenderer>().sprite;
+            clickableAnimation = Instantiate(animation, transform);
+        }
+
+        if (!clickable && clickableAnimation) {
+            Destroy(clickableAnimation.gameObject);
+            clickableAnimation = null;
+        }
+
         if (dragged) {
             OnCellCanDrop(Hit(true), true);
-        }
+            var nips = FindObjectsOfType<Nip>();
+            foreach (var n in nips) {
+                var canDrop = OnCellCanDrop(n.GetComponentInParent<Cell>(), false);
+                if (canDrop) {
+                    n.GetComponentInChildren<Collider>().clickable = true;
+                }
+            }
+        } 
+
+        clickable = false;
 
         if (isNip) {
             if (draggable && handPicked == null) {
