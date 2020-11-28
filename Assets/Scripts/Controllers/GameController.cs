@@ -59,14 +59,18 @@ public class GameController : MonoBehaviour
         }
         GenerateMission();
         GenerateMission();
+        GenerateMission();
     }
 
     private Nip GetRandomNip () {
         var rnd = new System.Random();
         var nips = missionNips.FindAll(i => i.Grade <= currentGrade);
-        Nip rndNip = nips[rnd.Next(nips.Count)];
-        if (missions.Find(m => m.Nip.GetName() == rndNip.GetName()) == null) return rndNip;
-        return GetRandomNip();
+        var availableNips = nips.FindAll(n => {
+            var exists = missions.Find(m => m.Nip.GetName() == n.GetName());
+            return exists == null;
+        });
+        Nip rndNip = availableNips[rnd.Next(availableNips.Count)];
+        return rndNip;
     }
 
     private void GenerateMission () {
@@ -77,7 +81,7 @@ public class GameController : MonoBehaviour
 
         Mission mission = new Mission() {
             type = rndType,
-            requiredCount = Random.Range(0, 10),
+            requiredCount = Random.Range(1, 10),
             Nip = rndNip
         };
         missions.Add(mission);
@@ -296,14 +300,27 @@ public class GameController : MonoBehaviour
         var mission = missions.Find(m => m.Nip.GetName() == nip.GetName() && m.type == type);
         if (mission == null) return;
 
+        if (type == Mission.Type.Collect) {
+            var allNips = new List<GameObject>(GameObject.FindGameObjectsWithTag("nip"));
+            var nips = allNips.FindAll(n => {
+                return n.GetComponent<Nip>().GetName() == nip.GetName();
+            });
+            mission.count = nips.Count;
+        }
+
         mission.count += count;
         if (mission.count < 0) mission.count = 0;
         if (mission.IsComplete()) {
+            var anim = Resources.Load<GameObject>("Animations/MissionComplete");
+            var canvas = GameObject.Find("Canvas");
+            Instantiate(anim, canvas.transform);
             stars += 1;
             var newGrade = mission.Nip.Grade + 1;
             if (newGrade > currentGrade) currentGrade = newGrade;
             missions.Remove(mission);
             GenerateMission();
+            var starController = FindObjectOfType<StarController>();
+            starController.clickable = true;
         }
     }
 

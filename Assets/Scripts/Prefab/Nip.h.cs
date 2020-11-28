@@ -30,7 +30,7 @@ public class Nip : MonoBehaviour
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
         controller.SetMission(this, Mission.Type.Create, 1);
-        controller.SetMission(this, Mission.Type.Collect, 1);
+        controller.SetMission(this, Mission.Type.Collect, 0);
         if (controller.gameInitialized && awakeAudio) {
             MusicController.PlayOnce(awakeAudio);
         }
@@ -39,7 +39,7 @@ public class Nip : MonoBehaviour
     private void OnDestroy() {
         if (controller.gameInitialized) {
             controller.SetMission(this, Mission.Type.Destroy, 1);    
-            controller.SetMission(this, Mission.Type.Collect, -1);
+            controller.SetMission(this, Mission.Type.Collect, 0);
         }
         if (destroyAudio) {
             MusicController.PlayOnce(destroyAudio);

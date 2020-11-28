@@ -21,7 +21,7 @@ public class AdsController : MonoBehaviour
     void Start()
     {
         MobileAds.Initialize(initStatus => {});
-        banner = new BannerView(bannerId, AdSize.SmartBanner, AdPosition.Bottom);
+        banner = new BannerView(bannerId, AdSize.SmartBanner, AdPosition.Top);
         reward = new RewardedAd(rewardId);
         reward.OnUserEarnedReward += HandlerUserEarnedReward;
         reward.OnAdClosed += HandleRewardClosed;
