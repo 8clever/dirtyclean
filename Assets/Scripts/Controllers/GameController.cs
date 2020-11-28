@@ -320,7 +320,9 @@ public class GameController : MonoBehaviour
             missions.Remove(mission);
             GenerateMission();
             var starController = FindObjectOfType<StarController>();
-            starController.clickable = true;
+            if (starController) {
+                starController.clickable = true;
+            }
         }
     }
 

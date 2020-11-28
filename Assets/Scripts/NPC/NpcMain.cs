@@ -34,6 +34,8 @@ public class NpcMain : Nip
                 if (audioCatchEnemy) {
                     MusicController.PlayOnce(audioCatchEnemy);
                 }
+                var anim = Resources.Load<GameObject>("Animations/FightNip");
+                Instantiate(anim, nip.transform.parent);
                 AddPoints(1);
                 Destroy(nip.gameObject);
                 if (move.ChangeTo) {

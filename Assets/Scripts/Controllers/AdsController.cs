@@ -28,7 +28,6 @@ public class AdsController : MonoBehaviour
         banner.OnAdFailedToLoad += HandleOnAdFailedToLoad;
         banner.OnAdLoaded += HandleOnAdLoaded;
         if (loadBanner) {
-
             banner.LoadAd(GetAdRequest());
         }
         if (loadReward) {
