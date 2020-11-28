@@ -353,7 +353,14 @@ public class Nip : MonoBehaviour
     }
 
     public void AddPoints (int number) {
+        if (!controller.gameInitialized) return;
+        if (number == 0) return;
+        
         controller.AddPointsToPoints(number);
+        var anim = Resources.Load<GameObject>("Animations/PointAddAnimation");
+        var obj = Instantiate(anim, transform);
+        var symbol = number > 0 ? "+" : "";
+        obj.GetComponentInChildren<TMPro.TextMeshPro>().text = $"{symbol}{number}";
     }
 
     public void OnCollisionList (Collision collision, List<System.Type> list) {

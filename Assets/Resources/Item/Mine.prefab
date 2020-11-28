@@ -105,7 +105,7 @@ MonoBehaviour:
   AllowDropToPrison: 0
   CreateAfterDropOnEmptyCell: {fileID: 5301850034150795258, guid: 2e6e77a9db1719c46ac3718d610cc220,
     type: 3}
-  Price: 150
+  Price: 100
 --- !u!1 &6617876624490433498
 GameObject:
   m_ObjectHideFlags: 0
