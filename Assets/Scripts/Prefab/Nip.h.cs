@@ -29,8 +29,10 @@ public class Nip : MonoBehaviour
     public void DefAwake () {
         config = Config.GetConfig();
         controller = GameObject.FindObjectOfType<GameController>();
-        controller.SetMission(this, Mission.Type.Create, 1);
-        controller.SetMission(this, Mission.Type.Collect, 0);
+        if (controller.gameInitialized) {
+            controller.SetMission(this, Mission.Type.Create, 1);
+            controller.SetMission(this, Mission.Type.Collect, 0);
+        }
         if (controller.gameInitialized && awakeAudio) {
             MusicController.PlayOnce(awakeAudio);
         }

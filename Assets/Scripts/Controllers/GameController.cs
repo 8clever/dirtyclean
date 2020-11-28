@@ -330,11 +330,10 @@ public class GameController : MonoBehaviour
     public class Save {
         public string level;
         public int step;
-
         public int health;
-
         public int point;
-
+        public int grade;
+        public int stars;
         [SerializeField]
         private string s_timeStartAddHealth = string.Empty;
         public System.DateTime? timeStartAddHealth {
@@ -373,25 +372,25 @@ public class GameController : MonoBehaviour
                 n.Restore();
             }
             // restore controller data
-            foreach (var o in root) {
-                var controller = o.GetComponent<GameController>();
-                if (controller) {
-                    controller.step = step;
-                    controller.health = health;
-                    controller.point = point;
-                    controller.timeStartAddHealth = timeStartAddHealth;
-                    controller.missions = missions;
-                    controller.RenderHealth();
-                    controller.RenderPoints();
-                    controller.RenderCurrentTime();
+            var controller = FindObjectOfType<GameController>();
+            controller.step = step;
+            controller.health = health;
+            controller.point = point;
+            controller.timeStartAddHealth = timeStartAddHealth;
+            controller.missions = missions;
+            controller.currentGrade = grade;
+            controller.stars = stars;
+            controller.RenderHealth();
+            controller.RenderPoints();
+            controller.RenderCurrentTime();
 
-                    // restore item;
-                    if (item?.ResourcePath == string.Empty) {
-                        controller.AfterNextStep();
-                    } else {
-                        item.Restore();
-                    }
-                }
+            Debug.Log(grade);
+
+            // restore item;
+            if (item?.ResourcePath == string.Empty) {
+                controller.AfterNextStep();
+            } else {
+                item.Restore();
             }
             
             SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
@@ -405,7 +404,9 @@ public class GameController : MonoBehaviour
             health = health,
             point = point,
             timeStartAddHealth = timeStartAddHealth,
-            missions = missions
+            missions = missions,
+            grade = currentGrade,
+            stars = stars
         };
         foreach (var o in GameObject.FindObjectsOfType<Nip>()) {
             save.nips.Add(o.GetSave());
