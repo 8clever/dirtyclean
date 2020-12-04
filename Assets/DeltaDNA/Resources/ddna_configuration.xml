@@ -2,7 +2,7 @@
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <environment_key_dev>b772a909-85d2-4daa-bf07-ff785501782f_Dev</environment_key_dev>
   <environment_key_live>b772a909-85d2-4daa-bf07-ff785501782f_Live</environment_key_live>
-  <environment_key>0</environment_key>
+  <environment_key>1</environment_key>
   <collect_url>collect19524ggdrt.deltadna.net/collect/api</collect_url>
   <engage_url>engage19524ggdrt.deltadna.net</engage_url>
   <hash_secret />
