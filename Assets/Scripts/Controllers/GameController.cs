@@ -313,6 +313,8 @@ public class GameController : MonoBehaviour
         if (mission.IsComplete()) {
             var anim = Resources.Load<GameObject>("Animations/MissionComplete");
             var canvas = GameObject.Find("Canvas");
+            if (canvas == null) return;
+
             Instantiate(anim, canvas.transform);
             stars += 1;
             var newGrade = mission.Nip.Grade + 1;
@@ -383,8 +385,6 @@ public class GameController : MonoBehaviour
             controller.RenderHealth();
             controller.RenderPoints();
             controller.RenderCurrentTime();
-
-            Debug.Log(grade);
 
             // restore item;
             if (item?.ResourcePath == string.Empty) {
