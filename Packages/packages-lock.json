@@ -76,7 +76,7 @@
       "dependencies": {}
     },
     "com.unity.accelerate": {
-      "version": "file:D:/Downloads/com.unity.accelerate-1.0.2.tgz",
+      "version": "file:../Assets/Plugins/com.unity.accelerate-1.0.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
