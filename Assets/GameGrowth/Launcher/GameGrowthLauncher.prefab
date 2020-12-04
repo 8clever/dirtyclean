@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2467769075533692444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2467769075533692445}
+  - component: {fileID: 2467769075533692446}
+  m_Layer: 0
+  m_Name: GameGrowthLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2467769075533692445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467769075533692444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2467769075533692446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467769075533692444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cf6a24b90593048848e7c32c0ddfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DefaultConfiguration: {fileID: 11400000, guid: abf87a26f7e718d4bba1875bb96d79ad,
+    type: 2}
+  m_Configuration: {fileID: 11400000, guid: f6eae538a506646b18db6270b4d11c95, type: 2}
+  m_StartAdjustManually: 0
+  m_AdjustEventBuffering: 0
+  m_AdjustSendInBackground: 0
+  m_AdjustLaunchDeferredDeeplink: 1
+  m_AdjustAndroidAppToken: '{Your Android App Token}'
+  m_AdjustAndroidPurchaseEventToken: '{Your Android Purchase Event Token}'
+  m_AdjustIosAppToken: '{Your iOS App Token}'
+  m_AdjustIosPurchaseEventToken: '{Your iOS Purchase Event Token}'
+  m_AdjustAppToken: '{Your App Token}'
+  m_AdjustPurchaseEventToken: '{Your Purchase Event Token}'
+  m_AdjustUseSameToken: 1
+  m_AdjustOverrideTokens: 0
+  m_AdjustLogLevel: 3
+  m_StartDeltaDnaManually: 0
+  m_AttributionChangedCallbackHandler:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2467769075533692446}
+        m_MethodName: DefaultAdjustAttributionCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_AdImpressionHandler:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2467769075533692446}
+        m_MethodName: DefaultRecordAdImpression
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_TransactionHandler:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2467769075533692446}
+        m_MethodName: DefaultRecordTransaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_UseDefaultImpressionTrackedHandler: 1

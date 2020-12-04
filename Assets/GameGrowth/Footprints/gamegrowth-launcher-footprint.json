@@ -1,0 +1,226 @@
+{
+    "name": "Game Growth Launcher",
+    "version": "1.0.14",
+    "directories": [
+        "Assets/GameGrowth",
+        "Assets/GameGrowth/Launcher",
+        "Assets/GameGrowth/Launcher/Editor",
+        "Assets/GameGrowth/Launcher/Editor/Helpers",
+        "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation",
+        "Assets/GameGrowth/Launcher/Helpers",
+        "Assets/GameGrowth/Launcher/Helpers/Adjust",
+        "Assets/GameGrowth/Launcher/Helpers/DeltaDNA"
+    ],
+    "files": [
+        {
+            "path": "Assets/GameGrowth.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/AttributionCallbackHandler.cs",
+            "sdkStepChecksum": "917e1a24e8e82f2bffa1429853aa0e88",
+            "checksum": "917e1a24e8e82f2bffa1429853aa0e88"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/AttributionCallbackHandler.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/DefaultGameGrowthConfiguration.asset",
+            "sdkStepChecksum": "7fab92808ec97372a9c2d60c9c7ffb83",
+            "checksum": "7fab92808ec97372a9c2d60c9c7ffb83"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/DefaultGameGrowthConfiguration.asset.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthAutomaticConfiguration.cs",
+            "sdkStepChecksum": "d11a8aa3ef7505fbc028a8094012799c",
+            "checksum": "d11a8aa3ef7505fbc028a8094012799c"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthAutomaticConfiguration.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthLauncherWindow.cs",
+            "sdkStepChecksum": "d9226dc6e03ce6e6ee693a2fa868cc77",
+            "checksum": "d9226dc6e03ce6e6ee693a2fa868cc77"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthLauncherWindow.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthPostBuild.cs",
+            "sdkStepChecksum": "3346ee57375c1e344aef58fea62bc26a",
+            "checksum": "3346ee57375c1e344aef58fea62bc26a"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/GameGrowthPostBuild.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/AdMobConfigurationHelper.cs",
+            "sdkStepChecksum": "6e290b6978653c30d496a0df5ae36c38",
+            "checksum": "6e290b6978653c30d496a0df5ae36c38"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/AdMobConfigurationHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/UnityEditor.GameGrowth.Helpers.Mediation.asmdef",
+            "sdkStepChecksum": "b28d184f05cf304ae7d8f81a45460190",
+            "checksum": "b28d184f05cf304ae7d8f81a45460190"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/UnityEditor.GameGrowth.Helpers.Mediation.asmdef.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/UnityMonetizationAdapterHelper.cs",
+            "sdkStepChecksum": "8b550f5bf54e988d71196e09bf0b4399",
+            "checksum": "8b550f5bf54e988d71196e09bf0b4399"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Editor/Helpers/Mediation/UnityMonetizationAdapterHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthConfiguration.asset",
+            "sdkStepChecksum": "1e4f6e8c7373b5b5b468539e2bc04e19",
+            "checksum": "1e4f6e8c7373b5b5b468539e2bc04e19"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthConfiguration.asset.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthEnvironmentValidator.cs",
+            "sdkStepChecksum": "ef97d9c348e8f772a33acdfa15fe1e36",
+            "checksum": "ef97d9c348e8f772a33acdfa15fe1e36"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthEnvironmentValidator.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthLauncher.cs",
+            "sdkStepChecksum": "5a9063fb43c11b5a244b6e09dedc626c",
+            "checksum": "5a9063fb43c11b5a244b6e09dedc626c"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthLauncher.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthLauncher.prefab",
+            "sdkStepChecksum": "80a9d7d4b2aa18a81e734b28091c8d9c",
+            "checksum": "80a9d7d4b2aa18a81e734b28091c8d9c"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/GameGrowthLauncher.prefab.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/Adjust.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/Adjust/AdjustHelper.cs",
+            "sdkStepChecksum": "058b599b5fe35c7a974a63231c2e6fd5",
+            "checksum": "058b599b5fe35c7a974a63231c2e6fd5"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/Adjust/AdjustHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/DeltaDNA.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/DeltaDNA/DeltaDnaConfigurationHelper.cs",
+            "sdkStepChecksum": "78ad8138326cdbf626fc7aeb158a1bdd",
+            "checksum": "78ad8138326cdbf626fc7aeb158a1bdd"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/Helpers/DeltaDNA/DeltaDnaConfigurationHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/TransactionData.cs",
+            "sdkStepChecksum": "e63d15025a292bd80155ce3d87406d6f",
+            "checksum": "e63d15025a292bd80155ce3d87406d6f"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/TransactionData.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/TransactionHandler.cs",
+            "sdkStepChecksum": "4b26b971e06a926592bf390a0106a636",
+            "checksum": "4b26b971e06a926592bf390a0106a636"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/TransactionHandler.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/UnityThreadUtil.cs",
+            "sdkStepChecksum": "9d9ed9c9b39f90eeda117d7e1a9d061a",
+            "checksum": "9d9ed9c9b39f90eeda117d7e1a9d061a"
+        },
+        {
+            "path": "Assets/GameGrowth/Launcher/UnityThreadUtil.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        }
+    ]
+}

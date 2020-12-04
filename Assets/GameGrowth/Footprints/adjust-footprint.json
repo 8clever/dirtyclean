@@ -1,0 +1,596 @@
+{
+    "name": "Adjust Attribution",
+    "version": "4.23.0.1",
+    "directories": [
+        "Assets/Adjust",
+        "Assets/Adjust/3rd Party",
+        "Assets/Adjust/Android",
+        "Assets/Adjust/Editor",
+        "Assets/Adjust/ExampleGUI",
+        "Assets/Adjust/iOS",
+        "Assets/Adjust/Prefab",
+        "Assets/Adjust/Unity",
+        "Assets/Adjust/Windows",
+        "Assets/Adjust/Windows/Stubs",
+        "Assets/Adjust/Windows/W81",
+        "Assets/Adjust/Windows/WS",
+        "Assets/Adjust/Windows/WU10"
+    ],
+    "files": [
+        {
+            "path": "Assets/Adjust.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/3rd Party.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/3rd Party/SimpleJSON.cs",
+            "sdkStepChecksum": "1b7df755d04b357f18e08e72e52f0709",
+            "checksum": "1b7df755d04b357f18e08e72e52f0709"
+        },
+        {
+            "path": "Assets/Adjust/3rd Party/SimpleJSON.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Android.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Android/adjust-android.jar",
+            "sdkStepChecksum": "4a4fbe977622d382ac34cfa49f458175",
+            "checksum": "4a4fbe977622d382ac34cfa49f458175"
+        },
+        {
+            "path": "Assets/Adjust/Android/adjust-android.jar.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Android/AdjustAndroid.cs",
+            "sdkStepChecksum": "4686be360ae5ad3792de71ad1aa3b547",
+            "checksum": "f80151e281c69de9d3cb2a45d2483a78"
+        },
+        {
+            "path": "Assets/Adjust/Android/AdjustAndroid.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Android/AdjustAndroidManifest.xml",
+            "sdkStepChecksum": "fdae20aa878d04146751755aaa5fd521",
+            "checksum": "fdae20aa878d04146751755aaa5fd521"
+        },
+        {
+            "path": "Assets/Adjust/Android/AdjustAndroidManifest.xml.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Editor.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Editor/AdjustEditor.cs",
+            "sdkStepChecksum": "b21094eb69fd126575047b8a057fe9d4",
+            "checksum": "b21094eb69fd126575047b8a057fe9d4"
+        },
+        {
+            "path": "Assets/Adjust/Editor/AdjustEditor.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.cs",
+            "sdkStepChecksum": "7d35860eb985523233b706ccb902c2e6",
+            "checksum": "7d35860eb985523233b706ccb902c2e6"
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.prefab",
+            "sdkStepChecksum": "6ad598549699d7918ad0cb5b26ea93be",
+            "checksum": "6ad598549699d7918ad0cb5b26ea93be"
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.prefab.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.unity",
+            "sdkStepChecksum": "aec59d34399b4a2d685388c1b63609e3",
+            "checksum": "aec59d34399b4a2d685388c1b63609e3"
+        },
+        {
+            "path": "Assets/Adjust/ExampleGUI/ExampleGUI.unity.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJAttribution.h",
+            "sdkStepChecksum": "cd4acb8acbaf97c0f04bd10c09864ae9",
+            "checksum": "cd4acb8acbaf97c0f04bd10c09864ae9"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJAttribution.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJConfig.h",
+            "sdkStepChecksum": "278b91ac55b192ba94e7f34bb5561751",
+            "checksum": "278b91ac55b192ba94e7f34bb5561751"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJConfig.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEvent.h",
+            "sdkStepChecksum": "2870bb1823d1283c1577284af66de444",
+            "checksum": "2870bb1823d1283c1577284af66de444"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEvent.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEventFailure.h",
+            "sdkStepChecksum": "03aff9a397477edd4db0553e94dee88c",
+            "checksum": "03aff9a397477edd4db0553e94dee88c"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEventFailure.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEventSuccess.h",
+            "sdkStepChecksum": "4aca11996c605bc6b8ba6962d18978d6",
+            "checksum": "4aca11996c605bc6b8ba6962d18978d6"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJEventSuccess.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJLogger.h",
+            "sdkStepChecksum": "9daeb24fad12797a115577676b82e328",
+            "checksum": "9daeb24fad12797a115577676b82e328"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJLogger.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSessionFailure.h",
+            "sdkStepChecksum": "2ba471b3089d751f78e629adad6d1a42",
+            "checksum": "2ba471b3089d751f78e629adad6d1a42"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSessionFailure.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSessionSuccess.h",
+            "sdkStepChecksum": "138622001909ced35ec31a288dbf679e",
+            "checksum": "138622001909ced35ec31a288dbf679e"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSessionSuccess.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSubscription.h",
+            "sdkStepChecksum": "f3fe3183f35fde0be595fb9d73da361c",
+            "checksum": "f3fe3183f35fde0be595fb9d73da361c"
+        },
+        {
+            "path": "Assets/Adjust/iOS/ADJSubscription.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/Adjust.h",
+            "sdkStepChecksum": "0414422a3ae81a5193dcec1df077d3c1",
+            "checksum": "0414422a3ae81a5193dcec1df077d3c1"
+        },
+        {
+            "path": "Assets/Adjust/iOS/Adjust.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustiOS.cs",
+            "sdkStepChecksum": "23ea0c8868d6743cc7dcdd5995e6ad6d",
+            "checksum": "23ea0c8868d6743cc7dcdd5995e6ad6d"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustiOS.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustSdk.a",
+            "sdkStepChecksum": "32cfc63518e8637d706404167dcf5908",
+            "checksum": "32cfc63518e8637d706404167dcf5908"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustSdk.a.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnity.h",
+            "sdkStepChecksum": "b1c72245bed672e86b4bb6f7a5c3017a",
+            "checksum": "b1c72245bed672e86b4bb6f7a5c3017a"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnity.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnity.mm",
+            "sdkStepChecksum": "908955cecc2ed499cb64df3ad90974f4",
+            "checksum": "908955cecc2ed499cb64df3ad90974f4"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnity.mm.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnityDelegate.h",
+            "sdkStepChecksum": "dde7e076e18af3f18cbc249cf1753be2",
+            "checksum": "dde7e076e18af3f18cbc249cf1753be2"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnityDelegate.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnityDelegate.mm",
+            "sdkStepChecksum": "4d52b47ff0f3e468a1858e1fd58e9b7c",
+            "checksum": "4d52b47ff0f3e468a1858e1fd58e9b7c"
+        },
+        {
+            "path": "Assets/Adjust/iOS/AdjustUnityDelegate.mm.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Prefab.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Prefab/Adjust.prefab",
+            "sdkStepChecksum": "08be9dc640acfe468328a02d35953475",
+            "checksum": "08be9dc640acfe468328a02d35953475"
+        },
+        {
+            "path": "Assets/Adjust/Prefab/Adjust.prefab.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/Adjust.cs",
+            "sdkStepChecksum": "77a3346501339312b62d4869898e1280",
+            "checksum": "d3e1de18b37598b8ebf09d64b05a56c5"
+        },
+        {
+            "path": "Assets/Adjust/Unity/Adjust.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustAppStoreSubscription.cs",
+            "sdkStepChecksum": "2c9d43f03e655149fe0e8311dfdb1132",
+            "checksum": "baa145a4c8704f7cda9609a19d872c92"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustAppStoreSubscription.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustAttribution.cs",
+            "sdkStepChecksum": "27a88928bc48efd238641263d794addb",
+            "checksum": "27a88928bc48efd238641263d794addb"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustAttribution.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustConfig.cs",
+            "sdkStepChecksum": "310a2899b66d1f11b536a805ed9761b5",
+            "checksum": "6910c6b443da6943f2b9069ea6ec9fb1"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustConfig.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEnvironment.cs",
+            "sdkStepChecksum": "143c7846f8601dbc0331aac3b27a8f17",
+            "checksum": "143c7846f8601dbc0331aac3b27a8f17"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEnvironment.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEvent.cs",
+            "sdkStepChecksum": "c7f3b7e68d090d068643b0f8d1d5480c",
+            "checksum": "c7f3b7e68d090d068643b0f8d1d5480c"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEvent.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEventFailure.cs",
+            "sdkStepChecksum": "4f823a85a5987ca2279c023a8db5fb46",
+            "checksum": "4f823a85a5987ca2279c023a8db5fb46"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEventFailure.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEventSuccess.cs",
+            "sdkStepChecksum": "1d2287e0a7df15d767e820b232fbb99e",
+            "checksum": "1d2287e0a7df15d767e820b232fbb99e"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustEventSuccess.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustLogLevel.cs",
+            "sdkStepChecksum": "e837068cec67d5802ad985737064f5f7",
+            "checksum": "e837068cec67d5802ad985737064f5f7"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustLogLevel.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustPlayStoreSubscription.cs",
+            "sdkStepChecksum": "0a86d90b7946353231cf54be05e14f59",
+            "checksum": "34d17ab73cbd25e09cd278530991c393"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustPlayStoreSubscription.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustSessionFailure.cs",
+            "sdkStepChecksum": "5eac77f6ccfd8cccc46e5147854a4412",
+            "checksum": "5eac77f6ccfd8cccc46e5147854a4412"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustSessionFailure.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustSessionSuccess.cs",
+            "sdkStepChecksum": "6b58c55b3021c96bfff33902d552011e",
+            "checksum": "6b58c55b3021c96bfff33902d552011e"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustSessionSuccess.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustUtils.cs",
+            "sdkStepChecksum": "2c9f3f1c0572672e33ecd49dc4ef8812",
+            "checksum": "2c9f3f1c0572672e33ecd49dc4ef8812"
+        },
+        {
+            "path": "Assets/Adjust/Unity/AdjustUtils.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/AdjustWindows.cs",
+            "sdkStepChecksum": "839b527f7026a13f855d43fddbdbbab5",
+            "checksum": "839b527f7026a13f855d43fddbdbbab5"
+        },
+        {
+            "path": "Assets/Adjust/Windows/AdjustWindows.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/Newtonsoft.Json.dll",
+            "sdkStepChecksum": "cacf2f8421cb46e9b6d447875a429960",
+            "checksum": "cacf2f8421cb46e9b6d447875a429960"
+        },
+        {
+            "path": "Assets/Adjust/Windows/Newtonsoft.Json.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/Win10Interface.dll",
+            "sdkStepChecksum": "ceb26008ad3a4cf0e810f287eaf8cf48",
+            "checksum": "ceb26008ad3a4cf0e810f287eaf8cf48"
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/Win10Interface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/Win81Interface.dll",
+            "sdkStepChecksum": "2185b66ce8d12a48aa219f798ed20a5e",
+            "checksum": "2185b66ce8d12a48aa219f798ed20a5e"
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/Win81Interface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/WinWsInterface.dll",
+            "sdkStepChecksum": "6fb1289bb7c1348e42c36863b4769c11",
+            "checksum": "6fb1289bb7c1348e42c36863b4769c11"
+        },
+        {
+            "path": "Assets/Adjust/Windows/Stubs/WinWsInterface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/W81.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/W81/AdjustWP81.dll",
+            "sdkStepChecksum": "8fbd72d4cc7f1c82d219b4c1a98de894",
+            "checksum": "8fbd72d4cc7f1c82d219b4c1a98de894"
+        },
+        {
+            "path": "Assets/Adjust/Windows/W81/AdjustWP81.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/W81/Win81Interface.dll",
+            "sdkStepChecksum": "507129102ca950970ff0e095964c6628",
+            "checksum": "507129102ca950970ff0e095964c6628"
+        },
+        {
+            "path": "Assets/Adjust/Windows/W81/Win81Interface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WindowsPcl.dll",
+            "sdkStepChecksum": "b5f1df86cbbe86a50d7168ce3f515134",
+            "checksum": "b5f1df86cbbe86a50d7168ce3f515134"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WindowsPcl.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WindowsUap.dll",
+            "sdkStepChecksum": "c1b3c67a7fbe1fe145308d28b8cf25d6",
+            "checksum": "c1b3c67a7fbe1fe145308d28b8cf25d6"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WindowsUap.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WS/AdjustWS.dll",
+            "sdkStepChecksum": "310d15be1acc67b59669171fa9003551",
+            "checksum": "310d15be1acc67b59669171fa9003551"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WS/AdjustWS.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WS/WinWsInterface.dll",
+            "sdkStepChecksum": "24b7beb7e37d1f5eebf92cda5982afd3",
+            "checksum": "24b7beb7e37d1f5eebf92cda5982afd3"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WS/WinWsInterface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WU10.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WU10/AdjustUAP10.dll",
+            "sdkStepChecksum": "e3675657ccd31e632bf067a29f721da7",
+            "checksum": "e3675657ccd31e632bf067a29f721da7"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WU10/AdjustUAP10.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Adjust/Windows/WU10/Win10Interface.dll",
+            "sdkStepChecksum": "42c4b134a0090078344e2cb88fb5ed9b",
+            "checksum": "42c4b134a0090078344e2cb88fb5ed9b"
+        },
+        {
+            "path": "Assets/Adjust/Windows/WU10/Win10Interface.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        }
+    ]
+}

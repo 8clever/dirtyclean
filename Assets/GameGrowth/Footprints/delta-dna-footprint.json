@@ -1,0 +1,1476 @@
+{
+    "name": "Delta DNA",
+    "version": "4.13.4.1",
+    "directories": [
+        "Assets/DeltaDNA",
+        "Assets/DeltaDNA/Ads",
+        "Assets/DeltaDNA/Ads/Editor",
+        "Assets/DeltaDNA/Ads/Editor/iOS",
+        "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent",
+        "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Base.lproj",
+        "Assets/DeltaDNA/Ads/Editor/Networks",
+        "Assets/DeltaDNA/Ads/IntegrationTester",
+        "Assets/DeltaDNA/Ads/Platforms",
+        "Assets/DeltaDNA/Ads/Platforms/Android",
+        "Assets/DeltaDNA/Ads/Platforms/iOS",
+        "Assets/DeltaDNA/Ads/Platforms/UnityPlayer",
+        "Assets/DeltaDNA/Ads/Plugins",
+        "Assets/DeltaDNA/Ads/Plugins/iOS",
+        "Assets/DeltaDNA/Editor",
+        "Assets/DeltaDNA/Editor/Android",
+        "Assets/DeltaDNA/Editor/iOS",
+        "Assets/DeltaDNA/Editor/iOS/NotificationService",
+        "Assets/DeltaDNA/Editor/Resources",
+        "Assets/DeltaDNA/Example",
+        "Assets/DeltaDNA/Helpers",
+        "Assets/DeltaDNA/Libraries",
+        "Assets/DeltaDNA/Messaging",
+        "Assets/DeltaDNA/Notifications",
+        "Assets/DeltaDNA/Platforms",
+        "Assets/DeltaDNA/Platforms/Android",
+        "Assets/DeltaDNA/Plugins",
+        "Assets/DeltaDNA/Plugins/iOS",
+        "Assets/DeltaDNA/Resources",
+        "Assets/DeltaDNA/Triggers",
+        "Assets/DeltaDNA/Triggers/Conditions",
+        "Assets/PlayServicesResolver",
+        "Assets/PlayServicesResolver/Editor",
+        "Assets/Plugins",
+        "Assets/Plugins/Android",
+        "Assets/Plugins/Android/deltadna-sdk-unity-notifications",
+        "Assets/Plugins/Android/deltadna-sdk-unity-notifications/libs",
+        "Assets/Plugins/iOS"
+    ],
+    "files": [
+        {
+            "path": "Assets/DeltaDNA.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Ad.cs",
+            "sdkStepChecksum": "bb457b2e4f68e204bb22ec9869b232d8",
+            "checksum": "bb457b2e4f68e204bb22ec9869b232d8"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Ad.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/AdsConfigurator.cs",
+            "sdkStepChecksum": "c104f0d384d11209ffadae5b46e968d2",
+            "checksum": "c104f0d384d11209ffadae5b46e968d2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/AdsConfigurator.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/AdsSdkChecker.cs",
+            "sdkStepChecksum": "0d742e3fe5ea44e2e298adcc04fc2684",
+            "checksum": "0d742e3fe5ea44e2e298adcc04fc2684"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/AdsSdkChecker.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/DefineSymbolsHelper.cs",
+            "sdkStepChecksum": "a41d7174c2c7bd13cbfb3b0e7eb432e3",
+            "checksum": "a41d7174c2c7bd13cbfb3b0e7eb432e3"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/DefineSymbolsHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Dependencies.xml",
+            "sdkStepChecksum": "dbf795960eed4b5395fe03679c0a516c",
+            "checksum": "dbf795960eed4b5395fe03679c0a516c"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Dependencies.xml.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/EnableDebugNotificationExtension.cs",
+            "sdkStepChecksum": "73573953958ff1295436a41d2e745fe4",
+            "checksum": "e19b907bf54f13e5929677c490c551fd"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/EnableDebugNotificationExtension.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Base.lproj.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Base.lproj/MainInterface.storyboard",
+            "sdkStepChecksum": "90c22f2fe86a2fbe1af2cd6c97aeb2a5",
+            "checksum": "90c22f2fe86a2fbe1af2cd6c97aeb2a5"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Base.lproj/MainInterface.storyboard.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Info.plist",
+            "sdkStepChecksum": "7fde890a6747212222d3144211fce83a",
+            "checksum": "7fde890a6747212222d3144211fce83a"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/Info.plist.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/NotificationViewController.h",
+            "sdkStepChecksum": "bc11aae4a1b18e13def3fe5d730e9f1d",
+            "checksum": "bc11aae4a1b18e13def3fe5d730e9f1d"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/NotificationViewController.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/NotificationViewController.m",
+            "sdkStepChecksum": "8722bb8bff8824e5d9c4c3ddd16858a7",
+            "checksum": "8722bb8bff8824e5d9c4c3ddd16858a7"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/iOS/NotificationContent/NotificationViewController.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/networks.json",
+            "sdkStepChecksum": "f9f5ab8722b6e2995c12072054aca60d",
+            "checksum": "f9f5ab8722b6e2995c12072054aca60d"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/networks.json.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/AndroidNetworks.cs",
+            "sdkStepChecksum": "f7c119cb30f0be9274c37e9f4b53c4d1",
+            "checksum": "f7c119cb30f0be9274c37e9f4b53c4d1"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/AndroidNetworks.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/InitialisationHelper.cs",
+            "sdkStepChecksum": "688c80d49f797f064bdcdf89a22f2850",
+            "checksum": "688c80d49f797f064bdcdf89a22f2850"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/InitialisationHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/IosNetworks.cs",
+            "sdkStepChecksum": "6c4e4070dde2b5b0eb7dec93521b7d2b",
+            "checksum": "6c4e4070dde2b5b0eb7dec93521b7d2b"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/IosNetworks.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/Networks.cs",
+            "sdkStepChecksum": "e91f1b135381cc5e89730adf31e708b9",
+            "checksum": "e91f1b135381cc5e89730adf31e708b9"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Editor/Networks/Networks.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/Adapters.cs",
+            "sdkStepChecksum": "057ed4f0939327baf6eee55daddbc2e2",
+            "checksum": "057ed4f0939327baf6eee55daddbc2e2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/Adapters.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/deltaDNAAdsIntegrationTester.unity",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/deltaDNAAdsIntegrationTester.unity.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/hires_cube.png",
+            "sdkStepChecksum": "04d4ffc1e8d5f0ca62d755e7e12cf8de",
+            "checksum": "04d4ffc1e8d5f0ca62d755e7e12cf8de"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/hires_cube.png.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/IntegrationTester.cs",
+            "sdkStepChecksum": "c97f30422e6bcaf6c461acf1ea5d8089",
+            "checksum": "c97f30422e6bcaf6c461acf1ea5d8089"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/IntegrationTester.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/Logo.mat",
+            "sdkStepChecksum": "829c0b7214e39c2b1a43bd16daa6525f",
+            "checksum": "829c0b7214e39c2b1a43bd16daa6525f"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/IntegrationTester/Logo.mat.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/InterstitialAd.cs",
+            "sdkStepChecksum": "b1a68b2567da66cdf34c9c2f126aef50",
+            "checksum": "b1a68b2567da66cdf34c9c2f126aef50"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/InterstitialAd.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/AdService.cs",
+            "sdkStepChecksum": "8f6b7360f6591d6117e4bce734232f49",
+            "checksum": "8f6b7360f6591d6117e4bce734232f49"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/AdService.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/AdServiceListener.cs",
+            "sdkStepChecksum": "28d48c33d6d9f64c56ba5ad4d46b679c",
+            "checksum": "28d48c33d6d9f64c56ba5ad4d46b679c"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/AdServiceListener.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/Utils.cs",
+            "sdkStepChecksum": "8205457cb7e5180907c1ff841175de30",
+            "checksum": "8205457cb7e5180907c1ff841175de30"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/Android/Utils.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/iOS/SmartAdsManager.cs",
+            "sdkStepChecksum": "6e617dc9a1b8fab93ae28ccff9cd020c",
+            "checksum": "6e617dc9a1b8fab93ae28ccff9cd020c"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/iOS/SmartAdsManager.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/ISmartAdsManager.cs",
+            "sdkStepChecksum": "049fdf13be9aaf633bfb49b2aa22100f",
+            "checksum": "049fdf13be9aaf633bfb49b2aa22100f"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/ISmartAdsManager.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdAdapter.cs",
+            "sdkStepChecksum": "1515cf41c842a597e89d3d8619e67061",
+            "checksum": "1515cf41c842a597e89d3d8619e67061"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdAdapter.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdAgent.cs",
+            "sdkStepChecksum": "a95c0ab351e7014e21b778929aa0c1ef",
+            "checksum": "a95c0ab351e7014e21b778929aa0c1ef"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdAgent.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdListener.cs",
+            "sdkStepChecksum": "1b2448b6c4f03061743e7b932f23bd48",
+            "checksum": "1b2448b6c4f03061743e7b932f23bd48"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdListener.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdMetrics.cs",
+            "sdkStepChecksum": "9a506cc1d0011967df0c6a2e9e713fea",
+            "checksum": "9a506cc1d0011967df0c6a2e9e713fea"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdMetrics.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdService.cs",
+            "sdkStepChecksum": "33d6f4fe80bf46da771e844f71866836",
+            "checksum": "33d6f4fe80bf46da771e844f71866836"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Platforms/UnityPlayer/AdService.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNADebugUnityPlugin.mm",
+            "sdkStepChecksum": "2c8bcb585ee947089b0c55295720bac1",
+            "checksum": "2c8bcb585ee947089b0c55295720bac1"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNADebugUnityPlugin.mm.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNASmartAdsUnityPlugin.h",
+            "sdkStepChecksum": "616da7e3d6de5f369414d91344ed0282",
+            "checksum": "616da7e3d6de5f369414d91344ed0282"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNASmartAdsUnityPlugin.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNASmartAdsUnityPlugin.m",
+            "sdkStepChecksum": "a208871fe4a34afcadc7e09df420e9e8",
+            "checksum": "a208871fe4a34afcadc7e09df420e9e8"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/Plugins/iOS/DDNASmartAdsUnityPlugin.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/RewardedAd.cs",
+            "sdkStepChecksum": "31dfda9136aed60e53118eb2b2bfa042",
+            "checksum": "31dfda9136aed60e53118eb2b2bfa042"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/RewardedAd.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/SmartAds.cs",
+            "sdkStepChecksum": "af5f8abfada9b697d8da69a2fe98adcb",
+            "checksum": "af5f8abfada9b697d8da69a2fe98adcb"
+        },
+        {
+            "path": "Assets/DeltaDNA/Ads/SmartAds.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNA.cs",
+            "sdkStepChecksum": "c6a5aac15216856601fedd5cc9111f1e",
+            "checksum": "c6a5aac15216856601fedd5cc9111f1e"
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNA.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNABase.cs",
+            "sdkStepChecksum": "6636ab4f6a794b9d50370ee4d56a89ee",
+            "checksum": "6636ab4f6a794b9d50370ee4d56a89ee"
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNABase.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNAImpl.cs",
+            "sdkStepChecksum": "b1fe7c03eeae8515dc29886790b80b17",
+            "checksum": "b1fe7c03eeae8515dc29886790b80b17"
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNAImpl.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNANonTracking.cs",
+            "sdkStepChecksum": "1d13cca7f04952b4a3d476c712e0c751",
+            "checksum": "1d13cca7f04952b4a3d476c712e0c751"
+        },
+        {
+            "path": "Assets/DeltaDNA/DDNANonTracking.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Android.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Android/Dependencies.xml",
+            "sdkStepChecksum": "7adce3d8cca9c51bbf0ee039608e0a14",
+            "checksum": "7adce3d8cca9c51bbf0ee039608e0a14"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Android/Dependencies.xml.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Android/NotificationsConfigurator.cs",
+            "sdkStepChecksum": "1a1b41e0ae46397c7bf0e31dccd60e70",
+            "checksum": "dba5a5b8711afd92e809deb9852674ad"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Android/NotificationsConfigurator.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/ConfigurationWindow.cs",
+            "sdkStepChecksum": "c9d9079550a1fe7c7ee52a43dfa45458",
+            "checksum": "2bdfb17e6f8ca6e95a41b9cb5df12bba"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/ConfigurationWindow.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/DefineSymbolsHelper.cs",
+            "sdkStepChecksum": "1d6fc461a43fff07dba46e76b01875cd",
+            "checksum": "1d6fc461a43fff07dba46e76b01875cd"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/DefineSymbolsHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/DeltaDNASdkChecker.cs",
+            "sdkStepChecksum": "11322db59fece624bd1e016acb040b36",
+            "checksum": "11322db59fece624bd1e016acb040b36"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/DeltaDNASdkChecker.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/EventsTreeView.cs",
+            "sdkStepChecksum": "5d32bbdfced2efca653ccf9805246ea0",
+            "checksum": "5d32bbdfced2efca653ccf9805246ea0"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/EventsTreeView.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/EventsWindow.cs",
+            "sdkStepChecksum": "11965a451c3986ddf35052e68152fb07",
+            "checksum": "11965a451c3986ddf35052e68152fb07"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/EventsWindow.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/InitialisationHelper.cs",
+            "sdkStepChecksum": "dc1afa8d41abaf40f404de549a75fefe",
+            "checksum": "dc1afa8d41abaf40f404de549a75fefe"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/InitialisationHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/AddDefineSymbolsToXcodeProject.cs",
+            "sdkStepChecksum": "348ff14c21a55c6e4af4864a2efe7085",
+            "checksum": "348ff14c21a55c6e4af4864a2efe7085"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/AddDefineSymbolsToXcodeProject.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/CreateRichPushNotificationTargetPostProcessBuild.cs",
+            "sdkStepChecksum": "145dd9ab198c193acb9bc27aa00f9f49",
+            "checksum": "145dd9ab198c193acb9bc27aa00f9f49"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/CreateRichPushNotificationTargetPostProcessBuild.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/EnableNotificationsPostProcessBuild.cs",
+            "sdkStepChecksum": "5c8249905b247e2394ed0f61b996449f",
+            "checksum": "5c8249905b247e2394ed0f61b996449f"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/EnableNotificationsPostProcessBuild.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/iOSConfiguration.cs",
+            "sdkStepChecksum": "2b24b4402b2db81830da80e27909a964",
+            "checksum": "2b24b4402b2db81830da80e27909a964"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/iOSConfiguration.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/Info.plist",
+            "sdkStepChecksum": "9969e7962d1b7679106e40e54af79a8d",
+            "checksum": "9969e7962d1b7679106e40e54af79a8d"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/Info.plist.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/NotificationService.h",
+            "sdkStepChecksum": "8df252e0cabe00dc72291691a2483de4",
+            "checksum": "8df252e0cabe00dc72291691a2483de4"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/NotificationService.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/NotificationService.m",
+            "sdkStepChecksum": "0ce91fd7efe9a6634f52d215a01327f7",
+            "checksum": "0ce91fd7efe9a6634f52d215a01327f7"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/iOS/NotificationService/NotificationService.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/MenuItems.cs",
+            "sdkStepChecksum": "3b6e41c90f45a91a5184d2a4f86dbb37",
+            "checksum": "3b6e41c90f45a91a5184d2a4f86dbb37"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/MenuItems.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo.png",
+            "sdkStepChecksum": "ee03287e58613fbf2f73bc5999db87f2",
+            "checksum": "ee03287e58613fbf2f73bc5999db87f2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo.png.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo_16.png",
+            "sdkStepChecksum": "60f5fcaf190780e097124f3eca903e81",
+            "checksum": "60f5fcaf190780e097124f3eca903e81"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo_16.png.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo_184.png",
+            "sdkStepChecksum": "a377c6485a66cb49454a411b490d3394",
+            "checksum": "a377c6485a66cb49454a411b490d3394"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/Resources/Logo_184.png.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/SdkChecker.cs",
+            "sdkStepChecksum": "04fa5d03a2c37f0e905b2b9019595e0b",
+            "checksum": "10061eb140dc2da7f0d09a5f38c28f4a"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/SdkChecker.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/WindowHelper.cs",
+            "sdkStepChecksum": "9b0497f4f76b1dd382f09ab5eaa95f86",
+            "checksum": "9b0497f4f76b1dd382f09ab5eaa95f86"
+        },
+        {
+            "path": "Assets/DeltaDNA/Editor/WindowHelper.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/EngageFactory.cs",
+            "sdkStepChecksum": "38e9939b024ef71f1d087399f130a183",
+            "checksum": "38e9939b024ef71f1d087399f130a183"
+        },
+        {
+            "path": "Assets/DeltaDNA/EngageFactory.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Engagement.cs",
+            "sdkStepChecksum": "ce547a56402f607fe4dd776055c78d99",
+            "checksum": "ce547a56402f607fe4dd776055c78d99"
+        },
+        {
+            "path": "Assets/DeltaDNA/Engagement.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/BasicExample.cs",
+            "sdkStepChecksum": "06d13d0a3c7670254f90c36408f7ce1d",
+            "checksum": "8dcd5f1fe21f73a7055ba7baeddf1b65"
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/BasicExample.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/deltaDNA.unity",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/deltaDNA.unity.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/deltaDNA_SmartAds.unity",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/deltaDNA_SmartAds.unity.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/hires_cube.png",
+            "sdkStepChecksum": "04d4ffc1e8d5f0ca62d755e7e12cf8de",
+            "checksum": "04d4ffc1e8d5f0ca62d755e7e12cf8de"
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/hires_cube.png.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/Logo.mat",
+            "sdkStepChecksum": "6f04f5d393f77053b2685eaddbbf4103",
+            "checksum": "6f04f5d393f77053b2685eaddbbf4103"
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/Logo.mat.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/SmartAdsExample.cs",
+            "sdkStepChecksum": "78569110e165f9ff15e2174c254816f9",
+            "checksum": "e170dfc4859593289b3ad2efd06c17c0"
+        },
+        {
+            "path": "Assets/DeltaDNA/Example/SmartAdsExample.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/GameEvent.cs",
+            "sdkStepChecksum": "55e2a3c4386ec700b9c0a450ec1c19b9",
+            "checksum": "55e2a3c4386ec700b9c0a450ec1c19b9"
+        },
+        {
+            "path": "Assets/DeltaDNA/GameEvent.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ActionStore.cs",
+            "sdkStepChecksum": "a54c46148dcc3bb4b1d7da79902842e5",
+            "checksum": "a54c46148dcc3bb4b1d7da79902842e5"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ActionStore.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/APIConfiguration.cs",
+            "sdkStepChecksum": "a7e84a5a3063d165f083b2b0c63a75b3",
+            "checksum": "a7e84a5a3063d165f083b2b0c63a75b3"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/APIConfiguration.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ClientInfo.cs",
+            "sdkStepChecksum": "28220b1f249669c90f422b096b747e82",
+            "checksum": "2697cb52ee99e4159f2ac2e8d62cebba"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ClientInfo.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ConcurrentQueue.cs",
+            "sdkStepChecksum": "76dc3c93408c2b2f036e6a8bf40e55ac",
+            "checksum": "76dc3c93408c2b2f036e6a8bf40e55ac"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ConcurrentQueue.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Configuration.cs",
+            "sdkStepChecksum": "6a3239ea27e32177d54567dcb90f8626",
+            "checksum": "6a3239ea27e32177d54567dcb90f8626"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Configuration.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Engage.cs",
+            "sdkStepChecksum": "02ecdd9c692a746f371595e2a1a4e494",
+            "checksum": "02ecdd9c692a746f371595e2a1a4e494"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Engage.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/EngageCache.cs",
+            "sdkStepChecksum": "15612f328c643aef169e37894d2576b0",
+            "checksum": "15612f328c643aef169e37894d2576b0"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/EngageCache.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/EventStore.cs",
+            "sdkStepChecksum": "6a7a06fce78f29d62064c2cdce3e7050",
+            "checksum": "6a7a06fce78f29d62064c2cdce3e7050"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/EventStore.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ImageMessageStore.cs",
+            "sdkStepChecksum": "77d5b166e269214af23b7bbc004426fc",
+            "checksum": "983343d2b296561b987c0d2e5b4a4bed"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/ImageMessageStore.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Logger.cs",
+            "sdkStepChecksum": "d0ed6f8c9a69b5fdb94dee613d3a7e11",
+            "checksum": "d0ed6f8c9a69b5fdb94dee613d3a7e11"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Logger.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Network.cs",
+            "sdkStepChecksum": "4b05292d6c05490fbec34535d0dc3818",
+            "checksum": "086b0d8ebf83ea89c76a2de078881ab0"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Network.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/OrientationChange.cs",
+            "sdkStepChecksum": "5f5d31c6d3cd1276ee72df279956ca98",
+            "checksum": "5f5d31c6d3cd1276ee72df279956ca98"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/OrientationChange.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Platform.cs",
+            "sdkStepChecksum": "63fa8738c33b25071851339d307c76cc",
+            "checksum": "63fa8738c33b25071851339d307c76cc"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Platform.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Settings.cs",
+            "sdkStepChecksum": "8862fe4b490583407022aebe9586e6b2",
+            "checksum": "8862fe4b490583407022aebe9586e6b2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Settings.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/SimpleDataStore.cs",
+            "sdkStepChecksum": "10949ac5c013a19b0f31dd2315091ea3",
+            "checksum": "10949ac5c013a19b0f31dd2315091ea3"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/SimpleDataStore.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Singleton.cs",
+            "sdkStepChecksum": "ac8675fa931edd434bb6341bfe8da618",
+            "checksum": "ac8675fa931edd434bb6341bfe8da618"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Singleton.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Utils.cs",
+            "sdkStepChecksum": "875710e649d6fd6fdadf53f1625255c2",
+            "checksum": "875710e649d6fd6fdadf53f1625255c2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Helpers/Utils.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Libraries.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Libraries/MiniJSON.cs",
+            "sdkStepChecksum": "80c25e03d863191b18bd7d42db347eb8",
+            "checksum": "80c25e03d863191b18bd7d42db347eb8"
+        },
+        {
+            "path": "Assets/DeltaDNA/Libraries/MiniJSON.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Messaging.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Messaging/ImageMessage.cs",
+            "sdkStepChecksum": "a0b386af4bf7910d66f606fe93a465c7",
+            "checksum": "a0b386af4bf7910d66f606fe93a465c7"
+        },
+        {
+            "path": "Assets/DeltaDNA/Messaging/ImageMessage.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Notifications.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Notifications/AndroidNotifications.cs",
+            "sdkStepChecksum": "5e13bdd4caaf67cc0be5826c10eee681",
+            "checksum": "5e13bdd4caaf67cc0be5826c10eee681"
+        },
+        {
+            "path": "Assets/DeltaDNA/Notifications/AndroidNotifications.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Notifications/IosNotifications.cs",
+            "sdkStepChecksum": "b0246e9b5c3cb820eb4a8d6d6115d21d",
+            "checksum": "b0246e9b5c3cb820eb4a8d6d6115d21d"
+        },
+        {
+            "path": "Assets/DeltaDNA/Notifications/IosNotifications.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Params.cs",
+            "sdkStepChecksum": "45e20bf03e97c52e93d149ed5f226b99",
+            "checksum": "45e20bf03e97c52e93d149ed5f226b99"
+        },
+        {
+            "path": "Assets/DeltaDNA/Params.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms/Android.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms/Android/DdnaNotifications.cs",
+            "sdkStepChecksum": "4f2774a1a090da872d372ec8543c865b",
+            "checksum": "4f2774a1a090da872d372ec8543c865b"
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms/Android/DdnaNotifications.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms/Android/Utils.cs",
+            "sdkStepChecksum": "92a9682830aa45ad7231c240645dedc2",
+            "checksum": "92a9682830aa45ad7231c240645dedc2"
+        },
+        {
+            "path": "Assets/DeltaDNA/Platforms/Android/Utils.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins/iOS/DDNAConsoleLogger.h",
+            "sdkStepChecksum": "7777ef84f2aa1c19b2de85ef0ee5c957",
+            "checksum": "7777ef84f2aa1c19b2de85ef0ee5c957"
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins/iOS/DDNAConsoleLogger.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins/iOS/DDNAConsoleLogger.m",
+            "sdkStepChecksum": "e29fd8e72cde51f0b8ef4e0d9c899928",
+            "checksum": "e29fd8e72cde51f0b8ef4e0d9c899928"
+        },
+        {
+            "path": "Assets/DeltaDNA/Plugins/iOS/DDNAConsoleLogger.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Product.cs",
+            "sdkStepChecksum": "dad68d9e714bc1bfecf57ca21a8bc587",
+            "checksum": "dad68d9e714bc1bfecf57ca21a8bc587"
+        },
+        {
+            "path": "Assets/DeltaDNA/Product.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Resources.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Resources/iso_4217.xml",
+            "sdkStepChecksum": "58bcaf988b9b2542e1dd508e3508b250",
+            "checksum": "58bcaf988b9b2542e1dd508e3508b250"
+        },
+        {
+            "path": "Assets/DeltaDNA/Resources/iso_4217.xml.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Transaction.cs",
+            "sdkStepChecksum": "e85babaeceed5c0acb7f61ad9cf71de1",
+            "checksum": "e85babaeceed5c0acb7f61ad9cf71de1"
+        },
+        {
+            "path": "Assets/DeltaDNA/Transaction.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionCountBasedTriggerCondition.cs",
+            "sdkStepChecksum": "7d73215f9eedc3243f2be8e66aaf965a",
+            "checksum": "7d73215f9eedc3243f2be8e66aaf965a"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionCountBasedTriggerCondition.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionCountTriggerCondition.cs",
+            "sdkStepChecksum": "fadbd251dd98d2a953e90065dffe60a1",
+            "checksum": "fadbd251dd98d2a953e90065dffe60a1"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionCountTriggerCondition.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionRepeatTriggerCondition.cs",
+            "sdkStepChecksum": "98ed7d96ddb66bc631fcd15ab564a828",
+            "checksum": "98ed7d96ddb66bc631fcd15ab564a828"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/ExecutionRepeatTriggerCondition.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/TriggerCondition.cs",
+            "sdkStepChecksum": "973e8665735ed76b9ee53fd20be1e54d",
+            "checksum": "973e8665735ed76b9ee53fd20be1e54d"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/TriggerCondition.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/TriggerConditionParser.cs",
+            "sdkStepChecksum": "2e9fb7d3d0431b1a90ee9df391b96959",
+            "checksum": "2e9fb7d3d0431b1a90ee9df391b96959"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/Conditions/TriggerConditionParser.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventAction.cs",
+            "sdkStepChecksum": "bb343fe6a44da69e2a49931d31a86637",
+            "checksum": "bb343fe6a44da69e2a49931d31a86637"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventAction.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventActionHandlers.cs",
+            "sdkStepChecksum": "fb6c194d36cbe2ad508488f93b84f5be",
+            "checksum": "fb6c194d36cbe2ad508488f93b84f5be"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventActionHandlers.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventTrigger.cs",
+            "sdkStepChecksum": "16826750897d4d8984c3b10333c87af4",
+            "checksum": "16826750897d4d8984c3b10333c87af4"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/EventTrigger.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/ExecutionCountManager.cs",
+            "sdkStepChecksum": "110c0aaabb034b62f1e278106efd4d2a",
+            "checksum": "110c0aaabb034b62f1e278106efd4d2a"
+        },
+        {
+            "path": "Assets/DeltaDNA/Triggers/ExecutionCountManager.cs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll",
+            "sdkStepChecksum": "d38c9ca3831914478eb04c44c8d92937",
+            "checksum": "d38c9ca3831914478eb04c44c8d92937"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll.mdb",
+            "sdkStepChecksum": "e3aff173acf26747a01f7590e04f3b79",
+            "checksum": "e3aff173acf26747a01f7590e04f3b79"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll.mdb.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll",
+            "sdkStepChecksum": "cfe1fe08a4a13b1775b0c9009c93e0b9",
+            "checksum": "cfe1fe08a4a13b1775b0c9009c93e0b9"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll.mdb",
+            "sdkStepChecksum": "b0fc5d74b88cffe1bdfaeb9e686abca7",
+            "checksum": "b0fc5d74b88cffe1bdfaeb9e686abca7"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll.mdb.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll",
+            "sdkStepChecksum": "ba664e8ae9c37e2e357d3352554b3393",
+            "checksum": "ba664e8ae9c37e2e357d3352554b3393"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll.mdb",
+            "sdkStepChecksum": "5a29f15c1d5ea06189e38b805d4abc54",
+            "checksum": "5a29f15c1d5ea06189e38b805d4abc54"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll.mdb.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll",
+            "sdkStepChecksum": "b16567bc9558525ff2d1620f4fe8950e",
+            "checksum": "b16567bc9558525ff2d1620f4fe8950e"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll.mdb",
+            "sdkStepChecksum": "659b24aac8adb27943b047ac09747eb8",
+            "checksum": "659b24aac8adb27943b047ac09747eb8"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll.mdb.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/play-services-resolver_v1.2.136.0.txt",
+            "sdkStepChecksum": "94cfc282822f4c014d9deec111418b3c",
+            "checksum": "94cfc282822f4c014d9deec111418b3c"
+        },
+        {
+            "path": "Assets/PlayServicesResolver/Editor/play-services-resolver_v1.2.136.0.txt.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/AndroidManifest.xml",
+            "sdkStepChecksum": "91d63963f3705a7b8fe01578714c5563",
+            "checksum": "91d63963f3705a7b8fe01578714c5563"
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/AndroidManifest.xml.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/libs.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/libs/classes.jar",
+            "sdkStepChecksum": "1638e2a6a92aa599bd892e51d38150e1",
+            "checksum": "1638e2a6a92aa599bd892e51d38150e1"
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/libs/classes.jar.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/project.properties",
+            "sdkStepChecksum": "581e3fe19089a89b44efe5d29f5afb59",
+            "checksum": "581e3fe19089a89b44efe5d29f5afb59"
+        },
+        {
+            "path": "Assets/Plugins/Android/deltadna-sdk-unity-notifications/project.properties.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/iOS.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/iOS/DDNAUnityNotificationsPlugin.h",
+            "sdkStepChecksum": "3f009f95f91b9b6886d90c92324b2b3b",
+            "checksum": "3f009f95f91b9b6886d90c92324b2b3b"
+        },
+        {
+            "path": "Assets/Plugins/iOS/DDNAUnityNotificationsPlugin.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/iOS/DDNAUnityNotificationsPlugin.m",
+            "sdkStepChecksum": "bb464b95713ce1632b09da08ee656bd0",
+            "checksum": "bb464b95713ce1632b09da08ee656bd0"
+        },
+        {
+            "path": "Assets/Plugins/iOS/DDNAUnityNotificationsPlugin.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/iOS/NSString+DDNAHelpers.h",
+            "sdkStepChecksum": "9c3022f41be9e1756a1d5dd86078301b",
+            "checksum": "9c3022f41be9e1756a1d5dd86078301b"
+        },
+        {
+            "path": "Assets/Plugins/iOS/NSString+DDNAHelpers.h.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        },
+        {
+            "path": "Assets/Plugins/iOS/NSString+DDNAHelpers.m",
+            "sdkStepChecksum": "c28e64002ccc0bf8d6494809fd659792",
+            "checksum": "c28e64002ccc0bf8d6494809fd659792"
+        },
+        {
+            "path": "Assets/Plugins/iOS/NSString+DDNAHelpers.m.meta",
+            "sdkStepChecksum": "",
+            "checksum": ""
+        }
+    ]
+}
