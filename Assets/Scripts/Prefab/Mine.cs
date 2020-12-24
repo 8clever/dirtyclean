@@ -36,7 +36,9 @@ public class Mine : Nip, INip
             var intersected = sphere?.bounds.Intersects(collider.bounds) ?? false;
             if (intersected) {
                 var nip = c.GetComponentInParent<Nip>();
-                DestroyNip(nip);
+                if (nip) {
+                    DestroyNip(nip);
+                }
             }
         }
         

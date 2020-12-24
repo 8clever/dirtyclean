@@ -519,6 +519,51 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 218809990}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &276777925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276777926}
+  - component: {fileID: 276777927}
+  m_Layer: 0
+  m_Name: AdMob
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276777926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276777925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 157.0783, y: 228.73541, z: -291.375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &276777927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276777925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6726c53d39405f4faacc32cf56ad4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadBanner: 0
+  RewardedButton: {fileID: 74701220}
 --- !u!1 &406349900
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +753,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Need health points? You will receive one health point each 15 seconds,
-    or you can see AD video and receive 20 health points permanent.
+    or you can see AD video and receive some health.
 --- !u!222 &962920609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1509,7 +1554,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1992290931
+--- !u!1 &2125304450
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1517,38 +1562,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1992290933}
-  - component: {fileID: 1992290932}
+  - component: {fileID: 2125304451}
   m_Layer: 0
-  m_Name: Controllers
+  m_Name: -- CONTROLLERS --
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1992290932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992290931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e130f5c8dabf37546a3d0bf87dcd65ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadBanner: 0
-  btnReward: {fileID: 74701220}
---- !u!4 &1992290933
+--- !u!4 &2125304451
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992290931}
+  m_GameObject: {fileID: 2125304450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 720.0197, y: 1989.5599, z: 0}
+  m_LocalPosition: {x: 157.0783, y: 228.73541, z: -291.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
