@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System;
-using GoogleMobileAds.Api;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using GoogleMobileAdsMediationTestSuite.Api;
+using GoogleMobileAds.Api;
 
 public class AdMobController : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool LoadBanner = false;
+    public bool LoadInterstitial = false;
     public Button RewardedButton;
     private AdRequest request;
     private RewardedAd rewarded;
     private BannerView banner;
-
     void Start()
     {
         MobileAds.Initialize((initStatus) =>
@@ -31,11 +32,15 @@ public class AdMobController : MonoBehaviour
                 case AdapterState.Ready:
                     // The adapter was successfully initialized.
                     MonoBehaviour.print("Adapter: " + className + " is initialized.");
-                    OnAdapterReady();
                     break;
                 }
             }
+            OnAdapterReady();
         });
+    }
+
+    public void ShowMediationTestSuite () {
+        MediationTestSuite.Show();
     }
 
     private void OnAdapterReady () {
@@ -47,6 +52,9 @@ public class AdMobController : MonoBehaviour
             loadRewardedVideo();
             RewardedButton.onClick.AddListener(showRewardedVideo);
         }
+        if (LoadInterstitial) {
+            loadRewardedVideo();
+        }
     }
 
     private void loadBanner () {
@@ -55,8 +63,9 @@ public class AdMobController : MonoBehaviour
         #elif UNITY_IPHONE
             var adUnitId = "ca-app-pub-7579927697787840/7409875131";
         #endif
-        banner = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Top);
+        banner = new BannerView(adUnitId, AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth), AdPosition.Top);
         banner.OnAdLoaded += HandleBannerAdLoaded;
+        banner.OnAdFailedToLoad += HandleOnAdFailedToLoad;
         banner.LoadAd(request);
     }
 
@@ -84,7 +93,12 @@ public class AdMobController : MonoBehaviour
 
     public void HandleRewardedAdLoaded(object sender, EventArgs args)
     {
-        RewardedButton.interactable = true;
+        if (RewardedButton) {
+            RewardedButton.interactable = true;
+        }
+        if (LoadInterstitial) {
+            rewarded.Show();
+        }
     }
 
     public void HandleBannerAdLoaded(object sender, EventArgs args)
@@ -103,5 +117,11 @@ public class AdMobController : MonoBehaviour
         if (game) {
             game.AddPointsToHealth(Convert.ToInt32(amount));
         }
+    }
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
+                            + args.Message);
     }
 }
